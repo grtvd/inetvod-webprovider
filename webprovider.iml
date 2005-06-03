@@ -11,13 +11,13 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Tomcat 5.5" level="application_server_libraries" />
+    <orderEntry type="library" name="Tomcat 5.0" level="application_server_libraries" />
     <orderEntryProperties />
   </component>
   <component name="WebModuleBuildComponent">
     <setting name="EXPLODED_URL" value="file://$MODULE_DIR$/exploded" />
     <setting name="EXPLODED_ENABLED" value="true" />
-    <setting name="JAR_URL" value="file://" />
+    <setting name="JAR_URL" value="file://$MODULE_DIR$/webprovider.war" />
     <setting name="JAR_ENABLED" value="false" />
     <setting name="SYNC_EXPLODED_DIR" value="true" />
     <setting name="BUILD_ON_FRAME_DEACTIVATION" value="false" />

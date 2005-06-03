@@ -2,4 +2,16 @@
 
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app>
+
+	<servlet>
+		<servlet-name>WebProviderServlet</servlet-name>
+		<servlet-class>com.inetvod.webprovider.WebProviderServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>WebProviderServlet</servlet-name>
+		<!-- <url-pattern>/inetvod/playerapi/xml</url-pattern> -->
+		<url-pattern>/providerapi/*</url-pattern>
+	</servlet-mapping>
+
 </web-app>
