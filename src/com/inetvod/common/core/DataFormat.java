@@ -28,9 +28,9 @@ public class DataFormat
 		if((value == null) || (value.length() == 0))
 			return null;
 
-		if(XML.fValue.matches(value))
+		if(XML.fValue.equals(value))
 			return XML;
-		if(Binary.fValue.matches(value))
+		if(Binary.fValue.equals(value))
 			return Binary;
 
 		throw new IllegalArgumentException("bad value(" + value + ")");

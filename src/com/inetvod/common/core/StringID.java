@@ -6,7 +6,7 @@ package com.inetvod.common.core;
 
 public class StringID extends DataID
 {
-	protected String fValue;
+	protected final String fValue;
 
 	public StringID(String value)
 	{
@@ -26,6 +26,6 @@ public class StringID extends DataID
 		if ((o == null) || !(o instanceof StringID))
 			return false;
 
-		return fValue.matches(((StringID)o).fValue);
+		return fValue.equals(((StringID)o).fValue);
 	}
 }
