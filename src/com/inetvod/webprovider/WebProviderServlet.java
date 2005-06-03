@@ -18,15 +18,6 @@ public class WebProviderServlet extends HttpServlet
 	protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
 		throws ServletException, IOException
 	{
-		try
-		{
-			ServletFulfiller fulfiller = new WebProviderServletFulfiller(httpServletRequest, httpServletResponse);
-			fulfiller.fulfill();
-		}
-		catch(Exception e)
-		{
-			//throw new ServletException(e);
-		}
 	}
 
 	protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)

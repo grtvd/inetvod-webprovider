@@ -15,8 +15,11 @@ import java.lang.reflect.Constructor;
 
 public class RequestData implements Requestable
 {
+	/* Constants */
 	public static final Constructor CtorDataFiler = DataReader.getCtor(RequestData.class);
+	public static final int RequestTypeMaxLength = 64;
 
+	/* Properties */
 	protected String fRequestType;
 	protected Requestable fRequest;
 
@@ -51,7 +54,7 @@ public class RequestData implements Requestable
 
 	public void readFrom(DataReader reader) throws Exception
 	{
-		fRequestType = reader.readString("RequestType", 64);
+		fRequestType = reader.readString("RequestType", RequestTypeMaxLength);
 
 		Class cl = Class.forName(getClass().getPackage().getName() + "." + fRequestType);
 		Constructor ctor = cl.getConstructor(new Class[] { DataReader.class });
@@ -60,7 +63,7 @@ public class RequestData implements Requestable
 
 	public void writeTo(DataWriter writer) throws Exception
 	{
-		writer.writeString("RequestType", fRequestType, 64);
+		writer.writeString("RequestType", fRequestType, RequestTypeMaxLength);
 		writer.writeObject(fRequestType, fRequest);
 	}
 }

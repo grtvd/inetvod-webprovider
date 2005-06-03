@@ -15,6 +15,19 @@ import java.util.Date;
 
 public class EnrollRqst implements Requestable
 {
+	/* Constants */
+	public static final int UserIDMaxLength = 64;
+	public static final int PasswordMaxLength = 32;
+	public static final int FirstNameMaxLength = 32;
+	public static final int LastNameMaxLength = 32;
+	public static final int AddrStreetMaxLength = 64;
+	public static final int CityMaxLength = 64;
+	public static final int StateMaxLength = 64;
+	public static final int PostalCodeMaxLength = 32;
+	public static final int CountryMaxLength = 64;
+	public static final int PhoneMaxLength = 32;
+
+	/* Properties */
 	protected String fUserID;
 	protected String fPassword;
 	protected String fFirstName;
@@ -47,34 +60,34 @@ public class EnrollRqst implements Requestable
 
 	public void readFrom(DataReader filer) throws Exception
 	{
-		fUserID = filer.readString("UserID", 64);
-		fPassword = filer.readString("Password", 32);
-		fFirstName = filer.readString("FirstName", 16);
-		fLastName = filer.readString("LastName", 32);
-		fAddrStreet1 = filer.readString("AddrStreet1", 64);
-		fAddrStreet2 = filer.readString("AddrStreet2", 64);
-		fCity = filer.readString("City", 64);
-		fState = filer.readString("State", 64);
-		fPostalCode = filer.readString("PostalCode", 32);
-		fCountry = filer.readString("Country", 64);
-		fPhone = filer.readString("Phone", 32);
+		fUserID = filer.readString("UserID", UserIDMaxLength);
+		fPassword = filer.readString("Password", PasswordMaxLength);
+		fFirstName = filer.readString("FirstName", FirstNameMaxLength);
+		fLastName = filer.readString("LastName", LastNameMaxLength);
+		fAddrStreet1 = filer.readString("AddrStreet1", AddrStreetMaxLength);
+		fAddrStreet2 = filer.readString("AddrStreet2", AddrStreetMaxLength);
+		fCity = filer.readString("City", CityMaxLength);
+		fState = filer.readString("State", StateMaxLength);
+		fPostalCode = filer.readString("PostalCode", PostalCodeMaxLength);
+		fCountry = filer.readString("Country", CountryMaxLength);
+		fPhone = filer.readString("Phone", PhoneMaxLength);
 		fBirthDate = filer.readDate("BirthDate");
 		fCurrencyID = filer.readString("CurrencyID", CurrencyID.MaxLength);
 	}
 
 	public void writeTo(DataWriter filer) throws Exception
 	{
-		filer.writeString("UserID", fUserID, 64);
-		filer.writeString("Password", fPassword, 32);
-		filer.writeString("FirstName", fFirstName, 16);
-		filer.writeString("LastName", fLastName, 32);
-		filer.writeString("AddrStreet1", fAddrStreet1, 64);
-		filer.writeString("AddrStreet1", fAddrStreet2, 64);
-		filer.writeString("City", fCity, 64);
-		filer.writeString("State", fState, 64);
-		filer.writeString("PostalCode", fPostalCode, 32);
-		filer.writeString("Country", fCountry, 64);
-		filer.writeString("Phone", fPhone, 32);
+		filer.writeString("UserID", fUserID, UserIDMaxLength);
+		filer.writeString("Password", fPassword, PasswordMaxLength);
+		filer.writeString("FirstName", fFirstName, FirstNameMaxLength);
+		filer.writeString("LastName", fLastName, LastNameMaxLength);
+		filer.writeString("AddrStreet1", fAddrStreet1, AddrStreetMaxLength);
+		filer.writeString("AddrStreet1", fAddrStreet2, AddrStreetMaxLength);
+		filer.writeString("City", fCity, CityMaxLength);
+		filer.writeString("State", fState, StateMaxLength);
+		filer.writeString("PostalCode", fPostalCode, PostalCodeMaxLength);
+		filer.writeString("Country", fCountry, CountryMaxLength);
+		filer.writeString("Phone", fPhone, PhoneMaxLength);
 		filer.writeDate("BirthDate", fBirthDate);
 		filer.writeString("CurrencyID", fCurrencyID, CurrencyID.MaxLength);
 	}

@@ -9,6 +9,10 @@ import com.inetvod.common.core.Writeable;
 
 public class ResponseData implements Writeable
 {
+	/* Constants */
+	public static final int ResponseTypeMaxLength = 64;
+
+	/* Properties */
 	protected String fResponseType;
 	protected Writeable fResponse;
 
@@ -21,7 +25,7 @@ public class ResponseData implements Writeable
 
 	public void writeTo(DataWriter writer) throws Exception
 	{
-		writer.writeString("ResponseType", fResponseType, 64);
+		writer.writeString("ResponseType", fResponseType, ResponseTypeMaxLength);
 		writer.writeObject(fResponseType, fResponse);
 	}
 }

@@ -17,10 +17,9 @@ import java.lang.reflect.Constructor;
 public class INetVODProviderRqst implements Requestable
 {
 	/* Constants */
+	public static final Constructor CtorDataFiler = DataReader.getCtor(INetVODProviderRqst.class);
 	public static final int VersionMaxLength = 16;
 	public static final int RequestIDMaxLength = 64;
-
-	public static final Constructor CtorDataFiler = DataReader.getCtor(INetVODProviderRqst.class);
 
 	/* Fields */
 	protected String fVersion;
