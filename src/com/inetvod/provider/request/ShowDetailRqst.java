@@ -22,6 +22,7 @@ import com.inetvod.common.dbdata.ShowFormatList;
 import com.inetvod.common.dbdata.ShowID;
 import com.inetvod.common.dbdata.ShowIDList;
 import com.inetvod.common.dbdata.ShowList;
+import com.inetvod.common.dbdata.Show;
 import com.inetvod.provider.rqdata.ShowDetail;
 import com.inetvod.provider.rqdata.ShowDetailList;
 
@@ -65,12 +66,28 @@ public class ShowDetailRqst extends SessionRequestable
 		showCost.setRentalHours((short)48);
 		showCostList.add(showCost);
 
+		showCost = new ShowCost();
+		showCost.setShowCostType(ShowCostType.PayPerView);
+		showCost.setMoney(new Money(CurrencyID.USD, 5.95));
+		showCost.setDescription("$5.95");
+		showCost.setRentalHours((short)168);
+		showCostList.add(showCost);
+
 		ShowList showList = ShowList.getAll();
 		Iterator<ShowID> iter = fShowIDList.iterator();
 
+		Show show;
 		while(iter.hasNext())
-			showDetailList.add(new ShowDetail(showList.getByID(iter.next()),
-				categoryIDList, showFormatList, showCostList));
+		{
+			show = showList.findByID(iter.next());
+			if(show == null)
+			{
+				fStatusCode = StatusCode.sc_RequestInvalid;
+				return response;
+			}
+
+			showDetailList.add(new ShowDetail(show, categoryIDList, showFormatList, showCostList));
+		}
 
 		fStatusCode = StatusCode.sc_Success;
 		return response;

@@ -59,6 +59,15 @@ public class ShowList extends ArrayList<Show>
 		return showList;
 	}
 
+	public Show findByID(ShowID showID)
+	{
+		int pos = indexOf(showID);
+		if(pos >= 0)
+			return get(pos);
+
+		return null;
+	}
+
 	public Show getByID(ShowID showID) throws Exception
 	{
 		int pos = indexOf(showID);

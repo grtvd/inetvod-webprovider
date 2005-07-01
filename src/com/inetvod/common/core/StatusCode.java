@@ -13,6 +13,7 @@ public class StatusCode
 
 	public static final StatusCode sc_RequestNotSupported = new StatusCode(1);
 	public static final StatusCode sc_RequestMissingRequired = new StatusCode(2);
+	public static final StatusCode sc_RequestInvalid = new StatusCode(3);
 
 	public static final StatusCode sc_InvalidMemberUserID = new StatusCode(1000);
 	public static final StatusCode sc_InvalidAdminUserID = new StatusCode(1001);
@@ -30,6 +31,7 @@ public class StatusCode
 			sc_Success,
 			sc_RequestNotSupported,
 			sc_RequestMissingRequired,
+			sc_RequestInvalid,
 			sc_InvalidMemberUserID,
 			sc_InvalidAdminUserID,
 			sc_UserIDInUse,
