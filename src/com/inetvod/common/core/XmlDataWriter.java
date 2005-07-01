@@ -4,11 +4,10 @@
  */
 package com.inetvod.common.core;
 
+import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-import java.io.IOException;
-import java.text.DateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -212,7 +211,7 @@ public class XmlDataWriter extends DataWriter
 		if(data == null)
 			return;
 
-		writeElement(fieldName, DateFormat.getDateInstance().format(data));
+		writeElement(fieldName, (new ISO8601DateFormat()).format(data));
 	}
 
 	/**
@@ -227,7 +226,7 @@ public class XmlDataWriter extends DataWriter
 		if(data == null)
 			return;
 
-		writeElement(fieldName, DateFormat.getDateTimeInstance().format(data));
+		writeElement(fieldName, (new ISO8601DateTimeFormat()).format(data));
 	}
 
 	/**

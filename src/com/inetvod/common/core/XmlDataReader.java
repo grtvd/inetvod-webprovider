@@ -12,7 +12,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.InputStream;
 import java.lang.reflect.Constructor;
-import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -228,7 +227,7 @@ public class XmlDataReader extends DataReader
 		if(data == null)
 			return null;
 
-		return DateFormat.getDateInstance().parse(data);
+		return (new ISO8601DateFormat()).parse(data);
 	}
 
 	/**
@@ -238,7 +237,12 @@ public class XmlDataReader extends DataReader
 	 */
 	public Date readDateTime(String fieldName) throws Exception
 	{
-		throw new UnsupportedOperationException("need to implement");	//TODO: need to implement
+		String data = readString(fieldName);
+
+		if(data == null)
+			return null;
+
+		return (new ISO8601DateTimeFormat()).parse(data);
 	}
 
 	/**
