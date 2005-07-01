@@ -11,6 +11,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.io.File;
 import java.nio.ByteOrder;
 import java.text.DateFormat;
 import java.text.FieldPosition;
@@ -184,9 +185,9 @@ public abstract class ServletFulfiller
 			StringBuffer sb = new StringBuffer();
 			long milliSecs = (new Date()).getTime() - startTime.getTime();
 			String fileDir = "c:\\temp\\iNetVOD\\requests\\";
-			String fileName = //fileDir + "2004-07-11";
-				fileDir + (new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-SSSS")).format(
-				startTime, sb, new FieldPosition(DateFormat.YEAR_FIELD)).toString() + "-";	//TODO: need to add Thread data to data
+			String baseFileName = String.format ("%s-%d_", (new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-SSSS")).format(
+				startTime, sb, new FieldPosition(DateFormat.YEAR_FIELD)).toString(), Thread.currentThread().getId());
+			String fileName = (new File(fileDir, baseFileName)).getPath();
 
 			if(requestStream != null)
 				StreamUtil.streamToFile(requestStream, fileName + "Rqst" + requestFileExt);
@@ -195,7 +196,7 @@ public abstract class ServletFulfiller
 				StreamUtil.streamToFile(responseStream, fileName + "Resp" + responseFileExt);
 
 			writer = new PrintWriter(new FileOutputStream(fileName + (success ? "Success" : "Failed") + ".txt"));
-			writer.println((new MessageFormat("Millis to build: {0}")).format(new Object[] { new Long(milliSecs) }));
+			writer.println((new MessageFormat("Millis to build: {0}")).format(new Object[] { milliSecs }));
 			if((msg != null) && (msg.length() > 0))
 				writer.println((new MessageFormat("Message: {0}")).format(new Object[] { msg }));
 			if(exception != null)
