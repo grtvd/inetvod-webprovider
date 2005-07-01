@@ -4,12 +4,12 @@
  */
 package com.inetvod.provider.request;
 
+import com.inetvod.common.core.DataReader;
+import com.inetvod.common.core.DataWriter;
 import com.inetvod.common.core.Requestable;
 import com.inetvod.common.core.StatusCode;
-import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.Writeable;
-import com.inetvod.common.core.DataWriter;
-import com.inetvod.common.core.CurrencyID;
+import com.inetvod.provider.rqdata.Address;
 
 import java.util.Date;
 
@@ -20,75 +20,118 @@ public class EnrollRqst implements Requestable
 	public static final int PasswordMaxLength = 32;
 	public static final int FirstNameMaxLength = 32;
 	public static final int LastNameMaxLength = 32;
-	public static final int AddrStreetMaxLength = 64;
-	public static final int CityMaxLength = 64;
-	public static final int StateMaxLength = 64;
-	public static final int PostalCodeMaxLength = 32;
-	public static final int CountryMaxLength = 64;
-	public static final int PhoneMaxLength = 32;
+	public static final int EmailMaxLength = 64;
 
 	/* Properties */
 	protected String fUserID;
 	protected String fPassword;
 	protected String fFirstName;
 	protected String fLastName;
-	protected String fAddrStreet1;
-	protected String fAddrStreet2;
-	protected String fCity;
-	protected String fState;
-	protected String fPostalCode;
-	protected String fCountry;
-	protected String fPhone;
+	protected String fEmail;
+
 	protected Date fBirthDate;
-	protected String fCurrencyID;
+	protected Address fShippingAddress;
+	protected Address fBillingAddress;
 
 	protected StatusCode fStatusCode = StatusCode.sc_GeneralError;
 	public StatusCode getStatusCode() { return fStatusCode; }
 
+	/* Construction */
 	public EnrollRqst(DataReader filer) throws Exception
 	{
 		readFrom(filer);
 	}
 
+	/* Implementation */
 	public Writeable fulfillRequest()
 	{
 		EnrollResp response = new EnrollResp();
 
-		fStatusCode = StatusCode.sc_Success;
+		//TODO: If this request is not support
+		// return StatusCode.sc_RequestNotSupported;
+
+		// Validate the request
+		if(validateRequest())
+		{
+			// TODO: Confirm fUserID is unique.  If not, set fStatusCode = StatusCode.sc_UserIDInUse; and return
+
+			// Enroll user to membership
+			//TODO: Enroll the user
+
+			fStatusCode = StatusCode.sc_Success;
+		}
+
 		return response;
 	}
 
-	public void readFrom(DataReader filer) throws Exception
+	protected boolean validateRequest()
 	{
-		fUserID = filer.readString("UserID", UserIDMaxLength);
-		fPassword = filer.readString("Password", PasswordMaxLength);
-		fFirstName = filer.readString("FirstName", FirstNameMaxLength);
-		fLastName = filer.readString("LastName", LastNameMaxLength);
-		fAddrStreet1 = filer.readString("AddrStreet1", AddrStreetMaxLength);
-		fAddrStreet2 = filer.readString("AddrStreet2", AddrStreetMaxLength);
-		fCity = filer.readString("City", CityMaxLength);
-		fState = filer.readString("State", StateMaxLength);
-		fPostalCode = filer.readString("PostalCode", PostalCodeMaxLength);
-		fCountry = filer.readString("Country", CountryMaxLength);
-		fPhone = filer.readString("Phone", PhoneMaxLength);
-		fBirthDate = filer.readDate("BirthDate");
-		fCurrencyID = filer.readString("CurrencyID", CurrencyID.MaxLength);
+		// Have the required fields been specified?
+		if((fUserID == null) || (fUserID.length() == 0)
+			|| (fPassword == null) || (fPassword.length() == 0)
+			|| (fFirstName == null) || (fFirstName.length() == 0)
+			|| (fLastName == null) || (fLastName.length() == 0)
+			|| (fEmail == null) || (fEmail.length() == 0))
+		{
+			fStatusCode = StatusCode.sc_RequestMissingRequired;
+			return false;
+		}
+
+		//TODO: Is the ShippingAddress required
+		if((fShippingAddress == null) || !isValidAddress(fShippingAddress))
+		{
+			fStatusCode = StatusCode.sc_RequestMissingRequired;
+			return false;
+		}
+
+		//TODO: Is the BillingAddress required
+		if((fBillingAddress == null) || !isValidAddress(fBillingAddress))
+		{
+			fStatusCode = StatusCode.sc_RequestMissingRequired;
+			return false;
+		}
+
+		return true;
 	}
 
-	public void writeTo(DataWriter filer) throws Exception
+	protected boolean isValidAddress(Address address)
 	{
-		filer.writeString("UserID", fUserID, UserIDMaxLength);
-		filer.writeString("Password", fPassword, PasswordMaxLength);
-		filer.writeString("FirstName", fFirstName, FirstNameMaxLength);
-		filer.writeString("LastName", fLastName, LastNameMaxLength);
-		filer.writeString("AddrStreet1", fAddrStreet1, AddrStreetMaxLength);
-		filer.writeString("AddrStreet1", fAddrStreet2, AddrStreetMaxLength);
-		filer.writeString("City", fCity, CityMaxLength);
-		filer.writeString("State", fState, StateMaxLength);
-		filer.writeString("PostalCode", fPostalCode, PostalCodeMaxLength);
-		filer.writeString("Country", fCountry, CountryMaxLength);
-		filer.writeString("Phone", fPhone, PhoneMaxLength);
-		filer.writeDate("BirthDate", fBirthDate);
-		filer.writeString("CurrencyID", fCurrencyID, CurrencyID.MaxLength);
+		if((address.getAddrStreet1() == null) || (address.getAddrStreet1().length() == 0)
+			|| (address.getCity() == null) || (address.getCity().length() == 0)
+			|| (address.getState() == null) || (address.getState().length() == 0)
+			|| (address.getPostalCode() == null) || (address.getPostalCode().length() == 0)
+			|| (address.getCountry() == null)
+			|| (address.getPhone() == null) || (address.getPhone().length() == 0))
+		{
+			return false;
+		}
+
+		return true;
+	}
+
+	public void readFrom(DataReader reader) throws Exception
+	{
+		fUserID = reader.readString("UserID", UserIDMaxLength);
+		fPassword = reader.readString("Password", PasswordMaxLength);
+		fFirstName = reader.readString("FirstName", FirstNameMaxLength);
+		fLastName = reader.readString("LastName", LastNameMaxLength);
+		fEmail = reader.readString("Email", EmailMaxLength);
+
+		fBirthDate = reader.readDate("BirthDate");
+		fShippingAddress = (Address)reader.readObject("ShippingAddress", Address.CtorDataReader);
+		fBillingAddress = (Address)reader.readObject("BillingAddress", Address.CtorDataReader);
+	}
+
+	public void writeTo(DataWriter writer) throws Exception
+	{
+		writer.writeString("UserID", fUserID, UserIDMaxLength);
+		writer.writeString("Password", fPassword, PasswordMaxLength);
+		writer.writeString("FirstName", fFirstName, FirstNameMaxLength);
+		writer.writeString("LastName", fLastName, LastNameMaxLength);
+		writer.writeString("Email", fEmail, EmailMaxLength);
+
+		writer.writeDate("BirthDate", fBirthDate);
+		writer.writeObject("ShippingAddress", fShippingAddress);
+		writer.writeObject("BillingAddress", fBillingAddress);
 	}
 }
