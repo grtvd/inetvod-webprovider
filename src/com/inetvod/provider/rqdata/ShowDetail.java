@@ -38,7 +38,7 @@ public class ShowDetail implements Writeable
 	protected ShowFormatList fShowFormatList;
 	protected ShowCostList fShowCostList;
 
-	/* Constuction Methods */
+	/* Constuction */
 	public ShowDetail(Show show, CategoryIDList categoryIDList, ShowFormatList showFormatList,
 		ShowCostList showCostList)
 	{
@@ -61,6 +61,7 @@ public class ShowDetail implements Writeable
 		fShowCostList = showCostList;
 	}
 
+	/* Implementation */
 	public void writeTo(DataWriter writer) throws Exception
 	{
 		writer.writeDataID("ShowID", fShowID, ShowID.MaxLength);

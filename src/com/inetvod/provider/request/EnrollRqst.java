@@ -6,14 +6,13 @@ package com.inetvod.provider.request;
 
 import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
-import com.inetvod.common.core.Requestable;
 import com.inetvod.common.core.StatusCode;
 import com.inetvod.common.core.Writeable;
 import com.inetvod.common.dbdata.Address;
 
 import java.util.Date;
 
-public class EnrollRqst implements Requestable
+public class EnrollRqst extends AuthenRequestable
 {
 	/* Constants */
 	public static final int UserIDMaxLength = 64;
@@ -33,9 +32,6 @@ public class EnrollRqst implements Requestable
 	protected Address fShippingAddress;
 	protected Address fBillingAddress;
 
-	protected StatusCode fStatusCode = StatusCode.sc_GeneralError;
-	public StatusCode getStatusCode() { return fStatusCode; }
-
 	/* Construction */
 	public EnrollRqst(DataReader filer) throws Exception
 	{
@@ -43,23 +39,29 @@ public class EnrollRqst implements Requestable
 	}
 
 	/* Implementation */
+	protected boolean isMemberRequest() { return false; }
+
 	public Writeable fulfillRequest()
 	{
-		EnrollResp response = new EnrollResp();
+		// validate autentication
+		if(!confirmAuthentication())
+			return null;
 
-		//TODO: If this request is not support
+		//TODO: If this request is not supported
 		// return StatusCode.sc_RequestNotSupported;
 
 		// Validate the request
-		if(validateRequest())
-		{
-			// TODO: Confirm fUserID is unique.  If not, set fStatusCode = StatusCode.sc_UserIDInUse; and return
+		if(!validateRequest())
+			return null;
 
-			// Enroll user to membership
-			//TODO: Enroll the user
+		// TODO: Confirm fUserID is unique.  If not, set fStatusCode = StatusCode.sc_UserIDInUse; and return
 
-			fStatusCode = StatusCode.sc_Success;
-		}
+		EnrollResp response = new EnrollResp();
+
+		// Enroll user to membership
+		//TODO: Enroll the user
+
+		fStatusCode = StatusCode.sc_Success;
 
 		return response;
 	}

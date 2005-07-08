@@ -33,13 +33,21 @@ public class ShowDetailRqst extends AuthenRequestable
 	/* Fields */
 	protected ShowIDList fShowIDList = new ShowIDList();
 
+	/* Construction */
 	public ShowDetailRqst(DataReader filer) throws Exception
 	{
 		readFrom(filer);
 	}
 
+	/* Implementation */
+	protected boolean isMemberRequest() { return false; }
+
 	public Writeable fulfillRequest() throws Exception
 	{
+		// validate autentication
+		if(!confirmAuthentication())
+			return null;
+
 		ShowDetailResp response = new ShowDetailResp();
 		ShowDetailList showDetailList = response.ShowDetailList;
 

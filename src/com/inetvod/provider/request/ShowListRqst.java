@@ -13,13 +13,21 @@ import com.inetvod.common.dbdata.ShowIDList;
 
 public class ShowListRqst extends AuthenRequestable
 {
+	/* Construction */
 	public ShowListRqst(DataReader filer) throws Exception
 	{
 		readFrom(filer);
 	}
 
+	/* Implementation */
+	protected boolean isMemberRequest() { return false; }
+
 	public Writeable fulfillRequest() throws Exception
 	{
+		// validate autentication
+		if(!confirmAuthentication())
+			return null;
+
 		ShowListResp response = new ShowListResp();
 		ShowIDList showIDList = response.ShowIDList;
 
