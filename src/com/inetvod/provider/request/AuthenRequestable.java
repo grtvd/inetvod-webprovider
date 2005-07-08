@@ -11,7 +11,7 @@ import com.inetvod.common.core.StatusCode;
 /**
  * A Requestable that understands Authenticate.
  */
-public abstract class SessionRequestable implements Requestable
+public abstract class AuthenRequestable implements Requestable
 {
 	protected String fVersion;
 	protected String fRequestID;
@@ -31,8 +31,33 @@ public abstract class SessionRequestable implements Requestable
 		//fMember = Member.get(fSessionData.getMemberID());
 	}
 
-//	public abstract Writeable fulfillRequest();
-//
-//	public abstract void readFrom(DataReader reader) throws Exception;
-//	public abstract void writeTo(DataWriter writer) throws Exception;
+	protected boolean isMemberRequest() { return true; }
+
+	public boolean confirmAuthentication()
+	{
+		if(fAuthenticate == null)
+		{
+			fStatusCode = StatusCode.sc_RequestMissingRequired;
+			return false;
+		}
+
+		//TODO: validate admin credentials
+		if(!"super".equals(fAuthenticate.getAdminUserID()) || !"superpassword".equals(fAuthenticate.getAdminPassword()))
+		{
+			fStatusCode = StatusCode.sc_InvalidAdminUserID;
+			return false;
+		}
+
+		if(isMemberRequest())
+		{
+			//TODO: validate member credentials
+			if(!"member".equals(fAuthenticate.getMemberUserID()) || !"memberpassword".equals(fAuthenticate.getMemberPassword()))
+			{
+				fStatusCode = StatusCode.sc_InvalidMemberUserID;
+				return false;
+			}
+		}
+
+		return true;
+	}
 }
