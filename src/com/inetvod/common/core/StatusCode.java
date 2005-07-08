@@ -23,6 +23,7 @@ public class StatusCode
 	public static final StatusCode sc_ShowLevelInsufficient = new StatusCode(1101);
 	public static final StatusCode sc_ShowNotRented = new StatusCode(1102);
 	public static final StatusCode sc_ShowRentExpired = new StatusCode(1103);
+	public static final StatusCode sc_ShowPaymentDenied = new StatusCode(1104);
 
 	public static final StatusCode sc_GeneralError = new StatusCode(9999);
 
@@ -39,6 +40,7 @@ public class StatusCode
 			sc_ShowLevelInsufficient,
 			sc_ShowNotRented,
 			sc_ShowRentExpired,
+			sc_ShowPaymentDenied,
 			sc_GeneralError
 		});
 

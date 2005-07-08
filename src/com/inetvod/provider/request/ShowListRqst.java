@@ -11,7 +11,7 @@ import com.inetvod.common.core.StatusCode;
 import com.inetvod.common.dbdata.ShowID;
 import com.inetvod.common.dbdata.ShowIDList;
 
-public class ShowListRqst extends SessionRequestable
+public class ShowListRqst extends AuthenRequestable
 {
 	public ShowListRqst(DataReader filer) throws Exception
 	{

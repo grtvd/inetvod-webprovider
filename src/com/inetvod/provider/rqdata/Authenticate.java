@@ -27,11 +27,26 @@ public class Authenticate implements Readable, Writeable
 	protected String fMemberUserID;
 	protected String fMemberPassword;
 
+	/* Construction */
 	public Authenticate(DataReader reader) throws Exception
 	{
 		readFrom(reader);
 	}
 
+	/* Getters/Setters */
+	public String getAdminUserID() { return fAdminUserID; }
+	public void setAdminUserID(String adminUserID) { fAdminUserID = adminUserID; }
+
+	public String getAdminPassword() { return fAdminPassword; }
+	public void setAdminPassword(String adminPassword) { fAdminPassword = adminPassword; }
+
+	public String getMemberUserID() { return fMemberUserID; }
+	public void setMemberUserID(String memberUserID) { fMemberUserID = memberUserID; }
+
+	public String getMemberPassword() { return fMemberPassword; }
+	public void setMemberPassword(String memberPassword) { fMemberPassword = memberPassword; }
+
+	/* Implementation */
 	public void readFrom(DataReader reader) throws Exception
 	{
 		fAdminUserID = reader.readString("AdminUserID", AdminUserIDMaxLength);

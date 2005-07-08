@@ -18,7 +18,6 @@ public class Show implements Writeable
 	public static final int EpisodeNameMaxLength = 64;
 	public static final int EpisodeNumberMaxLength = 32;
 	public static final int DescriptionMaxLength = Short.MAX_VALUE;
-	public static final int ShowURLMaxLength = 4096;
 	public static final int PictureURLMaxLength = 4096;
 	public static final int ShowAccessKeyMaxLength = Short.MAX_VALUE;
 

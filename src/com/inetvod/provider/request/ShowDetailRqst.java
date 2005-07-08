@@ -28,7 +28,7 @@ import com.inetvod.provider.rqdata.ShowDetailList;
 
 import java.util.Iterator;
 
-public class ShowDetailRqst extends SessionRequestable
+public class ShowDetailRqst extends AuthenRequestable
 {
 	/* Fields */
 	protected ShowIDList fShowIDList = new ShowIDList();
@@ -61,15 +61,15 @@ public class ShowDetailRqst extends SessionRequestable
 
 		showCost = new ShowCost();
 		showCost.setShowCostType(ShowCostType.PayPerView);
-		showCost.setMoney(new Money(CurrencyID.USD, 3.95));
-		showCost.setDescription("$3.95");
+		showCost.setCost(new Money(CurrencyID.USD, 3.95));
+		showCost.setCostDisplay("$3.95");
 		showCost.setRentalHours((short)48);
 		showCostList.add(showCost);
 
 		showCost = new ShowCost();
 		showCost.setShowCostType(ShowCostType.PayPerView);
-		showCost.setMoney(new Money(CurrencyID.USD, 5.95));
-		showCost.setDescription("$5.95");
+		showCost.setCost(new Money(CurrencyID.USD, 5.95));
+		showCost.setCostDisplay("$5.95");
 		showCost.setRentalHours((short)168);
 		showCostList.add(showCost);
 

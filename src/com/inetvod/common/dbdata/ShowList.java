@@ -17,6 +17,9 @@ public class ShowList extends ArrayList<Show>
 	 */
 	public static ShowList getAll()
 	{
+		if(fShowListCache != null)
+			return fShowListCache;
+
 		ShowList showList = new ShowList();
 		Show show;
 
@@ -56,8 +59,10 @@ public class ShowList extends ArrayList<Show>
 		show.setIsAdult(false);
 		showList.add(show);
 
-		return showList;
+		fShowListCache = showList;
+		return fShowListCache;
 	}
+	static private ShowList fShowListCache;
 
 	public Show findByID(ShowID showID)
 	{

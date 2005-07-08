@@ -33,8 +33,8 @@ public class RequestData implements Requestable
 
 	public void setRequest(String version, String requestID, Authenticate authenticate) throws Exception
 	{
-		if(fRequest instanceof SessionRequestable)
-			((SessionRequestable)fRequest).setRequest(version, requestID, authenticate);
+		if(fRequest instanceof AuthenRequestable)
+			((AuthenRequestable)fRequest).setRequest(version, requestID, authenticate);
 	}
 
 	public Writeable fulfillRequest() throws Exception
@@ -47,7 +47,12 @@ public class RequestData implements Requestable
 
 		Writeable response = fRequest.fulfillRequest();
 		fStatusCode = fRequest.getStatusCode();
-		ResponseData responseData = new ResponseData(response);
+
+		ResponseData responseData = null;
+		if((response != null))
+			responseData = new ResponseData(response);
+		if((responseData == null) && (fStatusCode.equals(StatusCode.sc_Success)))
+			fStatusCode = StatusCode.sc_GeneralError;
 
 		return responseData;
 	}

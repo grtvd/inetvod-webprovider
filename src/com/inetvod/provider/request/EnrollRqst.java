@@ -9,7 +9,7 @@ import com.inetvod.common.core.DataWriter;
 import com.inetvod.common.core.Requestable;
 import com.inetvod.common.core.StatusCode;
 import com.inetvod.common.core.Writeable;
-import com.inetvod.provider.rqdata.Address;
+import com.inetvod.common.dbdata.Address;
 
 import java.util.Date;
 

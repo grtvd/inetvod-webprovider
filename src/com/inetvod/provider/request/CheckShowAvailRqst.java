@@ -57,15 +57,15 @@ public class CheckShowAvailRqst implements Requestable
 
 				showCost = new ShowCost();
 				showCost.setShowCostType(ShowCostType.PayPerView);
-				showCost.setMoney(new Money(CurrencyID.USD, 2.95));
-				showCost.setDescription("$2.95");
+				showCost.setCost(new Money(CurrencyID.USD, 2.95));
+				showCost.setCostDisplay("$2.95");
 				showCost.setRentalHours((short)48);
 				showCostList.add(showCost);
 
 				showCost = new ShowCost();
 				showCost.setShowCostType(ShowCostType.PayPerView);
-				showCost.setMoney(new Money(CurrencyID.USD, 4.95));
-				showCost.setDescription("$4.95");
+				showCost.setCost(new Money(CurrencyID.USD, 4.95));
+				showCost.setCostDisplay("$4.95");
 				showCost.setRentalHours((short)168);
 				showCostList.add(showCost);
 
