@@ -4,10 +4,11 @@
  */
 package com.inetvod.provider.request;
 
-import com.inetvod.common.core.Writeable;
-import com.inetvod.common.core.DataWriter;
-
 import java.util.Date;
+
+import com.inetvod.common.core.DataWriter;
+import com.inetvod.common.core.Writeable;
+import com.inetvod.common.dbdata.License;
 
 public class RentShowResp implements Writeable
 {
@@ -16,17 +17,17 @@ public class RentShowResp implements Writeable
 
 	/* Fields */
 	protected Date fAvailableUntil;
-	protected String fShowURL;
+	protected License fLicense;
 
 	/* Getters/Setters */
 	public void setAvailableUntil(Date availableUntil) { fAvailableUntil = availableUntil; }
 
-	public void setShowURL(String showURL) { fShowURL = showURL; }
+	public void setLicense(License license) { fLicense = license; }
 
 	/* Implementation */
 	public void writeTo(DataWriter writer) throws Exception
 	{
 		writer.writeDateTime("AvailableUntil", fAvailableUntil);
-		writer.writeString("ShowURL", fShowURL, ShowURLMaxLength);
+		writer.writeObject("License", fLicense);
 	}
 }

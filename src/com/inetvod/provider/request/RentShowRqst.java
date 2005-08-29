@@ -4,6 +4,9 @@
  */
 package com.inetvod.provider.request;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
 import com.inetvod.common.core.StatusCode;
@@ -15,14 +18,17 @@ import com.inetvod.common.dbdata.ShowCostType;
 import com.inetvod.common.dbdata.ShowFormat;
 import com.inetvod.common.dbdata.ShowID;
 import com.inetvod.common.dbdata.ShowList;
-
-import java.util.Calendar;
-import java.util.Date;
+import com.inetvod.common.dbdata.License;
+import com.inetvod.common.dbdata.LicenseMethod;
 
 public class RentShowRqst extends AuthenRequestable
 {
+	/* Constants */
+	public static final int PlayerIPAddressMaxLength = 16;
+
 	/* Properties */
 	protected ShowID fShowID;
+	protected String fPlayerIPAddress;
 	protected ShowFormat fShowFormat;
 	protected ShowCost fApprovedCost;
 	protected Payment fPayment;
@@ -76,8 +82,11 @@ public class RentShowRqst extends AuthenRequestable
 		cal.setTime(new Date());
 		//TODO: set expriation date of rental, if any
 		response.setAvailableUntil(cal.getTime());
-		//TODO: set show URL for downloading
-		response.setShowURL("http://internetvideos.com/videos/135413241.afx");
+		//TODO: return the shows licensing information
+		License license = new License();
+		license.setLicenseMethod(LicenseMethod.URLOnly);
+		license.setShowURL("http://api.inetvod.com/mce/videos/TestVideo.wmv");
+		response.setLicense(license);
 
 		fStatusCode = StatusCode.sc_Success;
 
@@ -143,6 +152,7 @@ public class RentShowRqst extends AuthenRequestable
 	public void readFrom(DataReader reader) throws Exception
 	{
 		fShowID = (ShowID)reader.readDataID("ShowID", ShowID.MaxLength, ShowID.CtorString);
+		fPlayerIPAddress = reader.readString("PlayerIPAddress", PlayerIPAddressMaxLength);
 		fShowFormat = (ShowFormat)reader.readObject("ShowFormat", ShowFormat.CtorDataReader);
 		fApprovedCost = (ShowCost)reader.readObject("ApprovedCost", ShowCost.CtorDataReader);
 		fPayment = (Payment)reader.readObject("Payment", Payment.CtorDataReader);
@@ -151,6 +161,7 @@ public class RentShowRqst extends AuthenRequestable
 	public void writeTo(DataWriter writer) throws Exception
 	{
 		writer.writeDataID("ShowID", fShowID, ShowID.MaxLength);
+		writer.writeString("PlayerIPAddress", fPlayerIPAddress, PlayerIPAddressMaxLength);
 		writer.writeObject("ShowFormat", fShowFormat);
 		writer.writeObject("ApprovedCost", fApprovedCost);
 		writer.writeObject("Payment", fPayment);

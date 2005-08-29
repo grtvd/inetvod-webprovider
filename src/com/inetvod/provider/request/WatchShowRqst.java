@@ -4,22 +4,27 @@
  */
 package com.inetvod.provider.request;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
 import com.inetvod.common.core.StatusCode;
 import com.inetvod.common.core.Writeable;
+import com.inetvod.common.dbdata.License;
+import com.inetvod.common.dbdata.LicenseMethod;
 import com.inetvod.common.dbdata.Show;
 import com.inetvod.common.dbdata.ShowID;
 import com.inetvod.common.dbdata.ShowList;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.UUID;
-
 public class WatchShowRqst extends AuthenRequestable
 {
+	/* Constants */
+	public static final int PlayerIPAddressMaxLength = 16;
+
 	/* Properties */
 	protected ShowID fShowID;
+	protected String fPlayerIPAddress;
 
 	/* Construction */
 	public WatchShowRqst(DataReader filer) throws Exception
@@ -50,8 +55,12 @@ public class WatchShowRqst extends AuthenRequestable
 		cal.setTime(new Date());
 		//TODO: set expriation date of rental, if any
 		response.setAvailableUntil(cal.getTime());
-		//TODO: set show DRM credentials
-		response.setShowAccessKey(UUID.randomUUID().toString());
+
+		//TODO: return the shows licensing information
+		License license = new License();
+		license.setLicenseMethod(LicenseMethod.URLOnly);
+		license.setShowURL("http://api.inetvod.com/mce/videos/TestVideo.wmv");
+		response.setLicense(license);
 
 		fStatusCode = StatusCode.sc_Success;
 
@@ -80,10 +89,12 @@ public class WatchShowRqst extends AuthenRequestable
 	public void readFrom(DataReader reader) throws Exception
 	{
 		fShowID = (ShowID)reader.readDataID("ShowID", ShowID.MaxLength, ShowID.CtorString);
+		fPlayerIPAddress = reader.readString("PlayerIPAddress", PlayerIPAddressMaxLength);
 	}
 
 	public void writeTo(DataWriter writer) throws Exception
 	{
 		writer.writeDataID("ShowID", fShowID, ShowID.MaxLength);
+		writer.writeString("PlayerIPAddress", fPlayerIPAddress, PlayerIPAddressMaxLength);
 	}
 }

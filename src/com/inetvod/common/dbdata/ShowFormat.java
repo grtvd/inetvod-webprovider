@@ -4,12 +4,12 @@
  */
 package com.inetvod.common.dbdata;
 
+import java.lang.reflect.Constructor;
+
 import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
 import com.inetvod.common.core.Readable;
 import com.inetvod.common.core.Writeable;
-
-import java.lang.reflect.Constructor;
 
 public class ShowFormat implements Readable, Writeable
 {
@@ -22,6 +22,7 @@ public class ShowFormat implements Readable, Writeable
 	protected Short fHorzResolution;
 	protected Short fVertResolution;
 	protected Short fFramesPerSecond;
+	protected Short fBitRate;
 
 	/* Getters and Setters */
 	public MediaEncoding getMediaEncoding() { return fMediaEncoding; }
@@ -38,6 +39,9 @@ public class ShowFormat implements Readable, Writeable
 
 	public Short getFramesPerSecond() { return fFramesPerSecond; }
 	public void setFramesPerSecond(Short framesPerSecond) { fFramesPerSecond = framesPerSecond; }
+
+	public Short getBitRate() { return fBitRate; }
+	public void setBitRate(Short bitRate) { fBitRate = bitRate; }
 
 	/* Constuction Methods */
 	public ShowFormat()
@@ -56,6 +60,7 @@ public class ShowFormat implements Readable, Writeable
 		fHorzResolution = reader.readShort("HorzResolution");
 		fVertResolution = reader.readShort("VertResolution");
 		fFramesPerSecond = reader.readShort("FramesPerSecond");
+		fBitRate = reader.readShort("BitRate");
 	}
 
 	public void writeTo(DataWriter writer) throws Exception
@@ -65,5 +70,6 @@ public class ShowFormat implements Readable, Writeable
 		writer.writeShort("HorzResolution", fHorzResolution);
 		writer.writeShort("VertResolution", fVertResolution);
 		writer.writeShort("FramesPerSecond", fFramesPerSecond);
+		writer.writeShort("BitRate", fBitRate);
 	}
 }

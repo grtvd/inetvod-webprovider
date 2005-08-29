@@ -4,6 +4,8 @@
  */
 package com.inetvod.provider.request;
 
+import java.util.Iterator;
+
 import com.inetvod.common.core.CurrencyID;
 import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
@@ -14,6 +16,7 @@ import com.inetvod.common.dbdata.CategoryID;
 import com.inetvod.common.dbdata.CategoryIDList;
 import com.inetvod.common.dbdata.MediaContainer;
 import com.inetvod.common.dbdata.MediaEncoding;
+import com.inetvod.common.dbdata.Show;
 import com.inetvod.common.dbdata.ShowCost;
 import com.inetvod.common.dbdata.ShowCostList;
 import com.inetvod.common.dbdata.ShowCostType;
@@ -22,11 +25,8 @@ import com.inetvod.common.dbdata.ShowFormatList;
 import com.inetvod.common.dbdata.ShowID;
 import com.inetvod.common.dbdata.ShowIDList;
 import com.inetvod.common.dbdata.ShowList;
-import com.inetvod.common.dbdata.Show;
 import com.inetvod.provider.rqdata.ShowDetail;
 import com.inetvod.provider.rqdata.ShowDetailList;
-
-import java.util.Iterator;
 
 public class ShowDetailRqst extends AuthenRequestable
 {
@@ -65,6 +65,7 @@ public class ShowDetailRqst extends AuthenRequestable
 		showFormat.setHorzResolution((short)600);
 		showFormat.setVertResolution((short)480);
 		showFormat.setFramesPerSecond((short)30);
+		showFormat.setBitRate((short)750);
 		showFormatList.add(showFormat);
 
 		showCost = new ShowCost();
