@@ -4,20 +4,18 @@
  */
 package com.inetvod.common.core;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
+import java.io.File;
 import java.io.InputStream;
 import java.io.PrintWriter;
-import java.io.File;
 import java.nio.ByteOrder;
 import java.text.DateFormat;
 import java.text.FieldPosition;
-import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public abstract class ServletFulfiller
 {
@@ -65,7 +63,7 @@ public abstract class ServletFulfiller
 		{
 			response = createResponseFromException(request, e);
 
-			logRequest(false, "Failed fulfilling request", request, response, startTime, e);
+			logRequest(false, "Failed fulfilling request", null, request, response, startTime, e);
 			logged = true;
 
 			// if we have a valid response, don't propogate exception
@@ -79,7 +77,7 @@ public abstract class ServletFulfiller
 		}
 		catch(Exception e)
 		{
-			logRequest(false, "Failed writing response", request, response, startTime, e);
+			logRequest(false, "Failed writing response", null, request, response, startTime, e);
 			throw e;
 		}
 
@@ -175,51 +173,54 @@ public abstract class ServletFulfiller
 		writer.writeObject(nameParts[nameParts.length - 1], writeable);
 	}
 
-	protected void logRequest(boolean success, String msg, InputStream requestStream, InputStream responseStream,
-		String requestFileExt, String responseFileExt, Date startTime, Exception exception)
+	protected abstract String getRequestType(Requestable requestable);
+
+	protected void logRequest(boolean success, String msg, String requestType, InputStream requestStream,
+		InputStream responseStream, String requestFileExt, String responseFileExt, Date startTime, Exception exception)
 	{
 		PrintWriter writer = null;
 
 		try
 		{
-			StringBuffer sb = new StringBuffer();
 			long milliSecs = (new Date()).getTime() - startTime.getTime();
+
+			StringBuffer sb = new StringBuffer();
 			String fileDir = "c:\\temp\\iNetVOD\\requests\\";
-			String baseFileName = String.format ("%s-%d_", (new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-SSSS")).format(
+			String baseFileName = String.format ("%s-%d", (new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-SSSS")).format(
 				startTime, sb, new FieldPosition(DateFormat.YEAR_FIELD)).toString(), Thread.currentThread().getId());
 			String fileName = (new File(fileDir, baseFileName)).getPath();
 
 			if(requestStream != null)
-				StreamUtil.streamToFile(requestStream, fileName + "Rqst" + requestFileExt);
+				StreamUtil.streamToFile(requestStream, fileName + "_Rqst" + requestFileExt);
 
 			if(responseStream != null)
-				StreamUtil.streamToFile(responseStream, fileName + "Resp" + responseFileExt);
+				StreamUtil.streamToFile(responseStream, fileName + "_Resp" + responseFileExt);
 
-			writer = new PrintWriter(new FileOutputStream(fileName + (success ? "Success" : "Failed") + ".txt"));
-			writer.println((new MessageFormat("Millis to build: {0}")).format(new Object[] { milliSecs }));
+			sb = new StringBuffer();
+			sb.append(String.format("result:%s; ", (success ? "Success" : "FAILED")));
 			if((msg != null) && (msg.length() > 0))
-				writer.println((new MessageFormat("Message: {0}")).format(new Object[] { msg }));
-			if(exception != null)
-			{
-				writer.print("Exception: ");
-				writer.println(exception.toString());
-				writer.println("StackTrace: ");
-				exception.printStackTrace(writer);
-			}
-			writer.close();
+				sb.append(String.format("msg:%s; ", msg));
+			if((requestType != null) && (requestType.length() > 0))
+				sb.append(String.format("type:%s; ", requestType));
+			sb.append(String.format("time:%d; ", milliSecs));
+			sb.append(String.format("file:%s; ", baseFileName));
+			if(exception == null)
+				Logger.logInfo(this, "logRequest", sb.toString());
+			else
+				Logger.logErr(this, "logRequest", sb.toString(), exception);
 		}
 		catch(Exception e)
 		{
 			if(writer != null)
 				try { writer.close(); } catch(Exception e2) {}
-			//TODO: error during logging, don't raise, but maybe log to event viewer
+			Logger.logErr(this, "logRequest", "Failure during logging", e);
 		}
 	}
 
 	protected void logRequest(boolean success, String msg, InputStream requestStream,
 		Date startTime, Exception exception)
 	{
-		logRequest(success, msg, requestStream, null, ".raw", null, startTime, exception);
+		logRequest(success, msg, null, requestStream, null, ".raw", null, startTime, exception);
 	}
 
 	protected void logRequest(boolean success, String msg, Requestable request,
@@ -233,7 +234,7 @@ public abstract class ServletFulfiller
 			writeWriteableToWriter(request, requestWriter);
 			requestWriter.close();
 
-			logRequest(success, msg, new ByteArrayInputStream(requestStream.toByteArray()),
+			logRequest(success, getRequestType(request), null, new ByteArrayInputStream(requestStream.toByteArray()),
 				null, ".xml", null, startTime, exception);
 		}
 		catch(Exception e)
@@ -246,7 +247,7 @@ public abstract class ServletFulfiller
 		}
 	}
 
-	protected void logRequest(boolean success, String msg, Requestable request, Writeable response,
+	protected void logRequest(boolean success, String msg, String requestType, Requestable request, Writeable response,
 		Date startTime, Exception exception) throws Exception
 	{
 		XmlDataWriter requestWriter = null;
@@ -266,7 +267,7 @@ public abstract class ServletFulfiller
 			ByteArrayInputStream requestInStream = new ByteArrayInputStream(requestStream.toByteArray());
 			ByteArrayInputStream responseInStream = new ByteArrayInputStream(responseStream.toByteArray());
 
-			logRequest(success, msg, requestInStream, responseInStream, ".xml", ".xml", startTime, exception);
+			logRequest(success, msg, requestType, requestInStream, responseInStream, ".xml", ".xml", startTime, exception);
 		}
 		catch(Exception e)
 		{
@@ -282,6 +283,6 @@ public abstract class ServletFulfiller
 
 	protected void logRequest(Requestable request, Writeable response, Date startTime) throws Exception
 	{
-		logRequest(true, null, request, response, startTime, null);
+		logRequest(true, null, getRequestType(request), request, response, startTime, null);
 	}
 }

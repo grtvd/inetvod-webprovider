@@ -4,17 +4,17 @@
  */
 package com.inetvod.common.dbdata;
 
+import java.lang.reflect.Constructor;
+
 import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
 import com.inetvod.common.core.Readable;
 import com.inetvod.common.core.Writeable;
 
-import java.lang.reflect.Constructor;
-
 public class CreditCard implements Readable, Writeable
 {
 	/* Constants */
-	public static Constructor CtorDataReader = DataReader.getCtor(CreditCard.class);
+	public static Constructor<CreditCard> CtorDataReader = DataReader.getCtor(CreditCard.class);
 
 	public static final int NameOnCCMaxLength = 64;
 	public static final int CCTypeMaxLength = 16;

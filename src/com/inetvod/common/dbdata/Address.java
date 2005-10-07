@@ -4,18 +4,18 @@
  */
 package com.inetvod.common.dbdata;
 
-import com.inetvod.common.core.Readable;
-import com.inetvod.common.core.DataReader;
-import com.inetvod.common.core.Writeable;
-import com.inetvod.common.core.DataWriter;
-import com.inetvod.common.core.CountryID;
-
 import java.lang.reflect.Constructor;
+
+import com.inetvod.common.core.CountryID;
+import com.inetvod.common.core.DataReader;
+import com.inetvod.common.core.DataWriter;
+import com.inetvod.common.core.Readable;
+import com.inetvod.common.core.Writeable;
 
 public class Address implements Readable, Writeable
 {
 	/* Constants */
-	public static Constructor CtorDataReader = DataReader.getCtor(Address.class);
+	public static Constructor<Address> CtorDataReader = DataReader.getCtor(Address.class);
 
 	public static final int AddrStreetMaxLength = 64;
 	public static final int CityMaxLength = 64;
@@ -68,7 +68,7 @@ public class Address implements Readable, Writeable
 		fCity = reader.readString("City", CityMaxLength);
 		fState = reader.readString("State", StateMaxLength);
 		fPostalCode = reader.readString("PostalCode", PostalCodeMaxLength);
-		fCountry = (CountryID)reader.readDataID("Country", CountryID.MaxLength, CountryID.CtorString);
+		fCountry = reader.readDataID("Country", CountryID.MaxLength, CountryID.CtorString);
 		fPhone = reader.readString("Phone", PhoneMaxLength);
 	}
 

@@ -1,5 +1,5 @@
 /**
- * Copyright © 2004 iNetVOD, Inc. All Rights Reserved.
+ * Copyright © 2004-2005 iNetVOD, Inc. All Rights Reserved.
  * Confidential and Proprietary
  */
 package com.inetvod.common.core;
@@ -52,7 +52,7 @@ public class BinaryDataReader extends DataReader
 		if(data == UndefinedShortValue)
 			return null;
 
-		return new Short(data);
+		return data;
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class BinaryDataReader extends DataReader
 		if(data == UndefinedDoubleValue)
 			return null;
 
-		return new Double(data);
+		return data;
 	}
 
 	/**
@@ -148,7 +148,7 @@ public class BinaryDataReader extends DataReader
 		if(data == UndefinedBooleanValue)
 			return null;
 
-		return new Boolean((data == 0) ? false : true);
+		return (data != 0);
 	}
 
 	/**
@@ -215,12 +215,12 @@ public class BinaryDataReader extends DataReader
 	 * @param ctorString
 	 * @return may return null
 	 */
-	public DataID readDataID(String fieldName, int maxLength, Constructor ctorString) throws Exception
+	public <T extends DataID> T readDataID(String fieldName, int maxLength, Constructor<T> ctorString) throws Exception
 	{
 		String data = fDataInputStream.readUTF();
 		if((data == null) || (data.length() == 0))
 			return null;
 
-		return (DataID)ctorString.newInstance(new Object[] { data });
+		return ctorString.newInstance(new Object[] { data });
 	}
 }

@@ -1,0 +1,24 @@
+* webprovider
+
+- In IDEA
+	- Open webprovider.ipr
+	- Open "Settings -> Paths -> J2EE Build Settings"
+		- Check "Create web modeule jar file"
+	- Run "Build -> Rebuild Project"
+	- Will create "C:\projects\iNetVOD\webprovider\trunk\provider.war"
+	- Open "Settings -> Paths -> J2EE Build Settings"
+		- Unheck "Create web modeule jar file"
+	- Close IDEA
+
+- Deploy to Server
+	- In Firefox, open: http://api.inetvod.com/manager/html
+
+	- In "Applications" section, Undeploy "provider"
+
+	- In "Deploy:WAR file to deploy", specify WAR file as:
+		- C:\projects\iNetVOD\webprovider\trunk\provider.war
+
+	- Test
+
+- Commit all changed files, use label: "webprovider: Cut version CCYY-MM-DD."
+

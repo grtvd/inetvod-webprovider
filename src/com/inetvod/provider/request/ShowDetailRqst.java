@@ -104,8 +104,7 @@ public class ShowDetailRqst extends AuthenRequestable
 
 	public void readFrom(DataReader reader) throws Exception
 	{
-		fShowIDList = (ShowIDList)reader.readStringList("ShowID", ShowID.MaxLength,
-			ShowIDList.Ctor, ShowID.CtorString);
+		fShowIDList = reader.readStringList("ShowID", ShowID.MaxLength, ShowIDList.Ctor, ShowID.CtorString);
 	}
 
 	public void writeTo(DataWriter writer) throws Exception

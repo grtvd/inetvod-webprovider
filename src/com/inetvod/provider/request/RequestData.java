@@ -4,23 +4,24 @@
  */
 package com.inetvod.provider.request;
 
-import com.inetvod.common.core.Requestable;
+import java.lang.reflect.Constructor;
+
 import com.inetvod.common.core.DataReader;
+import com.inetvod.common.core.DataWriter;
+import com.inetvod.common.core.Requestable;
 import com.inetvod.common.core.StatusCode;
 import com.inetvod.common.core.Writeable;
-import com.inetvod.common.core.DataWriter;
 import com.inetvod.provider.rqdata.Authenticate;
-
-import java.lang.reflect.Constructor;
 
 public class RequestData implements Requestable
 {
 	/* Constants */
-	public static final Constructor CtorDataFiler = DataReader.getCtor(RequestData.class);
+	public static final Constructor<RequestData> CtorDataFiler = DataReader.getCtor(RequestData.class);
 	public static final int RequestTypeMaxLength = 64;
 
 	/* Properties */
 	protected String fRequestType;
+	public String getRequestType() { return fRequestType; }
 	protected Requestable fRequest;
 
 	protected StatusCode fStatusCode = StatusCode.sc_GeneralError;
@@ -57,13 +58,14 @@ public class RequestData implements Requestable
 		return responseData;
 	}
 
+	@SuppressWarnings({"unchecked"})
 	public void readFrom(DataReader reader) throws Exception
 	{
 		fRequestType = reader.readString("RequestType", RequestTypeMaxLength);
 
-		Class cl = Class.forName(getClass().getPackage().getName() + "." + fRequestType);
-		Constructor ctor = cl.getConstructor(new Class[] { DataReader.class });
-		fRequest = (Requestable)reader.readObject(fRequestType, ctor);
+		Class<Requestable> cl = (Class<Requestable>)Class.forName(getClass().getPackage().getName() + "." + fRequestType);
+		Constructor<Requestable> ctor = cl.getConstructor(new Class[] { DataReader.class });
+		fRequest = reader.readObject(fRequestType, ctor);
 	}
 
 	public void writeTo(DataWriter writer) throws Exception

@@ -4,18 +4,18 @@
  */
 package com.inetvod.common.dbdata;
 
+import java.lang.reflect.Constructor;
+
 import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
 import com.inetvod.common.core.Money;
 import com.inetvod.common.core.Readable;
 import com.inetvod.common.core.Writeable;
 
-import java.lang.reflect.Constructor;
-
 public class ShowCost implements Readable, Writeable
 {
 	/* Constants */
-	public static Constructor CtorDataReader = DataReader.getCtor(ShowCost.class);
+	public static Constructor<ShowCost> CtorDataReader = DataReader.getCtor(ShowCost.class);
 	public static final int DescriptionMaxLength = 32;
 
 	/* Properties */
@@ -50,7 +50,7 @@ public class ShowCost implements Readable, Writeable
 	public void readFrom(DataReader reader) throws Exception
 	{
 		fShowCostType = ShowCostType.convertFromString(reader.readString("ShowCostType", ShowCostType.MaxLength));
-		fCost = (Money) reader.readObject("Cost", Money.CtorDataFiler);
+		fCost = reader.readObject("Cost", Money.CtorDataFiler);
 		fCostDisplay = reader.readString("CostDisplay", DescriptionMaxLength);
 		fRentalHours = reader.readShort("RentalHours");
 	}

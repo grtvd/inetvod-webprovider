@@ -151,11 +151,11 @@ public class RentShowRqst extends AuthenRequestable
 
 	public void readFrom(DataReader reader) throws Exception
 	{
-		fShowID = (ShowID)reader.readDataID("ShowID", ShowID.MaxLength, ShowID.CtorString);
+		fShowID = reader.readDataID("ShowID", ShowID.MaxLength, ShowID.CtorString);
 		fPlayerIPAddress = reader.readString("PlayerIPAddress", PlayerIPAddressMaxLength);
-		fShowFormat = (ShowFormat)reader.readObject("ShowFormat", ShowFormat.CtorDataReader);
-		fApprovedCost = (ShowCost)reader.readObject("ApprovedCost", ShowCost.CtorDataReader);
-		fPayment = (Payment)reader.readObject("Payment", Payment.CtorDataReader);
+		fShowFormat = reader.readObject("ShowFormat", ShowFormat.CtorDataReader);
+		fApprovedCost = reader.readObject("ApprovedCost", ShowCost.CtorDataReader);
+		fPayment = reader.readObject("Payment", Payment.CtorDataReader);
 	}
 
 	public void writeTo(DataWriter writer) throws Exception

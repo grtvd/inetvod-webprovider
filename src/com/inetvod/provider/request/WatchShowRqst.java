@@ -88,7 +88,7 @@ public class WatchShowRqst extends AuthenRequestable
 
 	public void readFrom(DataReader reader) throws Exception
 	{
-		fShowID = (ShowID)reader.readDataID("ShowID", ShowID.MaxLength, ShowID.CtorString);
+		fShowID = reader.readDataID("ShowID", ShowID.MaxLength, ShowID.CtorString);
 		fPlayerIPAddress = reader.readString("PlayerIPAddress", PlayerIPAddressMaxLength);
 	}
 

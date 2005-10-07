@@ -4,13 +4,13 @@
  */
 package com.inetvod.provider.request;
 
+import java.util.Date;
+
 import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
 import com.inetvod.common.core.StatusCode;
 import com.inetvod.common.core.Writeable;
 import com.inetvod.common.dbdata.Address;
-
-import java.util.Date;
 
 public class EnrollRqst extends AuthenRequestable
 {
@@ -120,8 +120,8 @@ public class EnrollRqst extends AuthenRequestable
 		fEmail = reader.readString("Email", EmailMaxLength);
 
 		fBirthDate = reader.readDate("BirthDate");
-		fShippingAddress = (Address)reader.readObject("ShippingAddress", Address.CtorDataReader);
-		fBillingAddress = (Address)reader.readObject("BillingAddress", Address.CtorDataReader);
+		fShippingAddress = reader.readObject("ShippingAddress", Address.CtorDataReader);
+		fBillingAddress = reader.readObject("BillingAddress", Address.CtorDataReader);
 	}
 
 	public void writeTo(DataWriter writer) throws Exception

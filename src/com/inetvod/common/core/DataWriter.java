@@ -26,7 +26,7 @@ public abstract class DataWriter
 	 */
 	public void writeByteValue(String fieldName, byte data) throws Exception
 	{
-		writeByte(fieldName, new Byte(data));
+		writeByte(fieldName, data);
 	}
 
 	/**
@@ -47,7 +47,7 @@ public abstract class DataWriter
 	 */
 	public void writeShortValue(String fieldName, short data) throws Exception
 	{
-		writeShort(fieldName, new Short(data));
+		writeShort(fieldName, data);
 	}
 
 	/**
@@ -67,7 +67,7 @@ public abstract class DataWriter
 	 */
 	public void writeIntValue(String fieldName, int data) throws Exception
 	{
-		writeInt(fieldName, new Integer(data));
+		writeInt(fieldName, data);
 	}
 
 	/**
@@ -132,7 +132,7 @@ public abstract class DataWriter
 	 */
 	public void writeBooleanValue(String fieldName, boolean data) throws Exception
 	{
-		writeBoolean(fieldName, new Boolean(data));
+		writeBoolean(fieldName, data);
 	}
 
 	/**

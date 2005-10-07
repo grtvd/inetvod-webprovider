@@ -4,16 +4,16 @@
  */
 package com.inetvod.common.dbdata;
 
-import com.inetvod.common.core.LanguageID;
-
 import java.util.ArrayList;
+
+import com.inetvod.common.core.LanguageID;
 
 public class ShowList extends ArrayList<Show>
 {
 	/**
 	 * TODO: remove
 	 * Helper function with static data instead of hitting a DB
-	 * @return
+	 * @return ShowList
 	 */
 	public static ShowList getAll()
 	{
@@ -64,9 +64,18 @@ public class ShowList extends ArrayList<Show>
 	}
 	static private ShowList fShowListCache;
 
+	public int indexOfByID(ShowID showID)
+	{
+		for(int i = 0; i < size(); i++)
+			if(get(i).getShowID().equals(showID))
+				return i;
+
+		return -1;
+	}
+
 	public Show findByID(ShowID showID)
 	{
-		int pos = indexOf(showID);
+		int pos = indexOfByID(showID);
 		if(pos >= 0)
 			return get(pos);
 
@@ -75,7 +84,7 @@ public class ShowList extends ArrayList<Show>
 
 	public Show getByID(ShowID showID) throws Exception
 	{
-		int pos = indexOf(showID);
+		int pos = indexOfByID(showID);
 		if(pos >= 0)
 			return get(pos);
 

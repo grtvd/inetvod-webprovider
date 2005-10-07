@@ -4,15 +4,15 @@
  */
 package com.inetvod.provider.request;
 
-import com.inetvod.common.core.DataReader;
-import com.inetvod.common.core.Requestable;
-import com.inetvod.common.core.StatusCode;
-import com.inetvod.common.core.ServletFulfiller;
-import com.inetvod.common.core.Writeable;
-import com.inetvod.common.core.DataFormat;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.inetvod.common.core.DataFormat;
+import com.inetvod.common.core.DataReader;
+import com.inetvod.common.core.Requestable;
+import com.inetvod.common.core.ServletFulfiller;
+import com.inetvod.common.core.StatusCode;
+import com.inetvod.common.core.Writeable;
 
 public class WebProviderServletFulfiller extends ServletFulfiller
 {
@@ -45,6 +45,20 @@ public class WebProviderServletFulfiller extends ServletFulfiller
 	/// <returns></returns>
 	protected Requestable readRequestableFromReader(DataReader dataFiler) throws Exception
 	{
-		return (Requestable)dataFiler.readObject("INetVODProviderRqst", INetVODProviderRqst.CtorDataFiler);
+		return dataFiler.readObject("INetVODProviderRqst", INetVODProviderRqst.CtorDataFiler);
+	}
+
+	protected String getRequestType(Requestable requestable)
+	{
+		String requestType = null;
+
+		if(requestable instanceof INetVODProviderRqst)
+		{
+			INetVODProviderRqst iNetVODProviderRqst = (INetVODProviderRqst)requestable;
+			if(iNetVODProviderRqst.getRequestData() != null)
+				requestType = iNetVODProviderRqst.getRequestData().getRequestType();
+		}
+
+		return requestType;
 	}
 }

@@ -4,12 +4,12 @@
  */
 package com.inetvod.common.dbdata;
 
-import com.inetvod.common.core.CtorUtil;
-
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 
+import com.inetvod.common.core.CtorUtil;
+
 public class ShowIDList extends ArrayList<ShowID>
 {
-	public static final Constructor Ctor = CtorUtil.getCtorDefault(ShowIDList.class);
+	public static final Constructor<ShowIDList> Ctor = CtorUtil.getCtorDefault(ShowIDList.class);
 }

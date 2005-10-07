@@ -4,17 +4,17 @@
  */
 package com.inetvod.provider.rqdata;
 
+import java.lang.reflect.Constructor;
+
 import com.inetvod.common.core.DataReader;
+import com.inetvod.common.core.DataWriter;
 import com.inetvod.common.core.Readable;
 import com.inetvod.common.core.Writeable;
-import com.inetvod.common.core.DataWriter;
-
-import java.lang.reflect.Constructor;
 
 public class Authenticate implements Readable, Writeable
 {
 	/* Constants */
-	public static final Constructor CtorDataFiler = DataReader.getCtor(Authenticate.class);
+	public static final Constructor<Authenticate> CtorDataFiler = DataReader.getCtor(Authenticate.class);
 
 	public static final int AdminUserIDMaxLength = 64;
 	public static final int AdminPasswordMaxLength = 32;

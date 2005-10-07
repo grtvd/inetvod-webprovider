@@ -14,7 +14,7 @@ import com.inetvod.common.core.Writeable;
 public class ShowFormat implements Readable, Writeable
 {
 	/* Constants */
-	public static Constructor CtorDataReader = DataReader.getCtor(ShowFormat.class);
+	public static Constructor<ShowFormat> CtorDataReader = DataReader.getCtor(ShowFormat.class);
 
 	/* Properties */
 	protected MediaEncoding fMediaEncoding;

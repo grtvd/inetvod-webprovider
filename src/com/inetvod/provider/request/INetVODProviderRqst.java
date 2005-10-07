@@ -5,19 +5,19 @@
 package com.inetvod.provider.request;
 
 
-import com.inetvod.common.core.Requestable;
+import java.lang.reflect.Constructor;
+
 import com.inetvod.common.core.DataReader;
+import com.inetvod.common.core.DataWriter;
+import com.inetvod.common.core.Requestable;
 import com.inetvod.common.core.StatusCode;
 import com.inetvod.common.core.Writeable;
-import com.inetvod.common.core.DataWriter;
 import com.inetvod.provider.rqdata.Authenticate;
-
-import java.lang.reflect.Constructor;
 
 public class INetVODProviderRqst implements Requestable
 {
 	/* Constants */
-	public static final Constructor CtorDataFiler = DataReader.getCtor(INetVODProviderRqst.class);
+	public static final Constructor<INetVODProviderRqst> CtorDataFiler = DataReader.getCtor(INetVODProviderRqst.class);
 	public static final int VersionMaxLength = 16;
 	public static final int RequestIDMaxLength = 64;
 
@@ -27,6 +27,7 @@ public class INetVODProviderRqst implements Requestable
 	public String getRequestID() { return fRequestID; }
 	protected Authenticate fAuthenticate;
 	protected RequestData fRequestData;
+	public RequestData getRequestData() { return fRequestData; }
 
 	protected StatusCode fStatusCode = StatusCode.sc_GeneralError;
 	public StatusCode getStatusCode() { return fStatusCode; }
@@ -58,8 +59,8 @@ public class INetVODProviderRqst implements Requestable
 	{
 		fVersion = reader.readString("Version", VersionMaxLength);
 		fRequestID = reader.readString("RequestID", RequestIDMaxLength);
-		fAuthenticate = (Authenticate)reader.readObject("Authenticate", Authenticate.CtorDataFiler);
-		fRequestData = (RequestData)reader.readObject("RequestData", RequestData.CtorDataFiler);
+		fAuthenticate = reader.readObject("Authenticate", Authenticate.CtorDataFiler);
+		fRequestData = reader.readObject("RequestData", RequestData.CtorDataFiler);
 	}
 
 	public void writeTo(DataWriter writer) throws Exception

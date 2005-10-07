@@ -1,17 +1,14 @@
+/**
+ * Copyright © 2004-2005 iNetVOD, Inc. All Rights Reserved.
+ * Confidential and Proprietary
+ */
 package com.inetvod.common.core;
 
 import java.lang.reflect.Constructor;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Bob
- * Date: Jun 8, 2004
- * Time: 11:36:57 PM
- * To change this template use File | Settings | File Templates.
- */
 public class CtorUtil
 {
-	public static Constructor getCtorDefault(Class cl)
+	public static <T> Constructor<T> getCtorDefault(Class<T> cl)
 	{
 		try
 		{
@@ -23,7 +20,7 @@ public class CtorUtil
 
 		return null;
 	}
-	public static Constructor getCtorString(Class cl)
+	public static <T> Constructor<T> getCtorString(Class<T> cl)
 	{
 		try
 		{

@@ -10,7 +10,7 @@ import java.util.List;
 
 public abstract class DataReader
 {
-	public static Constructor getCtor(Class cl)
+	public static <T> Constructor<T> getCtor(Class<T> cl)
 	{
 		try
 		{
@@ -100,7 +100,7 @@ public abstract class DataReader
 		if(value == null)
 			throw new Exception("value is null");
 
-		return value.booleanValue();
+		return value;
 	}
 
 	/**
@@ -109,7 +109,8 @@ public abstract class DataReader
 	 * @param ctorDataFiler
 	 * @return may return null
 	 */
-	public abstract Readable readObject(String fieldName, Constructor ctorDataFiler) throws Exception;
+	//public abstract Readable readObject(String fieldName, Constructor ctorDataFiler) throws Exception;
+	public abstract <T extends Readable> T readObject(String fieldName, Constructor<T> ctorDataFiler) throws Exception;
 
 	/**
 	 * Read a list of complex Objects.
@@ -118,7 +119,8 @@ public abstract class DataReader
 	 * @param itemCtorDataFiler
 	 * @return will never return null, may return an empty list
 	 */
-	public abstract List readList(String fieldName, Constructor listCtor, Constructor itemCtorDataFiler) throws Exception;
+	//public abstract List readList(String fieldName, Constructor listCtor, Constructor itemCtorDataFiler) throws Exception;
+	public abstract <T, L extends List<T>> L readList(String fieldName, Constructor<L> listCtor, Constructor<T> itemCtorDataFiler) throws Exception;
 
 	/**
 	 * Read a list of Strings (or non-complex items than can be constructed from a sting).
@@ -128,7 +130,9 @@ public abstract class DataReader
 	 * @param itemCtorString
 	 * @return will never return null, may return an empty list
 	 */
-	public abstract List readStringList(String fieldName, int maxLength, Constructor listCtor, Constructor itemCtorString) throws Exception;
+	//public abstract List readStringList(String fieldName, int maxLength, Constructor listCtor, Constructor itemCtorString) throws Exception;
+	public abstract <T, L extends List<T>> L readStringList(String fieldName, int maxLength, Constructor<L> listCtor,
+		Constructor<T> itemCtorString) throws Exception;
 
 	/**
 	 * Read a DataID object.
@@ -137,5 +141,5 @@ public abstract class DataReader
 	 * @param ctorString
 	 * @return may return null
 	 */
-	public abstract DataID readDataID(String fieldName, int maxLength, Constructor ctorString) throws Exception;
+	public abstract <T extends DataID> T readDataID(String fieldName, int maxLength, Constructor<T> ctorString) throws Exception;
 }

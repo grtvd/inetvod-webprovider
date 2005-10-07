@@ -13,7 +13,7 @@ import com.inetvod.common.core.DataWriter;
 public class License implements Writeable
 {
 	/* Constants */
-	public static Constructor CtorDataReader = DataReader.getCtor(License.class);
+	public static Constructor<License> CtorDataReader = DataReader.getCtor(License.class);
 	public static final int ShowURLMaxLength = 4096;
 	public static final int LicenseURLMaxLength = 4096;
 

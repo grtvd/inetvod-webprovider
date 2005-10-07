@@ -24,276 +24,308 @@ import java.util.TimeZone;
  * i.e. the difference between the local time and Coordinated Universal Time,
  * immediately followed by a sign, + or -,
  * followed by the difference from UTC represented as hh:mm.
- *
  */
-public class ISO8601DateTimeFormat extends DateFormat {
+public class ISO8601DateTimeFormat extends DateFormat
+{
 
-  /**
-   * Construct a new ISO8601DateTimeFormat using the default time zone.
-   *
-   */
-  public ISO8601DateTimeFormat() {
-    setCalendar(Calendar.getInstance());
-  }
+	/**
+	 * Construct a new ISO8601DateTimeFormat using the default time zone.
+	 */
+	public ISO8601DateTimeFormat()
+	{
+		setCalendar(Calendar.getInstance());
+	}
 
-  /**
-   * Construct a new ISO8601DateTimeFormat using a specific time zone.
-   * @param tz The time zone used to format and parse the date.
-   */
-  public ISO8601DateTimeFormat(TimeZone tz) {
-    setCalendar(Calendar.getInstance(tz));
-  }
+	/**
+	 * Construct a new ISO8601DateTimeFormat using a specific time zone.
+	 * @param tz The time zone used to format and parse the date.
+	 */
+	public ISO8601DateTimeFormat(TimeZone tz)
+	{
+		setCalendar(Calendar.getInstance(tz));
+	}
 
-  /**
-   * @see DateFormat#parse(String, ParsePosition)
-   */
-  public Date parse(String text, ParsePosition pos) {
+	/**
+	 * @see DateFormat#parse(String, ParsePosition)
+	 */
+	public Date parse(String text, ParsePosition pos)
+	{
 
-    int i = pos.getIndex();
+		int i = pos.getIndex();
 
-    try {
-      int year = Integer.valueOf(text.substring(i, i + 4)).intValue();
-      i += 4;
+		try
+		{
+			int year = Integer.valueOf(text.substring(i, i + 4));
+			i += 4;
 
-      if (text.charAt(i) != '-') {
-        throw new NumberFormatException();
-      }
-      i++;
+			if(text.charAt(i) != '-')
+			{
+				throw new NumberFormatException();
+			}
+			i++;
 
-      int month = Integer.valueOf(text.substring(i, i + 2)).intValue() - 1;
-      i += 2;
+			int month = (Integer.valueOf(text.substring(i, i + 2))) - 1;
+			i += 2;
 
-      if (text.charAt(i) != '-') {
-        throw new NumberFormatException();
-      }
-      i++;
+			if(text.charAt(i) != '-')
+			{
+				throw new NumberFormatException();
+			}
+			i++;
 
-      int day = Integer.valueOf(text.substring(i, i + 2)).intValue();
-      i += 2;
+			int day = Integer.valueOf(text.substring(i, i + 2));
+			i += 2;
 
-      if (text.charAt(i) != 'T') {
-        throw new NumberFormatException();
-      }
-      i++;
+			if(text.charAt(i) != 'T')
+			{
+				throw new NumberFormatException();
+			}
+			i++;
 
-      int hour = Integer.valueOf(text.substring(i, i + 2)).intValue();
-      i += 2;
+			int hour = Integer.valueOf(text.substring(i, i + 2));
+			i += 2;
 
-      if (text.charAt(i) != ':') {
-        throw new NumberFormatException();
-      }
-      i++;
+			if(text.charAt(i) != ':')
+			{
+				throw new NumberFormatException();
+			}
+			i++;
 
-      int mins = Integer.valueOf(text.substring(i, i + 2)).intValue();
-      i += 2;
+			int mins = Integer.valueOf(text.substring(i, i + 2));
+			i += 2;
 
-      int secs = 0;
-      if (i < text.length() && text.charAt(i) == ':') {
-        // handle seconds flexible
-        i++;
+			int secs = 0;
+			if(i < text.length() && text.charAt(i) == ':')
+			{
+				// handle seconds flexible
+				i++;
 
-        secs = Integer.valueOf(text.substring(i, i + 2)).intValue();
-        i += 2;
-      }
+				secs = (Integer.valueOf(text.substring(i, i + 2)));
+				i += 2;
+			}
 
-      calendar.set(year, month, day, hour, mins, secs);
-      calendar.set(Calendar.MILLISECOND, 0); // no parts of a second
+			calendar.set(year, month, day, hour, mins, secs);
+			calendar.set(Calendar.MILLISECOND, 0); // no parts of a second
 
-      i = parseTZ(i, text);
+			i = parseTZ(i, text);
 
-    }
-    catch (NumberFormatException ex) {
-      pos.setErrorIndex(i);
-      return null;
-    }
-    catch (IndexOutOfBoundsException ex) {
-      pos.setErrorIndex(i);
-      return null;
-    }
-    finally {
-      pos.setIndex(i);
-    }
+		}
+		catch(NumberFormatException ex)
+		{
+			pos.setErrorIndex(i);
+			return null;
+		}
+		catch(IndexOutOfBoundsException ex)
+		{
+			pos.setErrorIndex(i);
+			return null;
+		}
+		finally
+		{
+			pos.setIndex(i);
+		}
 
-    return calendar.getTime();
-  }
+		return calendar.getTime();
+	}
 
-  /**
-   * Parse the time zone.
-   * @param i The position to start parsing.
-   * @param text The text to parse.
-   * @return The position after parsing has finished.
-   */
-  protected final int parseTZ(int i, String text) {
-    if (i < text.length()) {
-      // check and handle the zone/dst offset
-      int offset = 0;
-      if (text.charAt(i) == 'Z') {
-        offset = 0;
-        i++;
-      }
-      else {
-        int sign = 1;
-        if (text.charAt(i) == '-') {
-          sign = -1;
-        }
-        else if (text.charAt(i) != '+') {
-          throw new NumberFormatException();
-        }
-        i++;
+	/**
+	 * Parse the time zone.
+	 * @param i	The position to start parsing.
+	 * @param text The text to parse.
+	 * @return The position after parsing has finished.
+	 */
+	@SuppressWarnings({"MagicNumber"})
+	protected final int parseTZ(int i, String text)
+	{
+		if(i < text.length())
+		{
+			// check and handle the zone/dst offset
+			int offset;
+			if(text.charAt(i) == 'Z')
+			{
+				offset = 0;
+				i++;
+			}
+			else
+			{
+				int sign = 1;
+				if(text.charAt(i) == '-')
+				{
+					sign = -1;
+				}
+				else if(text.charAt(i) != '+')
+				{
+					throw new NumberFormatException();
+				}
+				i++;
 
-        int offsetHour = Integer.valueOf(text.substring(i, i + 2)).intValue();
-        i += 2;
+				int offsetHour = Integer.valueOf(text.substring(i, i + 2));
+				i += 2;
 
-        if (text.charAt(i) != ':') {
-          throw new NumberFormatException();
-        }
-        i++;
+				if(text.charAt(i) != ':')
+				{
+					throw new NumberFormatException();
+				}
+				i++;
 
-        int offsetMin = Integer.valueOf(text.substring(i, i + 2)).intValue();
-        i += 2;
-        offset = ((offsetHour * 60) + offsetMin) * 60000 * sign;
-      }
-      int offsetCal =
-        calendar.get(Calendar.ZONE_OFFSET) + calendar.get(Calendar.DST_OFFSET);
+				int offsetMin = Integer.valueOf(text.substring(i, i + 2));
+				i += 2;
+				offset = ((offsetHour * 60) + offsetMin) * 60000 * sign;
+			}
+			int offsetCal =
+				calendar.get(Calendar.ZONE_OFFSET) + calendar.get(Calendar.DST_OFFSET);
 
-      calendar.add(Calendar.MILLISECOND, offsetCal - offset);
-    }
-    return i;
-  }
+			calendar.add(Calendar.MILLISECOND, offsetCal - offset);
+		}
+		return i;
+	}
 
-  /**
-   * @see DateFormat#format(Date, StringBuffer, FieldPosition)
-   */
-  public StringBuffer format(
-    Date date,
-    StringBuffer sbuf,
-    FieldPosition fieldPosition) {
+	/**
+	 * @see DateFormat#format(Date, StringBuffer, FieldPosition)
+	 */
+	public StringBuffer format(
+		Date date,
+		StringBuffer sbuf,
+		FieldPosition fieldPosition)
+	{
 
-    calendar.setTime(date);
+		calendar.setTime(date);
 
-    writeCCYYMM(sbuf);
+		writeCCYYMM(sbuf);
 
-    sbuf.append('T');
+		sbuf.append('T');
 
-    writehhmmss(sbuf);
+		writehhmmss(sbuf);
 
-    writeTZ(sbuf);
+		writeTZ(sbuf);
 
-    return sbuf;
-  }
+		return sbuf;
+	}
 
-  /**
-   * Write the time zone string.
-   * @param sbuf The buffer to append the time zone.
-   */
-  protected final void writeTZ(StringBuffer sbuf) {
-    int offset =
-      calendar.get(Calendar.ZONE_OFFSET) + calendar.get(Calendar.DST_OFFSET);
-    if (offset == 0) {
-      sbuf.append('Z');
-    }
-    else {
-      int offsetHour = offset / 3600000;
-      int offsetMin = (offset % 3600000) / 60000;
-      if (offset >= 0) {
-        sbuf.append('+');
-      }
-      else {
-        sbuf.append('-');
-        offsetHour = 0 - offsetHour;
-        offsetMin = 0 - offsetMin;
-      }
-      appendInt(sbuf, offsetHour, 2);
-      sbuf.append(':');
-      appendInt(sbuf, offsetMin, 2);
-    }
-  }
+	/**
+	 * Write the time zone string.
+	 * @param sbuf The buffer to append the time zone.
+	 */
+	@SuppressWarnings({"MagicNumber"})
+	protected final void writeTZ(StringBuffer sbuf)
+	{
+		int offset =
+			calendar.get(Calendar.ZONE_OFFSET) + calendar.get(Calendar.DST_OFFSET);
+		if(offset == 0)
+		{
+			sbuf.append('Z');
+		}
+		else
+		{
+			int offsetHour = offset / 3600000;
+			int offsetMin = (offset % 3600000) / 60000;
+			if(offset >= 0)
+			{
+				sbuf.append('+');
+			}
+			else
+			{
+				sbuf.append('-');
+				offsetHour = 0 - offsetHour;
+				offsetMin = 0 - offsetMin;
+			}
+			appendInt(sbuf, offsetHour, 2);
+			sbuf.append(':');
+			appendInt(sbuf, offsetMin, 2);
+		}
+	}
 
-  /**
-   * Write hour, minutes, and seconds.
-   * @param sbuf The buffer to append the string.
-   */
-  protected final void writehhmmss(StringBuffer sbuf) {
-    int hour = calendar.get(Calendar.HOUR_OF_DAY);
-    appendInt(sbuf, hour, 2);
-    sbuf.append(':');
+	/**
+	 * Write hour, minutes, and seconds.
+	 * @param sbuf The buffer to append the string.
+	 */
+	protected final void writehhmmss(StringBuffer sbuf)
+	{
+		int hour = calendar.get(Calendar.HOUR_OF_DAY);
+		appendInt(sbuf, hour, 2);
+		sbuf.append(':');
 
-    int mins = calendar.get(Calendar.MINUTE);
-    appendInt(sbuf, mins, 2);
-    sbuf.append(':');
+		int mins = calendar.get(Calendar.MINUTE);
+		appendInt(sbuf, mins, 2);
+		sbuf.append(':');
 
-    int secs = calendar.get(Calendar.SECOND);
-    appendInt(sbuf, secs, 2);
-  }
+		int secs = calendar.get(Calendar.SECOND);
+		appendInt(sbuf, secs, 2);
+	}
 
-  /**
-   * Write century, year, and months.
-   * @param sbuf The buffer to append the string.
-   */
-  protected final void writeCCYYMM(StringBuffer sbuf) {
-    int year = calendar.get(Calendar.YEAR);
-    appendInt(sbuf, year, 4);
+	/**
+	 * Write century, year, and months.
+	 * @param sbuf The buffer to append the string.
+	 */
+	protected final void writeCCYYMM(StringBuffer sbuf)
+	{
+		int year = calendar.get(Calendar.YEAR);
+		appendInt(sbuf, year, 4);
 
-    String month;
-    switch (calendar.get(Calendar.MONTH)) {
-      case Calendar.JANUARY :
-        month = "-01-";
-        break;
-      case Calendar.FEBRUARY :
-        month = "-02-";
-        break;
-      case Calendar.MARCH :
-        month = "-03-";
-        break;
-      case Calendar.APRIL :
-        month = "-04-";
-        break;
-      case Calendar.MAY :
-        month = "-05-";
-        break;
-      case Calendar.JUNE :
-        month = "-06-";
-        break;
-      case Calendar.JULY :
-        month = "-07-";
-        break;
-      case Calendar.AUGUST :
-        month = "-08-";
-        break;
-      case Calendar.SEPTEMBER :
-        month = "-09-";
-        break;
-      case Calendar.OCTOBER :
-        month = "-10-";
-        break;
-      case Calendar.NOVEMBER :
-        month = "-11-";
-        break;
-      case Calendar.DECEMBER :
-        month = "-12-";
-        break;
-      default :
-        month = "-NA-";
-        break;
-    }
-    sbuf.append(month);
+		String month;
+		//noinspection SwitchStatement
+		switch(calendar.get(Calendar.MONTH))
+		{
+			case Calendar.JANUARY :
+				month = "-01-";
+				break;
+			case Calendar.FEBRUARY :
+				month = "-02-";
+				break;
+			case Calendar.MARCH :
+				month = "-03-";
+				break;
+			case Calendar.APRIL :
+				month = "-04-";
+				break;
+			case Calendar.MAY :
+				month = "-05-";
+				break;
+			case Calendar.JUNE :
+				month = "-06-";
+				break;
+			case Calendar.JULY :
+				month = "-07-";
+				break;
+			case Calendar.AUGUST :
+				month = "-08-";
+				break;
+			case Calendar.SEPTEMBER :
+				month = "-09-";
+				break;
+			case Calendar.OCTOBER :
+				month = "-10-";
+				break;
+			case Calendar.NOVEMBER :
+				month = "-11-";
+				break;
+			case Calendar.DECEMBER :
+				month = "-12-";
+				break;
+			default :
+				month = "-NA-";
+				break;
+		}
+		sbuf.append(month);
 
-    int day = calendar.get(Calendar.DAY_OF_MONTH);
-    appendInt(sbuf, day, 2);
-  }
+		int day = calendar.get(Calendar.DAY_OF_MONTH);
+		appendInt(sbuf, day, 2);
+	}
 
-  /**
-   * Write an integer value with leading zeros.
-   * @param buf The buffer to append the string.
-   * @param value The value to write.
-   * @param length The length of the string to write.
-   */
-  protected final void appendInt(StringBuffer buf, int value, int length) {
-    int len1 = buf.length();
-    buf.append(value);
-    int len2 = buf.length();
-    for (int i = len2; i < len1 + length; ++i) {
-      buf.insert(len1, '0');
-    }
-  }
+	/**
+	 * Write an integer value with leading zeros.
+	 * @param buf	The buffer to append the string.
+	 * @param value  The value to write.
+	 * @param length The length of the string to write.
+	 */
+	protected final void appendInt(StringBuffer buf, int value, int length)
+	{
+		int len1 = buf.length();
+		buf.append(value);
+		int len2 = buf.length();
+		for(int i = len2; i < len1 + length; ++i)
+		{
+			buf.insert(len1, '0');
+		}
+	}
 }

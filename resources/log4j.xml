@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "http://logging.apache.org/log4j/docs/api/org/apache/log4j/xml/log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="DailyFileLog" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="/temp/iNetVOD/webprovider.log"/>
+		<param name="datePattern" value="'.'yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss}|%p|%m%n" />
+		</layout>
+	</appender>
+	<root>
+		<priority value="debug"/>
+		<appender-ref ref="DailyFileLog"/>
+	</root>
+</log4j:configuration>

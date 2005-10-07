@@ -1,5 +1,5 @@
 /**
- * Copyright © 2004 iNetVOD, Inc. All Rights Reserved.
+ * Copyright © 2004-2005 iNetVOD, Inc. All Rights Reserved.
  * Confidential and Proprietary
  */
 package com.inetvod.common.core;
@@ -7,11 +7,11 @@ package com.inetvod.common.core;
 import java.io.DataOutputStream;
 import java.io.OutputStream;
 import java.nio.ByteOrder;
-import java.util.Date;
 import java.util.Calendar;
-import java.util.TimeZone;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.TimeZone;
 
 public class BinaryDataWriter extends DataWriter
 {
@@ -41,7 +41,7 @@ public class BinaryDataWriter extends DataWriter
 	 */
 	public void writeByte(String fieldName, Byte data) throws Exception
 	{
-		fDataOutputStream.writeByte(data != null ? data.byteValue() : UndefinedByteValue);
+		fDataOutputStream.writeByte(data != null ? (data) : UndefinedByteValue);
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class BinaryDataWriter extends DataWriter
 	 */
 	public void writeShort(String fieldName, Short data) throws Exception
 	{
-		fDataOutputStream.writeShort(data != null ? data.shortValue() : UndefinedShortValue);
+		fDataOutputStream.writeShort(data != null ? (data) : UndefinedShortValue);
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class BinaryDataWriter extends DataWriter
 	 */
 	public void writeInt(String fieldName, Integer data) throws Exception
 	{
-		fDataOutputStream.writeInt(data != null ? data.intValue() : UndefinedIntValue);
+		fDataOutputStream.writeInt(data != null ? (data) : UndefinedIntValue);
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class BinaryDataWriter extends DataWriter
 	 */
 	public void writeFloat(String fieldName, Float data) throws Exception
 	{
-		fDataOutputStream.writeFloat(data != null ? data.floatValue() : UndefinedFloatValue);
+		fDataOutputStream.writeFloat(data != null ? (data) : UndefinedFloatValue);
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class BinaryDataWriter extends DataWriter
 	 */
 	public void writeDouble(String fieldName, Double data) throws Exception
 	{
-		fDataOutputStream.writeDouble(data != null ? data.doubleValue() : UndefinedDoubleValue);
+		fDataOutputStream.writeDouble(data != null ? (data) : UndefinedDoubleValue);
 	}
 
 	/**
@@ -176,7 +176,7 @@ public class BinaryDataWriter extends DataWriter
 	 */
 	public void writeBoolean(String fieldName, Boolean data) throws Exception
 	{
-		fDataOutputStream.writeByte(data != null ? (data.booleanValue() ? 1 : 0) : UndefinedByteValue);
+		fDataOutputStream.writeByte(data != null ? ((data) ? 1 : 0) : UndefinedByteValue);
 	}
 
 	/**
@@ -205,10 +205,8 @@ public class BinaryDataWriter extends DataWriter
 	{
 		writeIntValue(fieldName, data.size());
 
-		Iterator iter = data.iterator();
-
-		while(iter.hasNext())
-			((Writeable)iter.next()).writeTo(this);
+		for(Object item : data)
+			((Writeable)item).writeTo(this);
 	}
 
 	/**
