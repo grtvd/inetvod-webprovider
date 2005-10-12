@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.inetvod.common.core.ServletFulfiller;
+import com.inetvod.common.dbdata.DataManager;
 import com.inetvod.provider.request.WebProviderServletFulfiller;
 import org.apache.log4j.xml.DOMConfigurator;
 
@@ -20,14 +21,28 @@ public class WebProviderServlet extends HttpServlet
 {
 	public void init() throws ServletException
 	{
-		String realPath = getServletContext().getRealPath("/log4j.xml");
-		File log4jFile = new File(realPath);
+		String realPath;
+		File file;
+
+		realPath = getServletContext().getRealPath("/log4j.xml");
+		file = new File(realPath);
 		try
 		{
-			DOMConfigurator.configure(log4jFile.toURL());
+			DOMConfigurator.configure(file.toURL());
 		}
 		catch(MalformedURLException e)
 		{
+		}
+
+		realPath = getServletContext().getRealPath("/data.xml");
+		file = new File(realPath);
+		try
+		{
+			DataManager.load(file);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
 		}
 	}
 

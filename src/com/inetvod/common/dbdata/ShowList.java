@@ -5,11 +5,15 @@
 package com.inetvod.common.dbdata;
 
 import java.util.ArrayList;
+import java.lang.reflect.Constructor;
 
 import com.inetvod.common.core.LanguageID;
+import com.inetvod.common.core.CtorUtil;
 
 public class ShowList extends ArrayList<Show>
 {
+	public static final Constructor<ShowList> Ctor = CtorUtil.getCtorDefault(ShowList.class);
+
 	/**
 	 * TODO: remove
 	 * Helper function with static data instead of hitting a DB

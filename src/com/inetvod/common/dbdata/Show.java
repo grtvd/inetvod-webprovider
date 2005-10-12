@@ -4,15 +4,20 @@
  */
 package com.inetvod.common.dbdata;
 
-import com.inetvod.common.core.DataWriter;
-import com.inetvod.common.core.Writeable;
-import com.inetvod.common.core.LanguageID;
-
 import java.util.Date;
+import java.lang.reflect.Constructor;
 
-public class Show implements Writeable
+import com.inetvod.common.core.DataWriter;
+import com.inetvod.common.core.LanguageID;
+import com.inetvod.common.core.Readable;
+import com.inetvod.common.core.Writeable;
+import com.inetvod.common.core.DataReader;
+
+public class Show implements Readable, Writeable
 {
 	/* Constants */
+	public static final Constructor<Show> CtorDataReader = DataReader.getCtor(Show.class);
+
 	public static final int NumFields = 11;
 	public static final int NameMaxLength = 64;
 	public static final int EpisodeNameMaxLength = 64;
@@ -72,8 +77,13 @@ public class Show implements Writeable
 	public void setIsAdult(Boolean isAdult) { fIsAdult = isAdult; }
 
 	/* Constuction Methods */
-	protected Show()
+	private Show()
 	{
+	}
+
+	public Show(DataReader reader) throws Exception
+	{
+		readFrom(reader);
 	}
 
 	public static Show newInstance(ShowID showID)
@@ -84,13 +94,29 @@ public class Show implements Writeable
 		return show;
 	}
 
-	/* Writeable Methods */
+	/* Implementation */
+
+	public void readFrom(DataReader reader) throws Exception
+	{
+		fShowID = reader.readDataID("ShowID", ShowID.MaxLength, ShowID.CtorString);
+		fName = reader.readString("Name", NameMaxLength);
+		fEpisodeName = reader.readString("EpisodeName", EpisodeNameMaxLength);
+		fEpisodeNumber = reader.readString("EpisodeNumber", EpisodeNumberMaxLength);
+		fReleasedOn = reader.readDate("ReleasedOn");
+		fReleasedYear = reader.readShort("ReleasedYear");
+		fDescription = reader.readString("Description", DescriptionMaxLength);
+		fRunningMins = reader.readShort("RunningMins");
+		fPictureURL = reader.readString("PictureURL", PictureURLMaxLength);
+		fRatingID = reader.readDataID("RatingID", RatingID.MaxLength, RatingID.CtorString);
+		fIsAdult = reader.readBoolean("IsAdult");
+	}
+
 	public void writeTo(DataWriter writer) throws Exception
 	{
 		writer.writeDataID("ShowID", fShowID, ShowID.MaxLength);
 		writer.writeString("Name", fName, NameMaxLength);
 		writer.writeString("EpisodeName", fEpisodeName, EpisodeNameMaxLength);
-		writer.writeString("fEpisodeNumber", fEpisodeNumber, EpisodeNumberMaxLength);
+		writer.writeString("EpisodeNumber", fEpisodeNumber, EpisodeNumberMaxLength);
 		writer.writeDate("ReleasedOn", fReleasedOn);
 		writer.writeShort("ReleasedYear", fReleasedYear);
 		writer.writeString("Description", fDescription, DescriptionMaxLength);
