@@ -8,7 +8,7 @@ import java.lang.reflect.Constructor;
 
 public class Money implements Readable, Writeable
 {
-	public static final Constructor<Money> CtorDataFiler = DataReader.getCtor(Money.class);
+	public static final Constructor<Money> CtorDataReader = DataReader.getCtor(Money.class);
 
 	/* Properties */
 	protected CurrencyID fCurrencyID;

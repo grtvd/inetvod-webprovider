@@ -34,9 +34,9 @@ public class RentShowRqst extends AuthenRequestable
 	protected Payment fPayment;
 
 	/* Construction */
-	public RentShowRqst(DataReader filer) throws Exception
+	public RentShowRqst(DataReader reader) throws Exception
 	{
-		readFrom(filer);
+		readFrom(reader);
 	}
 
 	/* Implementation */

@@ -18,9 +18,9 @@ public class ReleaseShowRqst extends AuthenRequestable
 	protected ShowID fShowID;
 
 	/* Construction */
-	public ReleaseShowRqst(DataReader filer) throws Exception
+	public ReleaseShowRqst(DataReader reader) throws Exception
 	{
-		readFrom(filer);
+		readFrom(reader);
 	}
 
 	/* Implementation */

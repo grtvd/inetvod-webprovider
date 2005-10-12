@@ -23,9 +23,9 @@ public class CheckShowAvailRqst extends AuthenRequestable
 	protected ShowID fShowID;
 
 	/* Construction */
-	public CheckShowAvailRqst(DataReader filer) throws Exception
+	public CheckShowAvailRqst(DataReader reader) throws Exception
 	{
-		readFrom(filer);
+		readFrom(reader);
 	}
 
 	/* Implementation */

@@ -13,9 +13,9 @@ import com.inetvod.provider.rqdata.StatusCode;
 public class ShowListRqst extends AuthenRequestable
 {
 	/* Construction */
-	public ShowListRqst(DataReader filer) throws Exception
+	public ShowListRqst(DataReader reader) throws Exception
 	{
-		readFrom(filer);
+		readFrom(reader);
 	}
 
 	/* Implementation */

@@ -12,9 +12,9 @@ import com.inetvod.provider.rqdata.StatusCode;
 public class PingRqst extends AuthenRequestable
 {
 	/* Construction */
-	public PingRqst(DataReader filer)
+	public PingRqst(DataReader reader)
 	{
-		readFrom(filer);
+		readFrom(reader);
 	}
 
 	/* Implementation */
@@ -30,12 +30,12 @@ public class PingRqst extends AuthenRequestable
 		return new PingResp();
 	}
 
-	public void readFrom(DataReader filer)
+	public void readFrom(DataReader reader)
 	{
 		// No Fields
 	}
 
-	public void writeTo(DataWriter filer)
+	public void writeTo(DataWriter reader)
 	{
 		// No Fields
 	}

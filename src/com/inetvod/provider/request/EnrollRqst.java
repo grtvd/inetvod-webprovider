@@ -33,9 +33,9 @@ public class EnrollRqst extends AuthenRequestable
 	protected Address fBillingAddress;
 
 	/* Construction */
-	public EnrollRqst(DataReader filer) throws Exception
+	public EnrollRqst(DataReader reader) throws Exception
 	{
-		readFrom(filer);
+		readFrom(reader);
 	}
 
 	/* Implementation */

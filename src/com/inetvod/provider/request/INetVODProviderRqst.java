@@ -17,7 +17,7 @@ import com.inetvod.provider.rqdata.StatusCode;
 public class INetVODProviderRqst implements Requestable
 {
 	/* Constants */
-	public static final Constructor<INetVODProviderRqst> CtorDataFiler = DataReader.getCtor(INetVODProviderRqst.class);
+	public static final Constructor<INetVODProviderRqst> CtorDataReader = DataReader.getCtor(INetVODProviderRqst.class);
 	public static final int VersionMaxLength = 16;
 	public static final int RequestIDMaxLength = 64;
 
@@ -59,8 +59,8 @@ public class INetVODProviderRqst implements Requestable
 	{
 		fVersion = reader.readString("Version", VersionMaxLength);
 		fRequestID = reader.readString("RequestID", RequestIDMaxLength);
-		fAuthenticate = reader.readObject("Authenticate", Authenticate.CtorDataFiler);
-		fRequestData = reader.readObject("RequestData", RequestData.CtorDataFiler);
+		fAuthenticate = reader.readObject("Authenticate", Authenticate.CtorDataReader);
+		fRequestData = reader.readObject("RequestData", RequestData.CtorDataReader);
 	}
 
 	public void writeTo(DataWriter writer) throws Exception

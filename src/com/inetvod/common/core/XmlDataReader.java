@@ -246,17 +246,17 @@ public class XmlDataReader extends DataReader
 	/**
 	 * Read an Object.
 	 * @param fieldName
-	 * @param ctorDataFiler
+	 * @param ctorDataReader
 	 * @return may return null
 	 */
-	public <T extends Readable> T readObject(String fieldName, Constructor<T> ctorDataFiler) throws Exception
+	public <T extends Readable> T readObject(String fieldName, Constructor<T> ctorDataReader) throws Exception
 	{
 		Node node = findChildNode(fieldName);
 		if(node == null)
 			return null;
 
 		fCurNodeList.add(node);
-		T readable = ctorDataFiler.newInstance(new Object[] { this });
+		T readable = ctorDataReader.newInstance(new Object[] { this });
 		fCurNodeList.remove(fCurNodeList.size() - 1);
 
 		return readable;
@@ -266,10 +266,10 @@ public class XmlDataReader extends DataReader
 	 * Read a list of complex Objects.
 	 * @param fieldName
 	 * @param listCtor
-	 * @param itemCtorDataFiler
+	 * @param itemCtorDataReader
 	 * @return will never return null, may return an empty list
 	 */
-	public <T, L extends List<T>> L readList(String fieldName, Constructor<L> listCtor, Constructor<T> itemCtorDataFiler) throws Exception
+	public <T, L extends List<T>> L readList(String fieldName, Constructor<L> listCtor, Constructor<T> itemCtorDataReader) throws Exception
 	{
 		L list = listCtor.newInstance(new Object[] {});
 
@@ -280,7 +280,7 @@ public class XmlDataReader extends DataReader
 		for(Node node: nodes)
 		{
 			fCurNodeList.add(node);
-			T item = itemCtorDataFiler.newInstance(new Object[] { this });
+			T item = itemCtorDataReader.newInstance(new Object[] { this });
 			list.add(item);
 			fCurNodeList.remove(fCurNodeList.size() - 1);
 		}

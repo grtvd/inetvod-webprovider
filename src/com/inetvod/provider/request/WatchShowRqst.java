@@ -27,9 +27,9 @@ public class WatchShowRqst extends AuthenRequestable
 	protected String fPlayerIPAddress;
 
 	/* Construction */
-	public WatchShowRqst(DataReader filer) throws Exception
+	public WatchShowRqst(DataReader reader) throws Exception
 	{
-		readFrom(filer);
+		readFrom(reader);
 	}
 
 	/* Implementation */

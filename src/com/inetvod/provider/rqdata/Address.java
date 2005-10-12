@@ -55,9 +55,9 @@ public class Address implements Readable, Writeable
 	public void setPhone(String phone) { fPhone = phone; }
 
 	/* Construction */
-	public Address(DataReader filer) throws Exception
+	public Address(DataReader reader) throws Exception
 	{
-		readFrom(filer);
+		readFrom(reader);
 	}
 
 	/* Implementation */

@@ -43,9 +43,9 @@ public class WebProviderServletFulfiller extends ServletFulfiller
 	/// </summary>
 	/// <param name="className"></param>
 	/// <returns></returns>
-	protected Requestable readRequestableFromReader(DataReader dataFiler) throws Exception
+	protected Requestable readRequestableFromReader(DataReader dataReader) throws Exception
 	{
-		return dataFiler.readObject("INetVODProviderRqst", INetVODProviderRqst.CtorDataFiler);
+		return dataReader.readObject("INetVODProviderRqst", INetVODProviderRqst.CtorDataReader);
 	}
 
 	protected String getRequestType(Requestable requestable)

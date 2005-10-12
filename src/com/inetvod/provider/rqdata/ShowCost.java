@@ -50,7 +50,7 @@ public class ShowCost implements Readable, Writeable
 	public void readFrom(DataReader reader) throws Exception
 	{
 		fShowCostType = ShowCostType.convertFromString(reader.readString("ShowCostType", ShowCostType.MaxLength));
-		fCost = reader.readObject("Cost", Money.CtorDataFiler);
+		fCost = reader.readObject("Cost", Money.CtorDataReader);
 		fCostDisplay = reader.readString("CostDisplay", DescriptionMaxLength);
 		fRentalHours = reader.readShort("RentalHours");
 	}

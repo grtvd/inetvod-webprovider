@@ -155,16 +155,16 @@ public class BinaryDataReader extends DataReader
 	 * Read an Object.
 	 *
 	 * @param fieldName
-	 * @param ctorDataFiler
+	 * @param ctorDataReader
 	 * @return may return null
 	 */
-	public Readable readObject(String fieldName, Constructor ctorDataFiler) throws Exception
+	public Readable readObject(String fieldName, Constructor ctorDataReader) throws Exception
 	{
 		boolean isNotNull = (fDataInputStream.readByte() != 0);
 		if(!isNotNull)
 			return null;
 
-		return (Readable)ctorDataFiler.newInstance(new Object[] { this });
+		return (Readable)ctorDataReader.newInstance(new Object[] { this });
 	}
 
 	/**
@@ -172,10 +172,10 @@ public class BinaryDataReader extends DataReader
 	 *
 	 * @param fieldName
 	 * @param listCtor
-	 * @param itemCtorDataFiler
+	 * @param itemCtorDataReader
 	 * @return will never return null, may return an empty list
 	 */
-	public List readList(String fieldName, Constructor listCtor, Constructor itemCtorDataFiler) throws Exception
+	public List readList(String fieldName, Constructor listCtor, Constructor itemCtorDataReader) throws Exception
 	{
 		throw new UnsupportedOperationException("need to implement");	//TODO: need to implement
 	}

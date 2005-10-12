@@ -35,9 +35,9 @@ public class ShowDetailRqst extends AuthenRequestable
 	protected ShowIDList fShowIDList = new ShowIDList();
 
 	/* Construction */
-	public ShowDetailRqst(DataReader filer) throws Exception
+	public ShowDetailRqst(DataReader reader) throws Exception
 	{
-		readFrom(filer);
+		readFrom(reader);
 	}
 
 	/* Implementation */

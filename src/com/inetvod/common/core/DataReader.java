@@ -106,21 +106,21 @@ public abstract class DataReader
 	/**
 	 * Read an Object.
 	 * @param fieldName
-	 * @param ctorDataFiler
+	 * @param ctorDataReader
 	 * @return may return null
 	 */
-	//public abstract Readable readObject(String fieldName, Constructor ctorDataFiler) throws Exception;
-	public abstract <T extends Readable> T readObject(String fieldName, Constructor<T> ctorDataFiler) throws Exception;
+	//public abstract Readable readObject(String fieldName, Constructor ctorDataReader) throws Exception;
+	public abstract <T extends Readable> T readObject(String fieldName, Constructor<T> ctorDataReader) throws Exception;
 
 	/**
 	 * Read a list of complex Objects.
 	 * @param fieldName
 	 * @param listCtor
-	 * @param itemCtorDataFiler
+	 * @param itemCtorDataReader
 	 * @return will never return null, may return an empty list
 	 */
-	//public abstract List readList(String fieldName, Constructor listCtor, Constructor itemCtorDataFiler) throws Exception;
-	public abstract <T, L extends List<T>> L readList(String fieldName, Constructor<L> listCtor, Constructor<T> itemCtorDataFiler) throws Exception;
+	//public abstract List readList(String fieldName, Constructor listCtor, Constructor itemCtorDataReader) throws Exception;
+	public abstract <T, L extends List<T>> L readList(String fieldName, Constructor<L> listCtor, Constructor<T> itemCtorDataReader) throws Exception;
 
 	/**
 	 * Read a list of Strings (or non-complex items than can be constructed from a sting).

@@ -17,7 +17,7 @@ import com.inetvod.provider.rqdata.StatusCode;
 public class RequestData implements Requestable
 {
 	/* Constants */
-	public static final Constructor<RequestData> CtorDataFiler = DataReader.getCtor(RequestData.class);
+	public static final Constructor<RequestData> CtorDataReader = DataReader.getCtor(RequestData.class);
 	public static final int RequestTypeMaxLength = 64;
 
 	/* Properties */
@@ -28,9 +28,9 @@ public class RequestData implements Requestable
 	protected StatusCode fStatusCode = StatusCode.sc_GeneralError;
 	public StatusCode getStatusCode() { return fStatusCode; }
 
-	public RequestData(DataReader filer) throws Exception
+	public RequestData(DataReader reader) throws Exception
 	{
-		readFrom(filer);
+		readFrom(reader);
 	}
 
 	public void setRequest(String version, String requestID, Authenticate authenticate) throws Exception

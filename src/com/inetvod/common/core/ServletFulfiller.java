@@ -127,7 +127,7 @@ public abstract class ServletFulfiller
 	/// </summary>
 	/// <param name="className"></param>
 	/// <returns></returns>
-	protected abstract Requestable readRequestableFromReader(DataReader dataFiler) throws Exception;
+	protected abstract Requestable readRequestableFromReader(DataReader dataReader) throws Exception;
 
 	protected void writeWriteable(Writeable writeable) throws Exception
 	{
