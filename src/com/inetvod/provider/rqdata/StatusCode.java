@@ -2,7 +2,7 @@
  * Copyright © 2004 iNetVOD, Inc. All Rights Reserved.
  * Confidential and Proprietary
  */
-package com.inetvod.common.core;
+package com.inetvod.provider.rqdata;
 
 import java.util.Arrays;
 import java.util.List;

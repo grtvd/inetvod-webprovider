@@ -9,7 +9,6 @@ import java.util.Date;
 
 import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
-import com.inetvod.common.core.StatusCode;
 import com.inetvod.common.core.Writeable;
 import com.inetvod.common.dbdata.DataManager;
 import com.inetvod.common.dbdata.License;
@@ -20,6 +19,7 @@ import com.inetvod.common.dbdata.ShowCost;
 import com.inetvod.common.dbdata.ShowCostType;
 import com.inetvod.common.dbdata.ShowFormat;
 import com.inetvod.common.dbdata.ShowID;
+import com.inetvod.provider.rqdata.StatusCode;
 
 public class RentShowRqst extends AuthenRequestable
 {

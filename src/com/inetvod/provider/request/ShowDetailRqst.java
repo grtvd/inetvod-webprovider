@@ -10,10 +10,10 @@ import com.inetvod.common.core.CurrencyID;
 import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
 import com.inetvod.common.core.Money;
-import com.inetvod.common.core.StatusCode;
 import com.inetvod.common.core.Writeable;
 import com.inetvod.common.dbdata.CategoryID;
 import com.inetvod.common.dbdata.CategoryIDList;
+import com.inetvod.common.dbdata.DataManager;
 import com.inetvod.common.dbdata.MediaContainer;
 import com.inetvod.common.dbdata.MediaEncoding;
 import com.inetvod.common.dbdata.Show;
@@ -25,9 +25,9 @@ import com.inetvod.common.dbdata.ShowFormatList;
 import com.inetvod.common.dbdata.ShowID;
 import com.inetvod.common.dbdata.ShowIDList;
 import com.inetvod.common.dbdata.ShowList;
-import com.inetvod.common.dbdata.DataManager;
 import com.inetvod.provider.rqdata.ShowDetail;
 import com.inetvod.provider.rqdata.ShowDetailList;
+import com.inetvod.provider.rqdata.StatusCode;
 
 public class ShowDetailRqst extends AuthenRequestable
 {

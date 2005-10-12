@@ -11,8 +11,8 @@ import com.inetvod.common.core.DataFormat;
 import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.Requestable;
 import com.inetvod.common.core.ServletFulfiller;
-import com.inetvod.common.core.StatusCode;
 import com.inetvod.common.core.Writeable;
+import com.inetvod.provider.rqdata.StatusCode;
 
 public class WebProviderServletFulfiller extends ServletFulfiller
 {

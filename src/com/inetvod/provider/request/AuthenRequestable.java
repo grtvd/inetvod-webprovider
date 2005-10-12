@@ -4,9 +4,9 @@
  */
 package com.inetvod.provider.request;
 
-import com.inetvod.common.core.StatusCode;
 import com.inetvod.provider.rqdata.Authenticate;
 import com.inetvod.provider.rqdata.ProviderRequestable;
+import com.inetvod.provider.rqdata.StatusCode;
 
 /**
  * A Requestable that understands Authenticate.

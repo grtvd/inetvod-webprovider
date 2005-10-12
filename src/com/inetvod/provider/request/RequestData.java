@@ -9,10 +9,10 @@ import java.lang.reflect.Constructor;
 import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
 import com.inetvod.common.core.Requestable;
-import com.inetvod.common.core.StatusCode;
 import com.inetvod.common.core.Writeable;
 import com.inetvod.provider.rqdata.Authenticate;
 import com.inetvod.provider.rqdata.ProviderRequestable;
+import com.inetvod.provider.rqdata.StatusCode;
 
 public class RequestData implements Requestable
 {
