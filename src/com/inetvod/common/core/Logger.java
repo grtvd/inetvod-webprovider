@@ -6,28 +6,19 @@ package com.inetvod.common.core;
 
 public class Logger
 {
-	private static String buildMethod(Class objClass, String method)
+	private static org.apache.log4j.Logger getLogger(Class logClass)
 	{
-		String className = objClass.getName();
-		String[] parts = className.split("\\.");
-		if(parts.length >= 2)
-			className = parts[parts.length - 2] + "." + parts[parts.length - 1];
-		return String.format("%s.%s", className, method);
-	}
-
-	private static String buildMethod(Object objClass, String method)
-	{
-		return buildMethod(objClass.getClass(), method);
-	}
-
-	private static org.apache.log4j.Logger getLogger()
-	{
-		return org.apache.log4j.Logger.getLogger(Logger.class);
+		return org.apache.log4j.Logger.getLogger(logClass);
 	}
 
 	public static void logInfo(Class objClass, String method, String message)
 	{
-		getLogger().info(String.format("%s|%s", buildMethod(objClass, method), message));
+		getLogger(objClass).info(String.format("%s|%s", method, ((message != null) ? message : "")));
+	}
+
+	public static void logInfo(Class objClass, String method, Exception e)
+	{
+		getLogger(objClass).info(String.format("%s|", method), e);
 	}
 
 	public static void logInfo(Object objClass, String method, String message)
@@ -35,13 +26,28 @@ public class Logger
 		logInfo(objClass.getClass(), method, message);
 	}
 
+	public static void logInfo(Object objClass, String method, Exception e)
+	{
+		logInfo(objClass.getClass(), method, e);
+	}
+
 	public static void logErr(Class objClass, String method, String message, Exception e)
 	{
-		getLogger().error(String.format("%s|%s", buildMethod(objClass, method), message), e);
+		getLogger(objClass).error(String.format("%s|%s", method, ((message != null) ? message : "")), e);
+	}
+
+	public static void logErr(Class objClass, String method, Exception e)
+	{
+		getLogger(objClass).error(String.format("%s|", method), e);
 	}
 
 	public static void logErr(Object objClass, String method, String message, Exception e)
 	{
 		logErr(objClass.getClass(), method, message, e);
+	}
+
+	public static void logErr(Object objClass, String method, Exception e)
+	{
+		logErr(objClass.getClass(), method, e);
 	}
 }

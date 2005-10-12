@@ -5,11 +5,15 @@
 		<param name="file" value="/temp/iNetVOD/webprovider.log"/>
 		<param name="datePattern" value="'.'yyyy-MM-dd"/>
 		<layout class="org.apache.log4j.PatternLayout">
-			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss}|%p|%m%n" />
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss}|%p|%c{2}.%m%n" />
 		</layout>
 	</appender>
-	<root>
-		<priority value="debug"/>
+	<category name="com.inetvod">
+		<level value="debug"/>
 		<appender-ref ref="DailyFileLog"/>
-	</root>
+	</category>
+	<category name="org.apache">
+		<level value="info"/>
+		<appender-ref ref="DailyFileLog"/>
+	</category>
 </log4j:configuration>

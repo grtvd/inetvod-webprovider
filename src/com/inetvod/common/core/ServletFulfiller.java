@@ -239,6 +239,7 @@ public abstract class ServletFulfiller
 		}
 		catch(Exception e)
 		{
+			Logger.logErr(this, "logRequest", "Failure during logging", e);
 		}
 		finally
 		{
@@ -271,6 +272,7 @@ public abstract class ServletFulfiller
 		}
 		catch(Exception e)
 		{
+			Logger.logErr(this, "logRequest", "Failure during logging", e);
 		}
 		finally
 		{

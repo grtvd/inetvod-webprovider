@@ -235,7 +235,12 @@ public class XmlDataReader extends DataReader
 	 */
 	public Boolean readBoolean(String fieldName) throws Exception
 	{
-		throw new UnsupportedOperationException("need to implement");	//TODO: need to implement
+		String data = readString(fieldName);
+
+		if(data == null)
+			return null;
+
+		return Boolean.parseBoolean(data);
 	}
 
 	/**
@@ -266,22 +271,21 @@ public class XmlDataReader extends DataReader
 	 */
 	public <T, L extends List<T>> L readList(String fieldName, Constructor<L> listCtor, Constructor<T> itemCtorDataFiler) throws Exception
 	{
-//		IList list = (IList)listCtor.Invoke(new object[] {});
-//
-//		ArrayList nodes = FindChildNodes(fieldName);
-//		if(nodes.Count == 0)
-//			return list;
-//
-//		foreach(XmlNode node in nodes)
-//		{
-//			fCurNodeList.Add(node);
-//			Streamable streamable = (Streamable)itemCtorDataFiler.Invoke(new object[] { this });
-//			list.Add(streamable);
-//			fCurNodeList.RemoveAt(fCurNodeList.Count - 1);
-//		}
-//
-//		return list;
-		throw new UnsupportedOperationException("need to implement");	//TODO: need to implement
+		L list = listCtor.newInstance(new Object[] {});
+
+		ArrayList<Node> nodes = findChildNodes(fieldName);
+		if(nodes.size() == 0)
+			return list;
+
+		for(Node node: nodes)
+		{
+			fCurNodeList.add(node);
+			T item = itemCtorDataFiler.newInstance(new Object[] { this });
+			list.add(item);
+			fCurNodeList.remove(fCurNodeList.size() - 1);
+		}
+
+		return list;
 	}
 
 	/**
