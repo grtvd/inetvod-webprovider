@@ -8,7 +8,7 @@ import java.util.Date;
 
 import com.inetvod.common.core.DataWriter;
 import com.inetvod.common.core.Writeable;
-import com.inetvod.common.dbdata.License;
+import com.inetvod.provider.rqdata.License;
 
 public class WatchShowResp implements Writeable
 {

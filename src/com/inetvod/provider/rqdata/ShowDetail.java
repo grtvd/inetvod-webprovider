@@ -4,18 +4,11 @@
  */
 package com.inetvod.provider.rqdata;
 
+import java.util.Date;
+
 import com.inetvod.common.core.DataWriter;
 import com.inetvod.common.core.LanguageID;
 import com.inetvod.common.core.Writeable;
-import com.inetvod.common.dbdata.CategoryIDList;
-import com.inetvod.common.dbdata.RatingID;
-import com.inetvod.common.dbdata.Show;
-import com.inetvod.common.dbdata.ShowCostList;
-import com.inetvod.common.dbdata.ShowFormatList;
-import com.inetvod.common.dbdata.ShowID;
-import com.inetvod.common.dbdata.CategoryID;
-
-import java.util.Date;
 
 public class ShowDetail implements Writeable
 {

@@ -2,13 +2,13 @@
  * Copyright © 2005 iNetVOD, Inc. All Rights Reserved.
  * Confidential and Proprietary
  */
-package com.inetvod.common.dbdata;
+package com.inetvod.provider.rqdata;
 
 import java.lang.reflect.Constructor;
 
-import com.inetvod.common.core.Writeable;
 import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
+import com.inetvod.common.core.Writeable;
 
 public class License implements Writeable
 {

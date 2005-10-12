@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.inetvod.common.core.ServletFulfiller;
-import com.inetvod.common.dbdata.DataManager;
+import com.inetvod.provider.rqdata.DataManager;
 import com.inetvod.provider.request.WebProviderServletFulfiller;
 import org.apache.log4j.xml.DOMConfigurator;
 

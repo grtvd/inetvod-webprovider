@@ -9,12 +9,12 @@ import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
 import com.inetvod.common.core.Money;
 import com.inetvod.common.core.Writeable;
-import com.inetvod.common.dbdata.DataManager;
-import com.inetvod.common.dbdata.Show;
-import com.inetvod.common.dbdata.ShowCost;
-import com.inetvod.common.dbdata.ShowCostList;
-import com.inetvod.common.dbdata.ShowCostType;
-import com.inetvod.common.dbdata.ShowID;
+import com.inetvod.provider.rqdata.DataManager;
+import com.inetvod.provider.rqdata.Show;
+import com.inetvod.provider.rqdata.ShowCost;
+import com.inetvod.provider.rqdata.ShowCostList;
+import com.inetvod.provider.rqdata.ShowCostType;
+import com.inetvod.provider.rqdata.ShowID;
 import com.inetvod.provider.rqdata.StatusCode;
 
 public class CheckShowAvailRqst extends AuthenRequestable

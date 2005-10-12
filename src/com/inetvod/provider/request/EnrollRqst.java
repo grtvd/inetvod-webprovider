@@ -9,7 +9,7 @@ import java.util.Date;
 import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
 import com.inetvod.common.core.Writeable;
-import com.inetvod.common.dbdata.Address;
+import com.inetvod.provider.rqdata.Address;
 import com.inetvod.provider.rqdata.StatusCode;
 
 public class EnrollRqst extends AuthenRequestable
