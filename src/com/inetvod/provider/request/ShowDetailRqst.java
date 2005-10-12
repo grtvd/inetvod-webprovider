@@ -25,6 +25,7 @@ import com.inetvod.common.dbdata.ShowFormatList;
 import com.inetvod.common.dbdata.ShowID;
 import com.inetvod.common.dbdata.ShowIDList;
 import com.inetvod.common.dbdata.ShowList;
+import com.inetvod.common.dbdata.DataManager;
 import com.inetvod.provider.rqdata.ShowDetail;
 import com.inetvod.provider.rqdata.ShowDetailList;
 
@@ -82,7 +83,7 @@ public class ShowDetailRqst extends AuthenRequestable
 		showCost.setRentalHours((short)168);
 		showCostList.add(showCost);
 
-		ShowList showList = ShowList.getAll();
+		ShowList showList = DataManager.getThe().getShowList();
 		Iterator<ShowID> iter = fShowIDList.iterator();
 
 		Show show;

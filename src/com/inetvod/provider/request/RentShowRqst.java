@@ -11,15 +11,15 @@ import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
 import com.inetvod.common.core.StatusCode;
 import com.inetvod.common.core.Writeable;
+import com.inetvod.common.dbdata.DataManager;
+import com.inetvod.common.dbdata.License;
+import com.inetvod.common.dbdata.LicenseMethod;
 import com.inetvod.common.dbdata.Payment;
 import com.inetvod.common.dbdata.Show;
 import com.inetvod.common.dbdata.ShowCost;
 import com.inetvod.common.dbdata.ShowCostType;
 import com.inetvod.common.dbdata.ShowFormat;
 import com.inetvod.common.dbdata.ShowID;
-import com.inetvod.common.dbdata.ShowList;
-import com.inetvod.common.dbdata.License;
-import com.inetvod.common.dbdata.LicenseMethod;
 
 public class RentShowRqst extends AuthenRequestable
 {
@@ -102,7 +102,7 @@ public class RentShowRqst extends AuthenRequestable
 		}
 
 		//TODO: Actually fetch Show from DB
-		Show show = ShowList.getAll().findByID(fShowID);
+		Show show = DataManager.getThe().getShowList().findByID(fShowID);
 		if(show == null)
 		{
 			fStatusCode = StatusCode.sc_RequestInvalid;
