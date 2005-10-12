@@ -12,6 +12,7 @@ import com.inetvod.common.core.Requestable;
 import com.inetvod.common.core.StatusCode;
 import com.inetvod.common.core.Writeable;
 import com.inetvod.provider.rqdata.Authenticate;
+import com.inetvod.provider.rqdata.ProviderRequestable;
 
 public class RequestData implements Requestable
 {
@@ -22,7 +23,7 @@ public class RequestData implements Requestable
 	/* Properties */
 	protected String fRequestType;
 	public String getRequestType() { return fRequestType; }
-	protected Requestable fRequest;
+	protected ProviderRequestable fRequest;
 
 	protected StatusCode fStatusCode = StatusCode.sc_GeneralError;
 	public StatusCode getStatusCode() { return fStatusCode; }
@@ -63,8 +64,8 @@ public class RequestData implements Requestable
 	{
 		fRequestType = reader.readString("RequestType", RequestTypeMaxLength);
 
-		Class<Requestable> cl = (Class<Requestable>)Class.forName(getClass().getPackage().getName() + "." + fRequestType);
-		Constructor<Requestable> ctor = cl.getConstructor(new Class[] { DataReader.class });
+		Class<ProviderRequestable> cl = (Class<ProviderRequestable>)Class.forName(getClass().getPackage().getName() + "." + fRequestType);
+		Constructor<ProviderRequestable> ctor = cl.getConstructor(new Class[] { DataReader.class });
 		fRequest = reader.readObject(fRequestType, ctor);
 	}
 

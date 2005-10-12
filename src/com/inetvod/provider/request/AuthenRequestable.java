@@ -4,14 +4,14 @@
  */
 package com.inetvod.provider.request;
 
-import com.inetvod.provider.rqdata.Authenticate;
-import com.inetvod.common.core.Requestable;
 import com.inetvod.common.core.StatusCode;
+import com.inetvod.provider.rqdata.Authenticate;
+import com.inetvod.provider.rqdata.ProviderRequestable;
 
 /**
  * A Requestable that understands Authenticate.
  */
-public abstract class AuthenRequestable implements Requestable
+public abstract class AuthenRequestable implements ProviderRequestable
 {
 	protected String fVersion;
 	protected String fRequestID;
@@ -51,7 +51,9 @@ public abstract class AuthenRequestable implements Requestable
 		if(isMemberRequest())
 		{
 			//TODO: validate member credentials
-			if(!"member".equals(fAuthenticate.getMemberUserID()) || !"memberpassword".equals(fAuthenticate.getMemberPassword()))
+			//TODO: remove temporary conversion to lower-case
+			if(!"member".equals(fAuthenticate.getMemberUserID().toLowerCase())
+				|| !"memberpassword".equals(fAuthenticate.getMemberPassword().toLowerCase()))
 			{
 				fStatusCode = StatusCode.sc_InvalidMemberUserID;
 				return false;
