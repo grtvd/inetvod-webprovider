@@ -9,8 +9,58 @@
 		<Description>A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against the controllers of it.</Description>
 		<RunningMins>126</RunningMins>
 		<PictureURL></PictureURL>
+		<CategoryID>action</CategoryID>
+		<CategoryID>scifi</CategoryID>
 		<RatingID>r</RatingID>
+		<LanguageID>eng</LanguageID>
 		<IsAdult>false</IsAdult>
+		<ShowRental>
+			<ShowFormat>
+				<MediaEncoding>WMV9</MediaEncoding>
+				<MediaContainer>ASF</MediaContainer>
+				<HorzResolution>600</HorzResolution>
+				<VertResolution>480</VertResolution>
+				<FramesPerSecond>30</FramesPerSecond>
+				<BitRate>750</BitRate>
+			</ShowFormat>
+			<ShowCost>
+				<ShowCostType>PayPerView</ShowCostType>
+				<Cost>
+					<CurrencyID>USD</CurrencyID>
+					<Amount>3.95</Amount>
+				</Cost>
+				<CostDisplay>$3.95</CostDisplay>
+				<RentalHours>48</RentalHours>
+			</ShowCost>
+			<ShowCost>
+				<ShowCostType>PayPerView</ShowCostType>
+				<Cost>
+					<CurrencyID>USD</CurrencyID>
+					<Amount>5.95</Amount>
+				</Cost>
+				<CostDisplay>$5.95</CostDisplay>
+				<RentalHours>168</RentalHours>
+			</ShowCost>
+		</ShowRental>
+		<ShowRental>
+			<ShowFormat>
+				<MediaEncoding>DivX5</MediaEncoding>
+				<MediaContainer>AVI</MediaContainer>
+				<HorzResolution>600</HorzResolution>
+				<VertResolution>480</VertResolution>
+				<FramesPerSecond>30</FramesPerSecond>
+				<BitRate>750</BitRate>
+			</ShowFormat>
+			<ShowCost>
+				<ShowCostType>PayPerView</ShowCostType>
+				<Cost>
+					<CurrencyID>USD</CurrencyID>
+					<Amount>4.95</Amount>
+				</Cost>
+				<CostDisplay>$4.95</CostDisplay>
+				<RentalHours>48</RentalHours>
+			</ShowCost>
+		</ShowRental>
 	</Show>
 	<Show>
 		<ShowID>123456789</ShowID>
@@ -22,8 +72,58 @@
 		<Description>Neo and the rebel leaders estimate that they have 72 hours until 250,000 probes discover Zion and destroy it and its inhabitants. During this, Neo must decide how he can save Trinity from a dark fate in his dreams.</Description>
 		<RunningMins>126</RunningMins>
 		<PictureURL></PictureURL>
+		<CategoryID>action</CategoryID>
+		<CategoryID>scifi</CategoryID>
 		<RatingID>r</RatingID>
+		<LanguageID>eng</LanguageID>
 		<IsAdult>false</IsAdult>
+		<ShowRental>
+			<ShowFormat>
+				<MediaEncoding>WMV9</MediaEncoding>
+				<MediaContainer>ASF</MediaContainer>
+				<HorzResolution>600</HorzResolution>
+				<VertResolution>480</VertResolution>
+				<FramesPerSecond>30</FramesPerSecond>
+				<BitRate>750</BitRate>
+			</ShowFormat>
+			<ShowCost>
+				<ShowCostType>PayPerView</ShowCostType>
+				<Cost>
+					<CurrencyID>USD</CurrencyID>
+					<Amount>3.95</Amount>
+				</Cost>
+				<CostDisplay>$3.95</CostDisplay>
+				<RentalHours>48</RentalHours>
+			</ShowCost>
+			<ShowCost>
+				<ShowCostType>PayPerView</ShowCostType>
+				<Cost>
+					<CurrencyID>USD</CurrencyID>
+					<Amount>5.95</Amount>
+				</Cost>
+				<CostDisplay>$5.95</CostDisplay>
+				<RentalHours>168</RentalHours>
+			</ShowCost>
+		</ShowRental>
+		<ShowRental>
+			<ShowFormat>
+				<MediaEncoding>DivX5</MediaEncoding>
+				<MediaContainer>AVI</MediaContainer>
+				<HorzResolution>600</HorzResolution>
+				<VertResolution>480</VertResolution>
+				<FramesPerSecond>30</FramesPerSecond>
+				<BitRate>750</BitRate>
+			</ShowFormat>
+			<ShowCost>
+				<ShowCostType>PayPerView</ShowCostType>
+				<Cost>
+					<CurrencyID>USD</CurrencyID>
+					<Amount>4.95</Amount>
+				</Cost>
+				<CostDisplay>$4.95</CostDisplay>
+				<RentalHours>48</RentalHours>
+			</ShowCost>
+		</ShowRental>
 	</Show>
 	<Show>
 		<ShowID>123456790</ShowID>
@@ -35,7 +135,57 @@
 		<Description>War breaks out on the scorched Earth as the machines invade Zion. Whereas Reloaded is about life, Revolutions addresses death.</Description>
 		<RunningMins>126</RunningMins>
 		<PictureURL></PictureURL>
+		<CategoryID>action</CategoryID>
+		<CategoryID>scifi</CategoryID>
 		<RatingID>r</RatingID>
+		<LanguageID>eng</LanguageID>
 		<IsAdult>false</IsAdult>
+		<ShowRental>
+			<ShowFormat>
+				<MediaEncoding>WMV9</MediaEncoding>
+				<MediaContainer>ASF</MediaContainer>
+				<HorzResolution>600</HorzResolution>
+				<VertResolution>480</VertResolution>
+				<FramesPerSecond>30</FramesPerSecond>
+				<BitRate>750</BitRate>
+			</ShowFormat>
+			<ShowCost>
+				<ShowCostType>PayPerView</ShowCostType>
+				<Cost>
+					<CurrencyID>USD</CurrencyID>
+					<Amount>3.95</Amount>
+				</Cost>
+				<CostDisplay>$3.95</CostDisplay>
+				<RentalHours>48</RentalHours>
+			</ShowCost>
+			<ShowCost>
+				<ShowCostType>PayPerView</ShowCostType>
+				<Cost>
+					<CurrencyID>USD</CurrencyID>
+					<Amount>5.95</Amount>
+				</Cost>
+				<CostDisplay>$5.95</CostDisplay>
+				<RentalHours>168</RentalHours>
+			</ShowCost>
+		</ShowRental>
+		<ShowRental>
+			<ShowFormat>
+				<MediaEncoding>DivX5</MediaEncoding>
+				<MediaContainer>AVI</MediaContainer>
+				<HorzResolution>600</HorzResolution>
+				<VertResolution>480</VertResolution>
+				<FramesPerSecond>30</FramesPerSecond>
+				<BitRate>750</BitRate>
+			</ShowFormat>
+			<ShowCost>
+				<ShowCostType>PayPerView</ShowCostType>
+				<Cost>
+					<CurrencyID>USD</CurrencyID>
+					<Amount>4.95</Amount>
+				</Cost>
+				<CostDisplay>$4.95</CostDisplay>
+				<RentalHours>48</RentalHours>
+			</ShowCost>
+		</ShowRental>
 	</Show>
 </DataManager>

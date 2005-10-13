@@ -28,12 +28,10 @@ public class ShowDetail implements Writeable
 	protected LanguageID fLanguageID;
 	protected Boolean fIsAdult;
 
-	protected ShowFormatList fShowFormatList;
-	protected ShowCostList fShowCostList;
+	protected ShowRentalList fShowRentalList;
 
 	/* Constuction */
-	public ShowDetail(Show show, CategoryIDList categoryIDList, ShowFormatList showFormatList,
-		ShowCostList showCostList)
+	public ShowDetail(Show show)
 	{
 		fShowID = show.getShowID();
 		fName = show.getName();
@@ -45,13 +43,12 @@ public class ShowDetail implements Writeable
 		fRunningMins = show.getRunningMins();
 		fPictureURL = show.getPictureURL();
 
-		fCategoryIDList = categoryIDList;
+		fCategoryIDList = show.getCategoryIDList();
 		fRatingID = show.getRatingID();
 		fLanguageID = show.getLanguageID();
 		fIsAdult = show.getIsAdult();
 
-		fShowFormatList = showFormatList;
-		fShowCostList = showCostList;
+		fShowRentalList = show.getShowRentalList();
 	}
 
 	/* Implementation */
@@ -74,7 +71,6 @@ public class ShowDetail implements Writeable
 		writer.writeDataID("LanguageID", fLanguageID, LanguageID.MaxLength);
 		writer.writeBoolean("IsAdult", fIsAdult);
 
-		writer.writeList("ShowFormat", fShowFormatList);
-		writer.writeList("ShowCost", fShowCostList);
+		writer.writeList("ShowRental", fShowRentalList);
 	}
 }

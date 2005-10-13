@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import com.inetvod.common.core.CtorUtil;
 
-public class ShowCostList extends ArrayList<ShowCost>
+public class ShowRentalList extends ArrayList<ShowRental>
 {
-	public static final Constructor<ShowCostList> Ctor = CtorUtil.getCtorDefault(ShowCostList.class);
+	public static final Constructor<ShowRentalList> Ctor = CtorUtil.getCtorDefault(ShowRentalList.class);
 }

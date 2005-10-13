@@ -16,7 +16,7 @@ public class ShowFormat implements Readable, Writeable
 	/* Constants */
 	public static Constructor<ShowFormat> CtorDataReader = DataReader.getCtor(ShowFormat.class);
 
-	/* Properties */
+	/* Fields */
 	protected MediaEncoding fMediaEncoding;
 	protected MediaContainer fMediaContainer;
 	protected Short fHorzResolution;

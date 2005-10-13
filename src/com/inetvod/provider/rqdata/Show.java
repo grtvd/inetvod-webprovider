@@ -27,18 +27,20 @@ public class Show implements Readable, Writeable
 	public static final int ShowAccessKeyMaxLength = Short.MAX_VALUE;
 
 	/* Fields */
-	protected ShowID fShowID;
-	protected String fName;
-	protected String fEpisodeName;
-	protected String fEpisodeNumber;
-	protected Date fReleasedOn;
-	protected Short fReleasedYear;
-	protected String fDescription;
-	protected Short fRunningMins;
-	protected String fPictureURL;
-	protected RatingID fRatingID;
-	protected LanguageID fLanguageID;
-	protected Boolean fIsAdult;
+	private ShowID fShowID;
+	private String fName;
+	private String fEpisodeName;
+	private String fEpisodeNumber;
+	private Date fReleasedOn;
+	private Short fReleasedYear;
+	private String fDescription;
+	private Short fRunningMins;
+	private String fPictureURL;
+	private CategoryIDList fCategoryIDList;
+	private RatingID fRatingID;
+	private LanguageID fLanguageID;
+	private Boolean fIsAdult;
+	private ShowRentalList fShowRentalList;
 
 	/* Getters and Setters */
 	public ShowID getShowID() { return fShowID; }
@@ -67,6 +69,8 @@ public class Show implements Readable, Writeable
 	public String getPictureURL() { return fPictureURL; }
 	public void setPictureURL(String pictureURL) { fPictureURL = pictureURL; }
 
+	public CategoryIDList getCategoryIDList() { return fCategoryIDList; }
+
 	public RatingID getRatingID() { return fRatingID; }
 	public void setRatingID(RatingID ratingID) { fRatingID = ratingID; }
 
@@ -75,6 +79,8 @@ public class Show implements Readable, Writeable
 
 	public Boolean getIsAdult() { return fIsAdult; }
 	public void setIsAdult(Boolean isAdult) { fIsAdult = isAdult; }
+
+	public ShowRentalList getShowRentalList() { return fShowRentalList; }
 
 	/* Constuction Methods */
 	private Show()
@@ -107,8 +113,11 @@ public class Show implements Readable, Writeable
 		fDescription = reader.readString("Description", DescriptionMaxLength);
 		fRunningMins = reader.readShort("RunningMins");
 		fPictureURL = reader.readString("PictureURL", PictureURLMaxLength);
+		fCategoryIDList = reader.readStringList("CategoryID", CategoryID.MaxLength, CategoryIDList.Ctor, CategoryID.CtorString);
 		fRatingID = reader.readDataID("RatingID", RatingID.MaxLength, RatingID.CtorString);
+		fLanguageID = reader.readDataID("LanguageID", LanguageID.MaxLength, LanguageID.CtorString);
 		fIsAdult = reader.readBoolean("IsAdult");
+		fShowRentalList = reader.readList("ShowRental", ShowRentalList.Ctor, ShowRental.CtorDataReader);
 	}
 
 	public void writeTo(DataWriter writer) throws Exception
@@ -122,7 +131,10 @@ public class Show implements Readable, Writeable
 		writer.writeString("Description", fDescription, DescriptionMaxLength);
 		writer.writeShort("RunningMins", fRunningMins);
 		writer.writeString("PictureURL", fPictureURL, PictureURLMaxLength);
+		writer.writeStringList("CategoryID", fCategoryIDList, CategoryID.MaxLength);
 		writer.writeDataID("RatingID", fRatingID, RatingID.MaxLength);
+		writer.writeDataID("LanguageID", fLanguageID, LanguageID.MaxLength);
 		writer.writeBoolean("IsAdult", fIsAdult);
+		writer.writeList("ShowRental", fShowRentalList);
 	}
 }
