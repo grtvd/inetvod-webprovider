@@ -12,4 +12,14 @@ import com.inetvod.common.core.CtorUtil;
 public class ShowRentalList extends ArrayList<ShowRental>
 {
 	public static final Constructor<ShowRentalList> Ctor = CtorUtil.getCtorDefault(ShowRentalList.class);
+
+	/* Implementation */
+	public ShowRental findByShowFormat(ShowFormat showFormat)
+	{
+		for(ShowRental showRental : this)
+			if(showRental.getShowFormatList().contains(showFormat))
+				return showRental;
+
+		return null;
+	}
 }

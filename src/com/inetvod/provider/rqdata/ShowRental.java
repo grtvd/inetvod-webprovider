@@ -20,6 +20,10 @@ public class ShowRental implements Readable, Writeable
 	private ShowFormatList fShowFormatList;
 	private ShowCostList fShowCostList;
 
+	/* Getters & Setters */
+	public ShowFormatList getShowFormatList() { return fShowFormatList; } 
+	public ShowCostList getShowCostList() { return fShowCostList; }
+
 	/* Construction */
 	public ShowRental(DataReader reader) throws Exception
 	{

@@ -10,6 +10,7 @@ import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
 import com.inetvod.common.core.Readable;
 import com.inetvod.common.core.Writeable;
+import com.inetvod.common.core.CompUtil;
 
 public class ShowFormat implements Readable, Writeable
 {
@@ -17,12 +18,12 @@ public class ShowFormat implements Readable, Writeable
 	public static Constructor<ShowFormat> CtorDataReader = DataReader.getCtor(ShowFormat.class);
 
 	/* Fields */
-	protected MediaEncoding fMediaEncoding;
-	protected MediaContainer fMediaContainer;
-	protected Short fHorzResolution;
-	protected Short fVertResolution;
-	protected Short fFramesPerSecond;
-	protected Short fBitRate;
+	private MediaEncoding fMediaEncoding;
+	private MediaContainer fMediaContainer;
+	private Short fHorzResolution;
+	private Short fVertResolution;
+	private Short fFramesPerSecond;
+	private Short fBitRate;
 
 	/* Getters and Setters */
 	public MediaEncoding getMediaEncoding() { return fMediaEncoding; }
@@ -51,6 +52,22 @@ public class ShowFormat implements Readable, Writeable
 	public ShowFormat(DataReader reader) throws Exception
 	{
 		readFrom(reader);
+	}
+
+	/* Implementation */
+	@SuppressWarnings({"NonFinalFieldReferenceInEquals"})
+	@Override public boolean equals(Object obj)
+	{
+		if(!(obj instanceof ShowFormat))
+			return false;
+		ShowFormat showFormat = (ShowFormat)obj;
+
+		return CompUtil.areEqual(fMediaEncoding.toString(), showFormat.fMediaEncoding.toString())
+			&& CompUtil.areEqual(fMediaContainer.toString(), showFormat.fMediaContainer.toString())
+			&& CompUtil.areEqual(fHorzResolution, showFormat.fHorzResolution)
+			&& CompUtil.areEqual(fVertResolution, showFormat.fVertResolution)
+			&& CompUtil.areEqual(fFramesPerSecond, showFormat.fFramesPerSecond)
+			&& CompUtil.areEqual(fBitRate, showFormat.fBitRate);
 	}
 
 	public void readFrom(DataReader reader) throws Exception

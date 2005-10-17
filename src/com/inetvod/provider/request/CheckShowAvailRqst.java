@@ -4,23 +4,23 @@
  */
 package com.inetvod.provider.request;
 
-import com.inetvod.common.core.CurrencyID;
 import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
-import com.inetvod.common.core.Money;
 import com.inetvod.common.core.Writeable;
+import com.inetvod.common.core.Logger;
 import com.inetvod.provider.rqdata.DataManager;
 import com.inetvod.provider.rqdata.Show;
-import com.inetvod.provider.rqdata.ShowCost;
-import com.inetvod.provider.rqdata.ShowCostList;
-import com.inetvod.provider.rqdata.ShowCostType;
+import com.inetvod.provider.rqdata.ShowFormat;
 import com.inetvod.provider.rqdata.ShowID;
+import com.inetvod.provider.rqdata.ShowRental;
+import com.inetvod.provider.rqdata.ShowRentalList;
 import com.inetvod.provider.rqdata.StatusCode;
 
 public class CheckShowAvailRqst extends AuthenRequestable
 {
 	/* Fields */
-	protected ShowID fShowID;
+	private ShowID fShowID;
+	private ShowFormat fShowFormat;
 
 	/* Construction */
 	public CheckShowAvailRqst(DataReader reader) throws Exception
@@ -44,39 +44,26 @@ public class CheckShowAvailRqst extends AuthenRequestable
 		// If Member does not have a sufficient subscription level, return StatusCode.sc_ShowLevelInsufficient;
 		// If Member is not allowed to rent this Show for other reason, return StatusCode.sc_ShowNoAccess;
 
-		CheckShowAvailResp response = new CheckShowAvailResp();
-
 		// TODO: fetch various show costs and rental periods for specific Member
-		ShowCostList showCostList = new ShowCostList();
-		ShowCost showCost;
-
-		showCost = new ShowCost();
-		showCost.setShowCostType(ShowCostType.PayPerView);
-		showCost.setCost(new Money(CurrencyID.USD, 2.95));
-		showCost.setCostDisplay("$2.95");
-		showCost.setRentalHours((short)48);
-		showCostList.add(showCost);
-
-		showCost = new ShowCost();
-		showCost.setShowCostType(ShowCostType.PayPerView);
-		showCost.setCost(new Money(CurrencyID.USD, 4.95));
-		showCost.setCostDisplay("$4.95");
-		showCost.setRentalHours((short)168);
-		showCostList.add(showCost);
+		ShowRental showRental = validateShowFormat(show);
+		if (showRental == null)
+			return null;
 
 		// set response data
-		response.setShowCostList(showCostList);
+		CheckShowAvailResp response = new CheckShowAvailResp();
+		response.setShowCostList(showRental.getShowCostList());
 
 		fStatusCode = StatusCode.sc_Success;
 
 		return response;
 	}
 
-	protected Show validateShow()
+	private Show validateShow()
 	{
 		if(fShowID == null)
 		{
 			fStatusCode = StatusCode.sc_RequestMissingRequired;
+			Logger.logInfo(this, "validateShow", "ShowID == null");
 			return null;
 		}
 
@@ -85,19 +72,43 @@ public class CheckShowAvailRqst extends AuthenRequestable
 		if(show == null)
 		{
 			fStatusCode = StatusCode.sc_RequestInvalid;
+			Logger.logInfo(this, "validateShow", String.format("ShowID(%s) not found", fShowID));
 			return null;
 		}
 
 		return show;
 	}
 
+	private ShowRental validateShowFormat(Show show)
+	{
+		if(fShowFormat == null)
+		{
+			fStatusCode = StatusCode.sc_RequestMissingRequired;
+			Logger.logInfo(this, "validateShow", "ShowFormat == null");
+			return null;
+		}
+
+		ShowRentalList showRentalList = show.getShowRentalList();
+		ShowRental showRental = showRentalList.findByShowFormat(fShowFormat);
+		if(showRental == null)
+		{
+			fStatusCode = StatusCode.sc_RequestInvalid;
+			Logger.logInfo(this, "validateShow", "ShowFormat not found");
+			return null;
+		}
+
+		return showRental;
+	}
+
 	public void readFrom(DataReader reader) throws Exception
 	{
-		fShowID = (ShowID)reader.readDataID("ShowID", ShowID.MaxLength, ShowID.CtorString);
+		fShowID = reader.readDataID("ShowID", ShowID.MaxLength, ShowID.CtorString);
+		fShowFormat = reader.readObject("ShowFormat", ShowFormat.CtorDataReader);
 	}
 
 	public void writeTo(DataWriter writer) throws Exception
 	{
 		writer.writeDataID("ShowID", fShowID, ShowID.MaxLength);
+		writer.writeObject("ShowFormat", fShowFormat);
 	}
 }
