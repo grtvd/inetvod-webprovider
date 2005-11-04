@@ -5,7 +5,7 @@
 package com.inetvod.provider.request;
 
 import java.util.Calendar;
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
@@ -19,6 +19,7 @@ import com.inetvod.provider.rqdata.ShowCost;
 import com.inetvod.provider.rqdata.ShowCostType;
 import com.inetvod.provider.rqdata.ShowFormat;
 import com.inetvod.provider.rqdata.ShowID;
+import com.inetvod.provider.rqdata.ShowRental;
 import com.inetvod.provider.rqdata.StatusCode;
 
 public class RentShowRqst extends AuthenRequestable
@@ -26,7 +27,7 @@ public class RentShowRqst extends AuthenRequestable
 	/* Constants */
 	public static final int PlayerIPAddressMaxLength = 16;
 
-	/* Properties */
+	/* Fields */
 	protected ShowID fShowID;
 	protected String fPlayerIPAddress;
 	protected ShowFormat fShowFormat;
@@ -53,10 +54,11 @@ public class RentShowRqst extends AuthenRequestable
 			return null;
 
 		// Validate the request
-		if(!validateShowFormat())
+		ShowRental showRental = validateShowFormat(show);
+		if(showRental == null)
 			return null;
 
-		if(!validateShowCost())
+		if(!validateShowCost(showRental))
 			return null;
 
 		if(!validatePayment())
@@ -78,8 +80,8 @@ public class RentShowRqst extends AuthenRequestable
 
 		RentShowResp response = new RentShowResp();
 
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(new Date());
+		Calendar cal = new GregorianCalendar();
+		cal.add(Calendar.HOUR, fApprovedCost.getRentalHours());
 		//TODO: set expriation date of rental, if any
 		response.setAvailableUntil(cal.getTime());
 		//TODO: return the shows licensing information
@@ -112,20 +114,27 @@ public class RentShowRqst extends AuthenRequestable
 		return show;
 	}
 
-	protected boolean validateShowFormat()
+	protected ShowRental validateShowFormat(Show show)
 	{
 		if(fShowFormat == null)
 		{
 			fStatusCode = StatusCode.sc_RequestMissingRequired;
-			return false;
+			return null;
 		}
 
 		//TODO: Confirm ShowFormat is valid.  If not, set fStatusCode = StatusCode.sc_RequestInvalid; and return false
 
-		return true;
+		ShowRental showRental = show.getShowRentalList().findByShowFormat(fShowFormat);
+		if(showRental == null)
+		{
+			fStatusCode = StatusCode.sc_RequestInvalid;
+			return null;
+		}
+
+		return showRental;
 	}
 
-	protected boolean validateShowCost()
+	protected boolean validateShowCost(ShowRental showRental)
 	{
 		if(fApprovedCost == null)
 		{
@@ -134,6 +143,12 @@ public class RentShowRqst extends AuthenRequestable
 		}
 
 		//TODO: Confirm ApprovedCost is valid.  If not, set fStatusCode = StatusCode.sc_RequestInvalid; and return false
+
+		if(!showRental.getShowCostList().contains(fApprovedCost))
+		{
+			fStatusCode = StatusCode.sc_RequestInvalid;
+			return false;
+		}
 
 		return true;
 	}

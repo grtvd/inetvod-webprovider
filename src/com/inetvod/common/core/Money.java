@@ -8,11 +8,12 @@ import java.lang.reflect.Constructor;
 
 public class Money implements Readable, Writeable
 {
+	/* Constants */
 	public static final Constructor<Money> CtorDataReader = DataReader.getCtor(Money.class);
 
-	/* Properties */
-	protected CurrencyID fCurrencyID;
-	protected Double fAmount;
+	/* Fields */
+	private CurrencyID fCurrencyID;
+	private Double fAmount;
 
 	/* Getters and Setters */
 	public CurrencyID getCurrencyID() { return fCurrencyID; }
@@ -35,6 +36,17 @@ public class Money implements Readable, Writeable
 	public Money(DataReader reader) throws Exception
 	{
 		readFrom(reader);
+	}
+
+	@SuppressWarnings({"NonFinalFieldReferenceInEquals"})
+	@Override public boolean equals(Object obj)
+	{
+		if(!(obj instanceof Money))
+			return false;
+		Money money = (Money)obj;
+
+		return CompUtil.areEqual(fCurrencyID, money.fCurrencyID)
+			&& CompUtil.areEqual(fAmount, money.fAmount);
 	}
 
 	public void readFrom(DataReader reader) throws Exception

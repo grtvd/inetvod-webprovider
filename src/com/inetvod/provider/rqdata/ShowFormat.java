@@ -44,7 +44,7 @@ public class ShowFormat implements Readable, Writeable
 	public Short getBitRate() { return fBitRate; }
 	public void setBitRate(Short bitRate) { fBitRate = bitRate; }
 
-	/* Constuction Methods */
+	/* Constuction */
 	public ShowFormat()
 	{
 	}
@@ -62,8 +62,8 @@ public class ShowFormat implements Readable, Writeable
 			return false;
 		ShowFormat showFormat = (ShowFormat)obj;
 
-		return CompUtil.areEqual(fMediaEncoding.toString(), showFormat.fMediaEncoding.toString())
-			&& CompUtil.areEqual(fMediaContainer.toString(), showFormat.fMediaContainer.toString())
+		return CompUtil.areEqual(fMediaEncoding, showFormat.fMediaEncoding)
+			&& CompUtil.areEqual(fMediaContainer, showFormat.fMediaContainer)
 			&& CompUtil.areEqual(fHorzResolution, showFormat.fHorzResolution)
 			&& CompUtil.areEqual(fVertResolution, showFormat.fVertResolution)
 			&& CompUtil.areEqual(fFramesPerSecond, showFormat.fFramesPerSecond)
