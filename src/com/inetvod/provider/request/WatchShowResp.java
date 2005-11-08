@@ -12,9 +12,6 @@ import com.inetvod.provider.rqdata.License;
 
 public class WatchShowResp implements Writeable
 {
-	/* Constants */
-	public static final int ShowAccessKeyMaxLength = Short.MAX_VALUE;
-
 	/* Fields */
 	protected Date fAvailableUntil;
 	protected License fLicense;

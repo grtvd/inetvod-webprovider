@@ -5,7 +5,7 @@
 package com.inetvod.provider.request;
 
 import java.util.Calendar;
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 import com.inetvod.common.core.DataReader;
 import com.inetvod.common.core.DataWriter;
@@ -51,8 +51,8 @@ public class WatchShowRqst extends AuthenRequestable
 
 		WatchShowResp response = new WatchShowResp();
 
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(new Date());
+		Calendar cal = new GregorianCalendar();
+		cal.add(Calendar.HOUR, 48);
 		//TODO: set expriation date of rental, if any
 		response.setAvailableUntil(cal.getTime());
 
