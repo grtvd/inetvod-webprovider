@@ -81,7 +81,7 @@ public class RentShowRqst extends AuthenRequestable
 		RentShowResp response = new RentShowResp();
 
 		Calendar cal = new GregorianCalendar();
-		cal.add(Calendar.HOUR, fApprovedCost.getRentalHours());
+		cal.add(Calendar.DATE, 30);
 		//TODO: set expriation date of rental, if any
 		response.setAvailableUntil(cal.getTime());
 		//TODO: return the shows licensing information
