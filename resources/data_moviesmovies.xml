@@ -269,7 +269,8 @@
 	</Show>
 	<Show>
 		<ShowID>moviesmovies1068</ShowID>
-		<Name>The Three Stooges: Flatheads</Name>
+		<Name>The Three Stooges</Name>
+		<EpisodeName>Flatheads</EpisodeName>
 		<ReleasedYear>1966</ReleasedYear>
 		<Description>Starring: The Three Stooges</Description>
 		<RunningMins>10</RunningMins>
@@ -317,7 +318,8 @@
 	</Show>
 	<Show>
 		<ShowID>moviesmovies1072</ShowID>
-		<Name>The Three Stooges: Malice in the Palace</Name>
+		<Name>The Three Stooges</Name>
+		<EpisodeName>Malice in the Palace</EpisodeName>
 		<ReleasedYear>1949</ReleasedYear>
 		<Description>Starring: The Three Stooges</Description>
 		<RunningMins>16</RunningMins>
@@ -365,7 +367,8 @@
 	</Show>
 	<Show>
 		<ShowID>moviesmovies1076</ShowID>
-		<Name>The Three Stooges: There Auto Be A Law</Name>
+		<Name>The Three Stooges</Name>
+		<EpisodeName>There Auto Be A Law</EpisodeName>
 		<ReleasedYear>1965</ReleasedYear>
 		<Description>Starring: The Three Stooges</Description>
 		<RunningMins>3</RunningMins>
@@ -731,7 +734,7 @@
 		<RunningMins>26</RunningMins>
 		<CategoryID>drama</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>
@@ -949,7 +952,8 @@
 	</Show>
 	<Show>
 		<ShowID>moviesmovies202</ShowID>
-		<Name>Campaigns in Europe: A Free Paris</Name>
+		<Name>Campaigns in Europe</Name>
+		<EpisodeName>A Free Paris</EpisodeName>
 		<ReleasedYear>1995</ReleasedYear>
 		<Description>Starring: N/A</Description>
 		<RunningMins>53</RunningMins>
@@ -997,7 +1001,8 @@
 	</Show>
 	<Show>
 		<ShowID>moviesmovies206</ShowID>
-		<Name>Campaigns in Europe: Invasion of Sicily</Name>
+		<Name>Campaigns in Europe</Name>
+		<EpisodeName>Invasion of Sicily</EpisodeName>
 		<ReleasedYear>1995</ReleasedYear>
 		<Description>Starring: N/A</Description>
 		<RunningMins>75</RunningMins>
@@ -1906,7 +1911,7 @@
 		<RunningMins>51</RunningMins>
 		<CategoryID>trailers</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>
@@ -1954,7 +1959,7 @@
 		<RunningMins>87</RunningMins>
 		<CategoryID>comedy</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>
@@ -2002,7 +2007,7 @@
 		<RunningMins>86</RunningMins>
 		<CategoryID>thriller</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>
@@ -2497,7 +2502,7 @@
 		<RunningMins>105</RunningMins>
 		<CategoryID>drama</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>
@@ -4175,7 +4180,7 @@
 		<RunningMins>24</RunningMins>
 		<CategoryID>drama</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>

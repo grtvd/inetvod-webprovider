@@ -237,7 +237,8 @@
 	</Show>
 	<Show>
 		<ShowID>excellentvideos1070</ShowID>
-		<Name>The Three Stooges: Gagster Dragster</Name>
+		<Name>The Three Stooges</Name>
+		<EpisodeName>Gagster Dragster</EpisodeName>
 		<ReleasedYear>1964</ReleasedYear>
 		<Description>Starring: The Three Stooges</Description>
 		<RunningMins>6</RunningMins>
@@ -277,7 +278,8 @@
 	</Show>
 	<Show>
 		<ShowID>excellentvideos1074</ShowID>
-		<Name>The Three Stooges: Sing a Song of Six Pants</Name>
+		<Name>The Three Stooges</Name>
+		<EpisodeName>Sing a Song of Six Pants</EpisodeName>
 		<ReleasedYear>1947</ReleasedYear>
 		<Description>Starring: Moe Howard, Larry Fine &amp; Shemp Howard</Description>
 		<RunningMins>17</RunningMins>
@@ -953,7 +955,8 @@
 	</Show>
 	<Show>
 		<ShowID>excellentvideos204</ShowID>
-		<Name>Campaigns in Europe: Code Name: Overlord</Name>
+		<Name>Campaigns in Europe</Name>
+		<EpisodeName>Code Name: Overlord</EpisodeName>
 		<ReleasedYear>1995</ReleasedYear>
 		<Description>Starring: N/A</Description>
 		<RunningMins>62</RunningMins>
@@ -1001,7 +1004,8 @@
 	</Show>
 	<Show>
 		<ShowID>excellentvideos208</ShowID>
-		<Name>Campaigns in Europe: Victory Preview</Name>
+		<Name>Campaigns in Europe</Name>
+		<EpisodeName>Victory Preview</EpisodeName>
 		<ReleasedYear>1995</ReleasedYear>
 		<Description>Starring: N/A</Description>
 		<RunningMins>71</RunningMins>
@@ -1921,7 +1925,7 @@
 		<RunningMins>117</RunningMins>
 		<CategoryID>thriller</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>
@@ -1961,7 +1965,7 @@
 		<RunningMins>70</RunningMins>
 		<CategoryID>scifi</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>
@@ -2465,7 +2469,7 @@
 		<RunningMins>58</RunningMins>
 		<CategoryID>action</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>
@@ -3821,7 +3825,7 @@
 		<RunningMins>88</RunningMins>
 		<CategoryID>comedy</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>
@@ -5219,7 +5223,7 @@
 		<RunningMins>77</RunningMins>
 		<CategoryID>comedy</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>

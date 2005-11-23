@@ -285,7 +285,8 @@
 	</Show>
 	<Show>
 		<ShowID>internetvideos1067</ShowID>
-		<Name>The Three Stooges: Disorder in the Court</Name>
+		<Name>The Three Stooges</Name>
+		<EpisodeName>Disorder in the Court</EpisodeName>
 		<ReleasedYear>1936</ReleasedYear>
 		<Description>Starring: Moe Howard, Larry Fine, Curly Howard</Description>
 		<RunningMins>16</RunningMins>
@@ -333,7 +334,8 @@
 	</Show>
 	<Show>
 		<ShowID>internetvideos1071</ShowID>
-		<Name>The Three Stooges: Hair Brained Barbers</Name>
+		<Name>The Three Stooges</Name>
+		<EpisodeName>Hair Brained Barbers</EpisodeName>
 		<ReleasedYear>1966</ReleasedYear>
 		<Description>Starring: The Three Stooges</Description>
 		<RunningMins>6</RunningMins>
@@ -373,7 +375,8 @@
 	</Show>
 	<Show>
 		<ShowID>internetvideos1075</ShowID>
-		<Name>The Three Stooges: Tee For Three</Name>
+		<Name>The Three Stooges</Name>
+		<EpisodeName>Tee For Three</EpisodeName>
 		<ReleasedYear>1966</ReleasedYear>
 		<Description>Starring: The Three Stooges</Description>
 		<RunningMins>6</RunningMins>
@@ -962,7 +965,8 @@
 	</Show>
 	<Show>
 		<ShowID>internetvideos205</ShowID>
-		<Name>Campaigns in Europe: Eisenhower</Name>
+		<Name>Campaigns in Europe</Name>
+		<EpisodeName>Eisenhower</EpisodeName>
 		<ReleasedYear>1995</ReleasedYear>
 		<Description>Starring: N/A</Description>
 		<RunningMins>75</RunningMins>
@@ -1919,7 +1923,7 @@
 		<RunningMins>91</RunningMins>
 		<CategoryID>comedy</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>
@@ -1959,7 +1963,7 @@
 		<RunningMins>74</RunningMins>
 		<CategoryID>thriller</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>
@@ -2007,7 +2011,7 @@
 		<RunningMins>79</RunningMins>
 		<CategoryID>thriller</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>
@@ -3275,7 +3279,7 @@
 		<RunningMins>80</RunningMins>
 		<CategoryID>thriller</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>

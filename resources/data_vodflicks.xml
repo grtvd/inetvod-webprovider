@@ -229,7 +229,8 @@
 	</Show>
 	<Show>
 		<ShowID>vodflicks1069</ShowID>
-		<Name>The Three Stooges: Flycycle Built For Two</Name>
+		<Name>The Three Stooges</Name>
+		<EpisodeName>Flycycle Built For Two</EpisodeName>
 		<ReleasedYear>1964</ReleasedYear>
 		<Description>Starring: The Three Stooges</Description>
 		<RunningMins>7</RunningMins>
@@ -277,7 +278,8 @@
 	</Show>
 	<Show>
 		<ShowID>vodflicks1073</ShowID>
-		<Name>The Three Stooges: Safari so Good</Name>
+		<Name>The Three Stooges</Name>
+		<EpisodeName>Safari so Good</EpisodeName>
 		<ReleasedYear>1965</ReleasedYear>
 		<Description>Starring: The Three Stooges</Description>
 		<RunningMins>5</RunningMins>
@@ -325,7 +327,8 @@
 	</Show>
 	<Show>
 		<ShowID>vodflicks1077</ShowID>
-		<Name>The Three Stooges: Thimk or Thwim</Name>
+		<Name>The Three Stooges</Name>
+		<EpisodeName>Thimk or Thwim</EpisodeName>
 		<ReleasedYear>1965</ReleasedYear>
 		<Description>Starring: The Three Stooges</Description>
 		<RunningMins>7</RunningMins>
@@ -917,7 +920,8 @@
 	</Show>
 	<Show>
 		<ShowID>vodflicks203</ShowID>
-		<Name>Campaigns in Europe: Airwar in Europe</Name>
+		<Name>Campaigns in Europe</Name>
+		<EpisodeName>Airwar in Europe</EpisodeName>
 		<ReleasedYear>1995</ReleasedYear>
 		<Description>Starring: N/A</Description>
 		<RunningMins>72</RunningMins>
@@ -965,7 +969,8 @@
 	</Show>
 	<Show>
 		<ShowID>vodflicks207</ShowID>
-		<Name>Campaigns in Europe: Launchpad England</Name>
+		<Name>Campaigns in Europe</Name>
+		<EpisodeName>Launchpad England</EpisodeName>
 		<ReleasedYear>1995</ReleasedYear>
 		<Description>Starring: N/A</Description>
 		<RunningMins>72</RunningMins>
@@ -1914,7 +1919,7 @@
 		<RunningMins>80</RunningMins>
 		<CategoryID>thriller</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>
@@ -1962,7 +1967,7 @@
 		<RunningMins>9</RunningMins>
 		<CategoryID>drama</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>
@@ -2098,7 +2103,7 @@
 		<RunningMins>99</RunningMins>
 		<CategoryID>comedy</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>
@@ -2457,7 +2462,7 @@
 		<RunningMins>86</RunningMins>
 		<CategoryID>scifi</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>
@@ -3136,7 +3141,7 @@
 		<RunningMins>80</RunningMins>
 		<CategoryID>thriller</CategoryID>
 		<LanguageID>eng</LanguageID>
-		<IsAdult>false</IsAdult>
+		<IsAdult>true</IsAdult>
 		<ShowRental>
 			<ShowFormat>
 				<MediaEncoding>WMV9</MediaEncoding>
