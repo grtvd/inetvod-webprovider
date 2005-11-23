@@ -4,22 +4,22 @@
  */
 package com.inetvod.provider.request;
 
-import com.inetvod.common.core.Writeable;
 import com.inetvod.common.core.DataWriter;
-import com.inetvod.provider.rqdata.ShowCostList;
+import com.inetvod.common.core.Writeable;
+import com.inetvod.provider.rqdata.ShowCost;
 
 public class CheckShowAvailResp implements Writeable
 {
 	/* Properties */
-	protected ShowCostList fShowCostList;
+	protected ShowCost fShowCost;
 
 	/* Getters/Setters */
-	public ShowCostList getShowCostList() { return fShowCostList; }
-	public void setShowCostList(ShowCostList showCostList) { fShowCostList = showCostList; }
+	public ShowCost getShowCost() { return fShowCost; }
+	public void setShowCost(ShowCost showCost) { fShowCost = showCost; }
 
 	/* Implementation */
 	public void writeTo(DataWriter writer) throws Exception
 	{
-		writer.writeList("ShowCost", fShowCostList);
+		writer.writeObject("ShowCost", fShowCost);
 	}
 }

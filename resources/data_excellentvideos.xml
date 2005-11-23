@@ -28,7 +28,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>48</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>48</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -47,7 +48,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>48</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>48</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -75,7 +77,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -94,7 +97,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -119,7 +123,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -134,7 +137,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -163,7 +165,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -182,7 +185,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -212,7 +216,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -231,7 +236,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -257,7 +263,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -272,7 +277,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -302,7 +306,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -321,7 +326,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -350,7 +356,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -369,7 +376,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -394,7 +402,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -409,7 +416,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -438,7 +444,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -457,7 +464,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -485,7 +493,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -504,7 +513,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -528,7 +538,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -543,7 +552,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -572,7 +580,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -591,7 +600,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -620,7 +630,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -639,7 +650,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -664,7 +676,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -679,7 +690,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -707,7 +717,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -726,7 +737,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -755,7 +767,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -774,7 +787,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -802,7 +816,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -821,7 +836,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -850,7 +866,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -869,7 +886,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -894,7 +912,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -909,7 +926,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -934,7 +950,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -949,7 +964,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -979,7 +993,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -998,7 +1013,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1028,7 +1044,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1047,7 +1064,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1072,7 +1090,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1087,7 +1104,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1116,7 +1132,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1135,7 +1152,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1164,7 +1182,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1183,7 +1202,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1208,7 +1228,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1223,7 +1242,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1252,7 +1270,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1271,7 +1290,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1300,7 +1320,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1319,7 +1340,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1348,7 +1370,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1367,7 +1390,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1396,7 +1420,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1415,7 +1440,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1440,7 +1466,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1455,7 +1480,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1484,7 +1508,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1503,7 +1528,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1532,7 +1558,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1551,7 +1578,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1576,7 +1604,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1591,7 +1618,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1616,7 +1642,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1631,7 +1656,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1662,7 +1686,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1681,7 +1706,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1710,7 +1736,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1729,7 +1756,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1754,7 +1782,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1769,7 +1796,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1798,7 +1824,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1817,7 +1844,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1846,7 +1874,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1865,7 +1894,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1894,7 +1924,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1913,7 +1944,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1938,7 +1970,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -1953,7 +1984,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -1982,7 +2012,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2001,7 +2032,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2030,7 +2062,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2049,7 +2082,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2074,7 +2108,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2089,7 +2122,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2118,7 +2150,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2137,7 +2170,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2166,7 +2200,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2185,7 +2220,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2210,7 +2246,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2225,7 +2260,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2254,7 +2288,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2273,7 +2308,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2302,7 +2338,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2321,7 +2358,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2350,7 +2388,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2369,7 +2408,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2398,7 +2438,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2417,7 +2458,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2442,7 +2484,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2457,7 +2498,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2482,7 +2522,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2497,7 +2536,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2526,7 +2564,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2545,7 +2584,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2574,7 +2614,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2593,7 +2634,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2618,7 +2660,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2633,7 +2674,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2662,7 +2702,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2681,7 +2722,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2709,7 +2751,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2728,7 +2771,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2753,7 +2797,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2768,7 +2811,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2797,7 +2839,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2816,7 +2859,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2845,7 +2889,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2864,7 +2909,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2889,7 +2935,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2904,7 +2949,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2933,7 +2977,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -2952,7 +2997,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -2981,7 +3027,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3000,7 +3047,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3025,7 +3073,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3040,7 +3087,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3069,7 +3115,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3088,7 +3135,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3117,7 +3165,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3136,7 +3185,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3161,7 +3211,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3176,7 +3225,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3205,7 +3253,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3224,7 +3273,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3253,7 +3303,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3272,7 +3323,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3296,7 +3348,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3311,7 +3362,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3340,7 +3390,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3359,7 +3410,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3388,7 +3440,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3407,7 +3460,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3435,7 +3489,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3454,7 +3509,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3479,7 +3535,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3494,7 +3549,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3523,7 +3577,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3542,7 +3597,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3571,7 +3627,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3590,7 +3647,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3619,7 +3677,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3638,7 +3697,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3663,7 +3723,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3678,7 +3737,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3703,7 +3761,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3718,7 +3775,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3747,7 +3803,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3766,7 +3823,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3794,7 +3852,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3813,7 +3872,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3838,7 +3898,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3853,7 +3912,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3882,7 +3940,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3901,7 +3960,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3930,7 +3990,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3949,7 +4010,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -3978,7 +4040,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -3997,7 +4060,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4022,7 +4086,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4037,7 +4100,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4066,7 +4128,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4085,7 +4148,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4114,7 +4178,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4133,7 +4198,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4158,7 +4224,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4173,7 +4238,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4202,7 +4266,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4221,7 +4286,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4250,7 +4316,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4269,7 +4336,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4294,7 +4362,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4309,7 +4376,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4338,7 +4404,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4357,7 +4424,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4386,7 +4454,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4405,7 +4474,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4434,7 +4504,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4453,7 +4524,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4477,7 +4549,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4492,7 +4563,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4517,7 +4587,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4532,7 +4601,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4561,7 +4629,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4580,7 +4649,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4605,7 +4675,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4620,7 +4689,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4649,7 +4717,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4668,7 +4737,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4693,7 +4763,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4708,7 +4777,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4737,7 +4805,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4756,7 +4825,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4785,7 +4855,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4804,7 +4875,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4829,7 +4901,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4844,7 +4915,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4873,7 +4943,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4892,7 +4963,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4921,7 +4993,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4940,7 +5013,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -4965,7 +5039,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -4980,7 +5053,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -5009,7 +5081,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -5028,7 +5101,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -5057,7 +5131,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -5076,7 +5151,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -5104,7 +5180,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -5123,7 +5200,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -5148,7 +5226,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -5163,7 +5240,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -5192,7 +5268,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -5211,7 +5288,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -5240,7 +5318,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -5259,7 +5338,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -5284,7 +5364,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -5299,7 +5378,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -5328,7 +5406,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -5347,7 +5426,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -5376,7 +5456,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -5395,7 +5476,8 @@
 					<Amount>2.95</Amount>
 				</Cost>
 				<CostDisplay>$2.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -5420,7 +5502,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -5435,7 +5516,6 @@
 			<ShowCost>
 				<ShowCostType>Free</ShowCostType>
 				<CostDisplay>Free</CostDisplay>
-				<RentalHours>72</RentalHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
@@ -5464,7 +5544,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 		<ShowRental>
@@ -5483,7 +5564,8 @@
 					<Amount>9.95</Amount>
 				</Cost>
 				<CostDisplay>$9.95</CostDisplay>
-				<RentalHours>72</RentalHours>
+				<RentalWindowDays>30</RentalWindowDays>
+				<RentalPeriodHours>72</RentalPeriodHours>
 			</ShowCost>
 		</ShowRental>
 	</Show>
