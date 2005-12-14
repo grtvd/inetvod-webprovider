@@ -25,6 +25,16 @@
 				<ShowCostType>PayPerView</ShowCostType>
 				<Cost>
 					<CurrencyID>USD</CurrencyID>
+					<Amount>0.99</Amount>
+				</Cost>
+				<CostDisplay>$0.99</CostDisplay>
+				<RentalWindowDays>7</RentalWindowDays>
+				<RentalPeriodHours>12</RentalPeriodHours>
+			</ShowCost>
+			<ShowCost>
+				<ShowCostType>PayPerView</ShowCostType>
+				<Cost>
+					<CurrencyID>USD</CurrencyID>
 					<Amount>3.95</Amount>
 				</Cost>
 				<CostDisplay>$3.95</CostDisplay>
