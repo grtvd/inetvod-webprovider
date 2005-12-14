@@ -34,6 +34,8 @@ public class RentShowRqst extends AuthenRequestable
 	protected ShowCost fApprovedCost;
 	protected Payment fPayment;
 
+	protected Show fShow;
+
 	/* Construction */
 	public RentShowRqst(DataReader reader) throws Exception
 	{
@@ -43,18 +45,16 @@ public class RentShowRqst extends AuthenRequestable
 	/* Implementation */
 	public Writeable fulfillRequest()
 	{
+		// Fetch and validate the show
+		if(!validateShow())
+			return null;
+
 		// validate autentication
 		if(!confirmAuthentication())
 			return null;
 
-		// TODO: Confirm valid Show
-		// Fetch and validate the show
-		Show show = validateShow();
-		if (show == null)
-			return null;
-
 		// Validate the request
-		ShowRental showRental = validateShowFormat(show);
+		ShowRental showRental = validateShowFormat(fShow);
 		if(showRental == null)
 			return null;
 
@@ -95,23 +95,28 @@ public class RentShowRqst extends AuthenRequestable
 		return response;
 	}
 
-	protected Show validateShow()
+	protected boolean isMemberRequest()
+	{
+		return wasMemberProvidered() || !fShow.isFreeShowCost();
+	}
+
+	protected boolean validateShow()
 	{
 		if(fShowID == null)
 		{
 			fStatusCode = StatusCode.sc_RequestMissingRequired;
-			return null;
+			return false;
 		}
 
 		//TODO: Actually fetch Show from DB
-		Show show = DataManager.getThe().getShowList().findByID(fShowID);
-		if(show == null)
+		fShow = DataManager.getThe().getShowList().findByID(fShowID);
+		if(fShow == null)
 		{
 			fStatusCode = StatusCode.sc_RequestInvalid;
-			return null;
+			return false;
 		}
 
-		return show;
+		return true;
 	}
 
 	protected ShowRental validateShowFormat(Show show)

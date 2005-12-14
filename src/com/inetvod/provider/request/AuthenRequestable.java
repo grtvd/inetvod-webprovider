@@ -33,6 +33,11 @@ public abstract class AuthenRequestable implements ProviderRequestable
 
 	protected boolean isMemberRequest() { return true; }
 
+	public boolean wasMemberProvidered()
+	{
+		return ((fAuthenticate.getMemberUserID() != null) && (fAuthenticate.getMemberUserID().length() > 0));
+	}
+
 	public boolean confirmAuthentication()
 	{
 		if(fAuthenticate == null)
@@ -52,7 +57,9 @@ public abstract class AuthenRequestable implements ProviderRequestable
 		{
 			//TODO: validate member credentials
 			//TODO: remove temporary conversion to lower-case
-			if(!"member".equals(fAuthenticate.getMemberUserID().toLowerCase())
+			if((fAuthenticate.getMemberUserID() == null)
+				|| (fAuthenticate.getMemberPassword() == null)
+				|| !"member".equals(fAuthenticate.getMemberUserID().toLowerCase())
 				|| !"memberpassword".equals(fAuthenticate.getMemberPassword().toLowerCase()))
 			{
 				fStatusCode = StatusCode.sc_InvalidMemberUserID;

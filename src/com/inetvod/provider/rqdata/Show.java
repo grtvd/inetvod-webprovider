@@ -82,6 +82,16 @@ public class Show implements Readable, Writeable
 
 	public ShowRentalList getShowRentalList() { return fShowRentalList; }
 
+	public boolean isFreeShowCost()
+	{
+		for(ShowRental showRental : fShowRentalList)
+			for(ShowCost showCost : showRental.getShowCostList())
+				if(ShowCostType.Free.equals(showCost.getShowCostType()))
+					return true;
+
+		return false;
+	}
+
 	/* Constuction Methods */
 	private Show()
 	{

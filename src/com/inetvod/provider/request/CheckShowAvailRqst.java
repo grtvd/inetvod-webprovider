@@ -24,6 +24,8 @@ public class CheckShowAvailRqst extends AuthenRequestable
 	private ShowFormat fShowFormat;
 	private ShowCost fShowCost;
 
+	private Show fShow;
+
 	/* Construction */
 	public CheckShowAvailRqst(DataReader reader) throws Exception
 	{
@@ -33,13 +35,12 @@ public class CheckShowAvailRqst extends AuthenRequestable
 	/* Implementation */
 	public Writeable fulfillRequest() throws Exception
 	{
-		// validate autentication
-		if(!confirmAuthentication())
+		// Fetch and validate the show
+		if(!validateShow())
 			return null;
 
-		// Fetch and validate the show
-		Show show = validateShow();
-		if (show == null)
+		// validate autentication
+		if(!confirmAuthentication())
 			return null;
 
 		// TODO: confirm Show is still avaliable for renting
@@ -47,7 +48,7 @@ public class CheckShowAvailRqst extends AuthenRequestable
 		// If Member is not allowed to rent this Show for other reason, return StatusCode.sc_ShowNoAccess;
 
 		// TODO: fetch various rental periods for specific Member based on ShowFormat
-		ShowRental showRental = validateShowFormat(show);
+		ShowRental showRental = validateShowFormat(fShow);
 		if (showRental == null)
 			return null;
 
@@ -65,25 +66,30 @@ public class CheckShowAvailRqst extends AuthenRequestable
 		return response;
 	}
 
-	private Show validateShow()
+	protected boolean isMemberRequest()
+	{
+		return wasMemberProvidered() || !fShow.isFreeShowCost();
+	}
+
+	private boolean validateShow()
 	{
 		if(fShowID == null)
 		{
 			fStatusCode = StatusCode.sc_RequestMissingRequired;
 			Logger.logInfo(this, "validateShow", "ShowID == null");
-			return null;
+			return false;
 		}
 
 		//TODO: Actually fetch Show from DB
-		Show show = DataManager.getThe().getShowList().findByID(fShowID);
-		if(show == null)
+		fShow = DataManager.getThe().getShowList().findByID(fShowID);
+		if(fShow == null)
 		{
 			fStatusCode = StatusCode.sc_RequestInvalid;
 			Logger.logInfo(this, "validateShow", String.format("ShowID(%s) not found", fShowID));
-			return null;
+			return false;
 		}
 
-		return show;
+		return true;
 	}
 
 	private ShowRental validateShowFormat(Show show)

@@ -26,6 +26,8 @@ public class WatchShowRqst extends AuthenRequestable
 	protected ShowID fShowID;
 	protected String fPlayerIPAddress;
 
+	protected Show fShow;
+
 	/* Construction */
 	public WatchShowRqst(DataReader reader) throws Exception
 	{
@@ -35,14 +37,12 @@ public class WatchShowRqst extends AuthenRequestable
 	/* Implementation */
 	public Writeable fulfillRequest()
 	{
-		// validate autentication
-		if(!confirmAuthentication())
+		// Fetch and validate the show
+		if(!validateShow())
 			return null;
 
-		// TODO: Confirm valid Show
-		// Fetch and validate the show
-		Show show = validateShow();
-		if (show == null)
+		// validate autentication
+		if(!confirmAuthentication())
 			return null;
 
 		//TODO: Confirm member has rented the Show, if not, fStatusCode = StatusCode.sc_ShowNotRented; return;
@@ -67,23 +67,28 @@ public class WatchShowRqst extends AuthenRequestable
 		return response;
 	}
 
-	protected Show validateShow()
+	protected boolean isMemberRequest()
+	{
+		return wasMemberProvidered() || !fShow.isFreeShowCost();
+	}
+
+	protected boolean validateShow()
 	{
 		if(fShowID == null)
 		{
 			fStatusCode = StatusCode.sc_RequestMissingRequired;
-			return null;
+			return false;
 		}
 
 		//TODO: Actually fetch Show from DB
-		Show show = DataManager.getThe().getShowList().findByID(fShowID);
-		if(show == null)
+		fShow = DataManager.getThe().getShowList().findByID(fShowID);
+		if(fShow == null)
 		{
 			fStatusCode = StatusCode.sc_RequestInvalid;
-			return null;
+			return false;
 		}
 
-		return show;
+		return true;
 	}
 
 	public void readFrom(DataReader reader) throws Exception
