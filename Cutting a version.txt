@@ -35,6 +35,7 @@
 		- C:\projects\iNetVOD\webprovider\trunk\provider_internetvideos.war
 		- C:\projects\iNetVOD\webprovider\trunk\provider_mlb.war
 		- C:\projects\iNetVOD\webprovider\trunk\provider_moviesmovies.war
+		- C:\projects\iNetVOD\webprovider\trunk\provider_rocketboom.war
 		- C:\projects\iNetVOD\webprovider\trunk\provider_vodflicks.war
 
 	- Test
