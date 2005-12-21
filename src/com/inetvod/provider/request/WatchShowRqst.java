@@ -51,16 +51,27 @@ public class WatchShowRqst extends AuthenRequestable
 
 		WatchShowResp response = new WatchShowResp();
 
-		Calendar cal = new GregorianCalendar();
-		cal.add(Calendar.HOUR, 48);
-		//TODO: set expriation date of rental, if any
-		response.setAvailableUntil(cal.getTime());
+		Short rentalPeriodHours = fShow.getShowRentalList().get(0).getShowCostList().get(0).getRentalPeriodHours();
+		if(rentalPeriodHours != null)
+		{
+			Calendar cal = new GregorianCalendar();
+			cal.add(Calendar.HOUR, rentalPeriodHours);
+			//TODO: set expriation date of rental, if any
+			response.setAvailableUntil(cal.getTime());
+		}
 
 		//TODO: return the shows licensing information
-		License license = new License();
-		license.setLicenseMethod(LicenseMethod.URLOnly);
-		license.setShowURL("http://api.inetvod.com/mce/videos/TestVideo.wmv");
-		response.setLicense(license);
+		if(fShow.getLicense() != null)
+		{
+			response.setLicense(fShow.getLicense());
+		}
+		else
+		{
+			License license = new License();
+			license.setLicenseMethod(LicenseMethod.URLOnly);
+			license.setShowURL("http://api.inetvod.com/mce/videos/TestVideo.wmv");
+			response.setLicense(license);
+		}
 
 		fStatusCode = StatusCode.sc_Success;
 

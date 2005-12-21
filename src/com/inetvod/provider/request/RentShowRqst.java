@@ -80,15 +80,27 @@ public class RentShowRqst extends AuthenRequestable
 
 		RentShowResp response = new RentShowResp();
 
-		Calendar cal = new GregorianCalendar();
-		cal.add(Calendar.DATE, 30);
-		//TODO: set expriation date of rental, if any
-		response.setAvailableUntil(cal.getTime());
+		// set expriation date of rental, if any
+		Short rentalWindowDays = fApprovedCost.getRentalWindowDays();
+		if(rentalWindowDays != null)
+		{
+			Calendar cal = new GregorianCalendar();
+			cal.add(Calendar.DATE, rentalWindowDays);
+			//TODO: set expriation date of rental, if any
+			response.setAvailableUntil(cal.getTime());
+		}
 		//TODO: return the shows licensing information
-		License license = new License();
-		license.setLicenseMethod(LicenseMethod.URLOnly);
-		license.setShowURL("http://api.inetvod.com/mce/videos/TestVideo.wmv");
-		response.setLicense(license);
+		if(fShow.getLicense() != null)
+		{
+			response.setLicense(fShow.getLicense());
+		}
+		else
+		{
+			License license = new License();
+			license.setLicenseMethod(LicenseMethod.URLOnly);
+			license.setShowURL("http://api.inetvod.com/mce/videos/TestVideo.wmv");
+			response.setLicense(license);
+		}
 
 		fStatusCode = StatusCode.sc_Success;
 

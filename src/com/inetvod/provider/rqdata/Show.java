@@ -41,6 +41,7 @@ public class Show implements Readable, Writeable
 	private LanguageID fLanguageID;
 	private Boolean fIsAdult;
 	private ShowRentalList fShowRentalList;
+	private License fLicense;
 
 	/* Getters and Setters */
 	public ShowID getShowID() { return fShowID; }
@@ -81,6 +82,9 @@ public class Show implements Readable, Writeable
 	public void setIsAdult(Boolean isAdult) { fIsAdult = isAdult; }
 
 	public ShowRentalList getShowRentalList() { return fShowRentalList; }
+
+	public License getLicense() { return fLicense; }
+	public void setLicense(License license) { fLicense = license; }
 
 	public boolean isFreeShowCost()
 	{
@@ -128,6 +132,7 @@ public class Show implements Readable, Writeable
 		fLanguageID = reader.readDataID("LanguageID", LanguageID.MaxLength, LanguageID.CtorString);
 		fIsAdult = reader.readBoolean("IsAdult");
 		fShowRentalList = reader.readList("ShowRental", ShowRentalList.Ctor, ShowRental.CtorDataReader);
+		fLicense = reader.readObject("License", License.CtorDataReader);
 	}
 
 	public void writeTo(DataWriter writer) throws Exception
@@ -146,5 +151,6 @@ public class Show implements Readable, Writeable
 		writer.writeDataID("LanguageID", fLanguageID, LanguageID.MaxLength);
 		writer.writeBoolean("IsAdult", fIsAdult);
 		writer.writeList("ShowRental", fShowRentalList);
+		writer.writeObject("License", fLicense);
 	}
 }
