@@ -25,12 +25,11 @@ public class WebProviderServlet extends HttpServlet
 {
 	public void init() throws ServletException
 	{
-		String realPath;
 		File file;
 
-		//TODO: can revert to: realPath = getServletContext().getRealPath("/log4j.xml");
-		realPath = getServletContext().getRealPath(determineDataFile("log4j", ".xml"));
-		file = new File(realPath);
+		String configDir = getServletContext().getInitParameter("configdir");
+		//TODO: can revert to: file = new File(getServletContext().getRealPath("/log4j.xml"));
+		file = determineDataFile(configDir, "log4j", ".xml");
 		try
 		{
 			DOMConfigurator.configure(file.toURL());
@@ -41,8 +40,7 @@ public class WebProviderServlet extends HttpServlet
 		}
 
 		//TODO: can remove, the DataManager is a helper object to simulate database access
-		realPath = getServletContext().getRealPath(determineDataFile("data", ".xml"));
-		file = new File(realPath);
+		file = determineDataFile(configDir, "data", ".xml");
 		try
 		{
 			DataManager.load(file);
@@ -54,23 +52,28 @@ public class WebProviderServlet extends HttpServlet
 	}
 
 	//TODO: can remove, only needed to load the DataManager object
-	private String determineDataFile(String defaultDataFilePrefix, String defaultDataFileExt)
+	private File determineDataFile(String configDir, String defaultDataFilePrefix, String defaultDataFileExt)
 	{
 		String contextBegin = "provider_";
-		String defaultDataFile = "/" + defaultDataFilePrefix + defaultDataFileExt;
+		String dataFile = "/" + defaultDataFilePrefix + defaultDataFileExt;
 
-		String contextRoot = determineContextRoot(defaultDataFile);
+		String contextRoot = determineContextRoot(dataFile);
 
 		if(contextRoot != null)
 		{
 			if(contextRoot.startsWith(contextBegin))
 			{
-				return String.format("/" + defaultDataFilePrefix + "_%s" + defaultDataFileExt,
+				String fileName = String.format(defaultDataFilePrefix + "_%s" + defaultDataFileExt,
 					contextRoot.substring(contextBegin.length()));
+				File file = new File(configDir, fileName);
+				if(file.exists())
+					return file;
+
+				dataFile = "/" + fileName;
 			}
 		}
 
-		return defaultDataFile;
+		return new File(getServletContext().getRealPath(dataFile));
 	}
 
 	//TODO: can remove, only needed to load the DataManager object
