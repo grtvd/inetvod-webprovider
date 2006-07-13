@@ -98,7 +98,7 @@ public class RentShowRqst extends AuthenRequestable
 		{
 			License license = new License();
 			license.setLicenseMethod(LicenseMethod.URLOnly);
-			license.setShowURL("http://api.inetvod.com/mce/videos/TestVideo.wmv");
+			license.setShowURL(DataManager.getThe().getShowURL());
 			response.setLicense(license);
 		}
 

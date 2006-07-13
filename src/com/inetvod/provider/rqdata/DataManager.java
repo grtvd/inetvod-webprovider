@@ -24,9 +24,11 @@ public class DataManager implements Readable
 	/* Fields */
 	private static DataManager fTheDataManager;
 
+	private String fShowURL;
 	private ShowList fShowList;
 
 	/* Getters & Setters */
+	public String getShowURL() { return fShowURL; }
 	public ShowList getShowList() { return fShowList; }
 
 	/* Constuction */
@@ -43,11 +45,12 @@ public class DataManager implements Readable
 		FileInputStream inputStream = new FileInputStream(dataManagerXml);
 		XmlDataReader dataReader = new XmlDataReader(inputStream);
 
-		fTheDataManager = dataReader.readObject("DataManager", DataManager.CtorDataReader);
+		fTheDataManager = dataReader.readObject("DataManager", CtorDataReader);
 	}
 
 	public void readFrom(DataReader reader) throws Exception
 	{
+		fShowURL = reader.readString("ShowURL", Integer.MAX_VALUE);
 		fShowList = reader.readList("Show", ShowList.Ctor, Show.CtorDataReader);
 	}
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <DataManager>
+	<ShowURL>http://www.inetvod.com/videos/TestVideo.wmv</ShowURL>
 	<Show>
 		<ShowID>mf123</ShowID>
 		<Name>The Matrix</Name>
