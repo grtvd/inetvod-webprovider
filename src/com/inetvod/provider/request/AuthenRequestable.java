@@ -1,10 +1,11 @@
 /**
- * Copyright © 2005 iNetVOD, Inc. All Rights Reserved.
+ * Copyright © 2005-2006 iNetVOD, Inc. All Rights Reserved.
  * Confidential and Proprietary
  */
 package com.inetvod.provider.request;
 
 import com.inetvod.provider.rqdata.Authenticate;
+import com.inetvod.provider.rqdata.DataManager;
 import com.inetvod.provider.rqdata.ProviderRequestable;
 import com.inetvod.provider.rqdata.StatusCode;
 
@@ -59,8 +60,7 @@ public abstract class AuthenRequestable implements ProviderRequestable
 			//TODO: remove temporary conversion to lower-case
 			if((fAuthenticate.getMemberUserID() == null)
 				|| (fAuthenticate.getMemberPassword() == null)
-				|| !"member".equals(fAuthenticate.getMemberUserID().toLowerCase())
-				|| !"memberpassword".equals(fAuthenticate.getMemberPassword().toLowerCase()))
+				|| !DataManager.getThe().getMemberPassword().equals(fAuthenticate.getMemberPassword()))
 			{
 				fStatusCode = StatusCode.sc_InvalidMemberUserID;
 				return false;

@@ -1,5 +1,5 @@
 /**
- * Copyright © 2005 iNetVOD, Inc. All Rights Reserved.
+ * Copyright © 2005-2006 iNetVOD, Inc. All Rights Reserved.
  * Confidential and Proprietary
  */
 package com.inetvod.provider.rqdata;
@@ -20,14 +20,17 @@ public class DataManager implements Readable
 {
 	/* Constants */
 	public static final Constructor<DataManager> CtorDataReader = DataReader.getCtor(DataManager.class);
+	private static final int MemberPasswordMaxLength = 16;
 
 	/* Fields */
 	private static DataManager fTheDataManager;
 
+	private String fMemberPassword;
 	private String fShowURL;
 	private ShowList fShowList;
 
 	/* Getters & Setters */
+	public String getMemberPassword() { return fMemberPassword; }
 	public String getShowURL() { return fShowURL; }
 	public ShowList getShowList() { return fShowList; }
 
@@ -46,10 +49,14 @@ public class DataManager implements Readable
 		XmlDataReader dataReader = new XmlDataReader(inputStream);
 
 		fTheDataManager = dataReader.readObject("DataManager", CtorDataReader);
+
+		if(fTheDataManager.fMemberPassword == null)
+			fTheDataManager.fMemberPassword = "memberpassword";
 	}
 
 	public void readFrom(DataReader reader) throws Exception
 	{
+		fMemberPassword = reader.readString("MemberPassword", MemberPasswordMaxLength);
 		fShowURL = reader.readString("ShowURL", Integer.MAX_VALUE);
 		fShowList = reader.readList("Show", ShowList.Ctor, Show.CtorDataReader);
 	}
