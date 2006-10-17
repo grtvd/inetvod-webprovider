@@ -80,14 +80,14 @@ public class EnrollRqst extends AuthenRequestable
 		}
 
 		//TODO: Is the ShippingAddress required
-		if((fShippingAddress == null) || !isValidAddress(fShippingAddress))
+		if((fShippingAddress == null) || !isValidAddress(fShippingAddress, false))
 		{
 			fStatusCode = StatusCode.sc_RequestMissingRequired;
 			return false;
 		}
 
 		//TODO: Is the BillingAddress required
-		if((fBillingAddress == null) || !isValidAddress(fBillingAddress))
+		if((fBillingAddress == null) || !isValidAddress(fBillingAddress, true))
 		{
 			fStatusCode = StatusCode.sc_RequestMissingRequired;
 			return false;
@@ -96,17 +96,20 @@ public class EnrollRqst extends AuthenRequestable
 		return true;
 	}
 
-	protected boolean isValidAddress(Address address)
+	protected boolean isValidAddress(Address address, boolean phoneRequired)
 	{
 		if((address.getAddrStreet1() == null) || (address.getAddrStreet1().length() == 0)
 			|| (address.getCity() == null) || (address.getCity().length() == 0)
 			|| (address.getState() == null) || (address.getState().length() == 0)
 			|| (address.getPostalCode() == null) || (address.getPostalCode().length() == 0)
-			|| (address.getCountry() == null)
-			|| (address.getPhone() == null) || (address.getPhone().length() == 0))
+			|| (address.getCountry() == null))
 		{
 			return false;
 		}
+
+		if(phoneRequired)
+			if((address.getPhone() == null) || (address.getPhone().length() == 0))
+				return false;
 
 		return true;
 	}
