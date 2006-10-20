@@ -184,10 +184,10 @@ public abstract class ServletFulfiller
 		{
 			long milliSecs = (new Date()).getTime() - startTime.getTime();
 
-			StringBuffer sb = new StringBuffer();
 			String fileDir = "c:\\temp\\iNetVOD\\requests\\";
 			String baseFileName = String.format ("%s-%d", (new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-SSSS")).format(
-				startTime, sb, new FieldPosition(DateFormat.YEAR_FIELD)).toString(), Thread.currentThread().getId());
+				startTime, new StringBuffer(), new FieldPosition(DateFormat.YEAR_FIELD)).toString(),
+				Thread.currentThread().getId());
 			String fileName = (new File(fileDir, baseFileName)).getPath();
 
 			if(requestStream != null)
@@ -196,7 +196,7 @@ public abstract class ServletFulfiller
 			if(responseStream != null)
 				StreamUtil.streamToFile(responseStream, fileName + "_Resp" + responseFileExt);
 
-			sb = new StringBuffer();
+			StringBuilder sb = new StringBuilder();
 			sb.append(String.format("result:%s; ", (success ? "Success" : "FAILED")));
 			if((msg != null) && (msg.length() > 0))
 				sb.append(String.format("msg:%s; ", msg));
