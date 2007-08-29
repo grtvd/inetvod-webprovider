@@ -184,7 +184,7 @@ public abstract class ServletFulfiller
 		{
 			long milliSecs = (new Date()).getTime() - startTime.getTime();
 
-			String fileDir = "c:\\temp\\iNetVOD\\requests\\";
+			String fileDir = "/program files/inetvod/logs/webprovider/requests";
 			String baseFileName = String.format ("%s-%d", (new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-SSSS")).format(
 				startTime, new StringBuffer(), new FieldPosition(DateFormat.YEAR_FIELD)).toString(),
 				Thread.currentThread().getId());

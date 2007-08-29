@@ -8,13 +8,10 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.log4j.xml.DOMConfigurator;
 
 import com.inetvod.common.core.Logger;
 import com.inetvod.common.core.ServletFulfiller;
@@ -32,11 +29,11 @@ public class WebProviderServlet extends HttpServlet
 		file = determineDataFile(configDir, "log4j", ".xml");
 		try
 		{
-			DOMConfigurator.configure(file.toURL());
+			Logger.initialize(file.getAbsolutePath(), "/program files/inetvod/logs/webprovider");
 		}
 		catch(MalformedURLException e)
 		{
-			e.printStackTrace();
+			Logger.logErr(this, "init", e);
 		}
 
 		//TODO: can remove, the DataManager is a helper object to simulate database access
