@@ -1,5 +1,5 @@
 /**
- * Copyright © 2005 iNetVOD, Inc. All Rights Reserved.
+ * Copyright © 2005-2007 iNetVOD, Inc. All Rights Reserved.
  * Confidential and Proprietary
  */
 package com.inetvod.provider.rqdata;
@@ -18,6 +18,7 @@ public class ShowFormat implements Readable, Writeable
 	public static Constructor<ShowFormat> CtorDataReader = DataReader.getCtor(ShowFormat.class);
 
 	/* Fields */
+	private ShowFormatID fShowFormatID;		//optional
 	private MediaEncoding fMediaEncoding;
 	private MediaContainer fMediaContainer;
 	private Short fHorzResolution;
@@ -26,6 +27,9 @@ public class ShowFormat implements Readable, Writeable
 	private Short fBitRate;
 
 	/* Getters and Setters */
+	public ShowFormatID getShowFormatID() { return fShowFormatID; }
+	public void setShowFormatID(ShowFormatID showFormatID) { fShowFormatID = showFormatID; }
+
 	public MediaEncoding getMediaEncoding() { return fMediaEncoding; }
 	public void setMediaEncoding(MediaEncoding mediaEncoding) { fMediaEncoding = mediaEncoding; }
 
@@ -62,7 +66,8 @@ public class ShowFormat implements Readable, Writeable
 			return false;
 		ShowFormat showFormat = (ShowFormat)obj;
 
-		return CompUtil.areEqual(fMediaEncoding, showFormat.fMediaEncoding)
+		return CompUtil.areEqual(fShowFormatID, showFormat.fShowFormatID)
+			&& CompUtil.areEqual(fMediaEncoding, showFormat.fMediaEncoding)
 			&& CompUtil.areEqual(fMediaContainer, showFormat.fMediaContainer)
 			&& CompUtil.areEqual(fHorzResolution, showFormat.fHorzResolution)
 			&& CompUtil.areEqual(fVertResolution, showFormat.fVertResolution)
@@ -72,6 +77,7 @@ public class ShowFormat implements Readable, Writeable
 
 	public void readFrom(DataReader reader) throws Exception
 	{
+		fShowFormatID = reader.readDataID("ShowFormatID", ShowFormatID.MaxLength, ShowFormatID.CtorString);
 		fMediaEncoding = MediaEncoding.convertFromString(reader.readString("MediaEncoding", MediaEncoding.MaxLength));
 		fMediaContainer = MediaContainer.convertFromString(reader.readString("MediaContainer", MediaContainer.MaxLength));
 		fHorzResolution = reader.readShort("HorzResolution");
@@ -82,6 +88,7 @@ public class ShowFormat implements Readable, Writeable
 
 	public void writeTo(DataWriter writer) throws Exception
 	{
+		writer.writeDataID("ShowFormatID", fShowFormatID, ShowFormatID.MaxLength);
 		writer.writeString("MediaEncoding", MediaEncoding.convertToString(fMediaEncoding), MediaEncoding.MaxLength);
 		writer.writeString("MediaContainer", MediaContainer.convertToString(fMediaContainer), MediaContainer.MaxLength);
 		writer.writeShort("HorzResolution", fHorzResolution);

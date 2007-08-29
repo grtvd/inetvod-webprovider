@@ -1,37 +1,41 @@
 /**
- * Copyright © 2005 iNetVOD, Inc. All Rights Reserved.
+ * Copyright © 2005-2007 iNetVOD, Inc. All Rights Reserved.
  * Confidential and Proprietary
  */
 package com.inetvod.provider.rqdata;
 
-public class MediaContainer
+import java.util.HashMap;
+
+public enum MediaContainer
 {
+	ASF("ASF"),
+	RM("RM"),
+	RTSP("RTSP"),
+	AVI("AVI"),
+	MOV("MOV"),
+	MP3("MP3");
+
+	/* Constants */
 	public static final int MaxLength = 32;
 
-	public static final MediaContainer ASF = new MediaContainer("ASF");
-	public static final MediaContainer RM = new MediaContainer("RM");
-	public static final MediaContainer RTSP = new MediaContainer("RTSP");
-	public static final MediaContainer AVI = new MediaContainer("AVI");
-	public static final MediaContainer MOV = new MediaContainer("MOV");
+	/* Fields */
+	private static HashMap<String, MediaContainer> fAllValues = new HashMap<String, MediaContainer>();
 
 	private final String fValue;
+
+	/* Getters and Setters */
+	public String toString() { return fValue; }
+
+	/* Construction */
+	static
+	{
+		for(MediaContainer value : values())
+			fAllValues.put(value.toString(), value);
+	}
 
 	private MediaContainer(String name)
 	{
 		fValue = name;
-	}
-
-	public String toString()
-	{
-		return fValue;
-	}
-
-	public boolean equals(Object obj)
-	{
-		if(!(obj instanceof MediaContainer))
-			return false;
-
-		return fValue.equals(((MediaContainer)obj).fValue);
 	}
 
 	public static MediaContainer convertFromString(String value)
@@ -39,16 +43,9 @@ public class MediaContainer
 		if((value == null) || (value.length() == 0))
 			return null;
 
-		if(ASF.fValue.equals(value))
-			return ASF;
-		if(RM.fValue.equals(value))
-			return RM;
-		if(RTSP.fValue.equals(value))
-			return RTSP;
-		if(AVI.fValue.equals(value))
-			return AVI;
-		if(MOV.fValue.matches(value))
-			return MOV;
+		MediaContainer mediaContainer = fAllValues.get(value);
+		if(mediaContainer != null)
+			return mediaContainer;
 
 		throw new IllegalArgumentException("bad value(" + value + ")");
 	}

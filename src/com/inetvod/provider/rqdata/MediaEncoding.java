@@ -1,37 +1,47 @@
 /**
- * Copyright © 2005 iNetVOD, Inc. All Rights Reserved.
+ * Copyright © 2005-2007 iNetVOD, Inc. All Rights Reserved.
  * Confidential and Proprietary
  */
 package com.inetvod.provider.rqdata;
 
-public class MediaEncoding
+import java.util.HashMap;
+
+public enum MediaEncoding
 {
+	WMV1("WMV1"),
+	WMV2("WMV2"),
+	WMV3("WMV3"),
+	RV30("RV30"),
+	RV40("RV40"),
+	SVQ3("SVQ3"),
+	AVC1("avc1"),
+	MP4V("mp4v"),
+	DIVX("divx"),
+	MPGA("mpga"),
+	MP4A("mp4a"),
+	WMA2("WMA2");
+
+	/* Constants */
 	public static final int MaxLength = 32;
 
-	public static final MediaEncoding WMV9 = new MediaEncoding("WMV9");
-	public static final MediaEncoding RV9 = new MediaEncoding("RV9");
-	public static final MediaEncoding SVQ3 = new MediaEncoding("SVQ3");
-	public static final MediaEncoding DivX5 = new MediaEncoding("DivX5");
-	public static final MediaEncoding Xvid = new MediaEncoding("Xvid");
+	/* Fields */
+	private static HashMap<String, MediaEncoding> fAllValues = new HashMap<String, MediaEncoding>();
 
 	private final String fValue;
 
+	static
+	{
+		for(MediaEncoding value : values())
+			fAllValues.put(value.toString(), value);
+	}
+
+	/* Getters and Setters */
+	public String toString() { return fValue; }
+
+	/* Construction */
 	private MediaEncoding(String name)
 	{
 		fValue = name;
-	}
-
-	public String toString()
-	{
-		return fValue;
-	}
-
-	public boolean equals(Object obj)
-	{
-		if(!(obj instanceof MediaEncoding))
-			return false;
-
-		return fValue.equals(((MediaEncoding)obj).fValue);
 	}
 
 	public static MediaEncoding convertFromString(String value)
@@ -39,16 +49,9 @@ public class MediaEncoding
 		if((value == null) || (value.length() == 0))
 			return null;
 
-		if(WMV9.fValue.equals(value))
-			return WMV9;
-		if(RV9.fValue.equals(value))
-			return RV9;
-		if(SVQ3.fValue.equals(value))
-			return SVQ3;
-		if(DivX5.fValue.equals(value))
-			return DivX5;
-		if(Xvid.fValue.equals(value))
-			return Xvid;
+		MediaEncoding mediaEncoding = fAllValues.get(value);
+		if(mediaEncoding != null)
+			return mediaEncoding;
 
 		throw new IllegalArgumentException("bad value(" + value + ")");
 	}

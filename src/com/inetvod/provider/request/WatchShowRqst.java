@@ -1,5 +1,5 @@
 /**
- * Copyright © 2005 iNetVOD, Inc. All Rights Reserved.
+ * Copyright © 2005-2007 iNetVOD, Inc. All Rights Reserved.
  * Confidential and Proprietary
  */
 package com.inetvod.provider.request;
@@ -16,6 +16,8 @@ import com.inetvod.provider.rqdata.LicenseMethod;
 import com.inetvod.provider.rqdata.Show;
 import com.inetvod.provider.rqdata.ShowID;
 import com.inetvod.provider.rqdata.StatusCode;
+import com.inetvod.provider.rqdata.ShowFormat;
+import com.inetvod.provider.rqdata.ShowRental;
 
 public class WatchShowRqst extends AuthenRequestable
 {
@@ -25,6 +27,7 @@ public class WatchShowRqst extends AuthenRequestable
 	/* Properties */
 	protected ShowID fShowID;
 	protected String fPlayerIPAddress;
+	protected ShowFormat fShowFormat;
 
 	protected Show fShow;
 
@@ -45,13 +48,18 @@ public class WatchShowRqst extends AuthenRequestable
 		if(!confirmAuthentication())
 			return null;
 
+		// Validate the request
+		ShowRental showRental = validateShowFormat(fShow);
+		if(showRental == null)
+			return null;
+
 		//TODO: Confirm member has rented the Show, if not, fStatusCode = StatusCode.sc_ShowNotRented; return;
 
 		//TODO: Confirm rental period for the Show has not expired, if so, fStatusCode = StatusCode.sc_ShowRentExpired; return;
 
 		WatchShowResp response = new WatchShowResp();
 
-		Short rentalPeriodHours = fShow.getShowRentalList().get(0).getShowCostList().get(0).getRentalPeriodHours();
+		Short rentalPeriodHours = showRental.getShowCostList().get(0).getRentalPeriodHours();
 		if(rentalPeriodHours != null)
 		{
 			Calendar cal = new GregorianCalendar();
@@ -102,15 +110,37 @@ public class WatchShowRqst extends AuthenRequestable
 		return true;
 	}
 
+	protected ShowRental validateShowFormat(Show show)
+	{
+		if(fShowFormat == null)
+		{
+			fStatusCode = StatusCode.sc_RequestMissingRequired;
+			return null;
+		}
+
+		//TODO: Confirm ShowFormat is valid.  If not, set fStatusCode = StatusCode.sc_RequestInvalid; and return false
+
+		ShowRental showRental = show.getShowRentalList().findByShowFormat(fShowFormat);
+		if(showRental == null)
+		{
+			fStatusCode = StatusCode.sc_RequestInvalid;
+			return null;
+		}
+
+		return showRental;
+	}
+
 	public void readFrom(DataReader reader) throws Exception
 	{
 		fShowID = reader.readDataID("ShowID", ShowID.MaxLength, ShowID.CtorString);
 		fPlayerIPAddress = reader.readString("PlayerIPAddress", PlayerIPAddressMaxLength);
+		fShowFormat = reader.readObject("ShowFormat", ShowFormat.CtorDataReader);
 	}
 
 	public void writeTo(DataWriter writer) throws Exception
 	{
 		writer.writeDataID("ShowID", fShowID, ShowID.MaxLength);
 		writer.writeString("PlayerIPAddress", fPlayerIPAddress, PlayerIPAddressMaxLength);
+		writer.writeObject("ShowFormat", fShowFormat);
 	}
 }

@@ -16,7 +16,7 @@
 		<IsAdult>false</IsAdult>
 		<ShowRental>
 			<ShowFormat>
-				<MediaEncoding>WMV9</MediaEncoding>
+				<MediaEncoding>WMV2</MediaEncoding>
 				<MediaContainer>ASF</MediaContainer>
 				<HorzResolution>600</HorzResolution>
 				<VertResolution>480</VertResolution>
@@ -44,7 +44,7 @@
 		</ShowRental>
 		<ShowRental>
 			<ShowFormat>
-				<MediaEncoding>DivX5</MediaEncoding>
+				<MediaEncoding>divx</MediaEncoding>
 				<MediaContainer>AVI</MediaContainer>
 				<HorzResolution>600</HorzResolution>
 				<VertResolution>480</VertResolution>
@@ -79,7 +79,7 @@
 		<IsAdult>false</IsAdult>
 		<ShowRental>
 			<ShowFormat>
-				<MediaEncoding>WMV9</MediaEncoding>
+				<MediaEncoding>WMV2</MediaEncoding>
 				<MediaContainer>ASF</MediaContainer>
 				<HorzResolution>600</HorzResolution>
 				<VertResolution>480</VertResolution>
@@ -107,7 +107,7 @@
 		</ShowRental>
 		<ShowRental>
 			<ShowFormat>
-				<MediaEncoding>DivX5</MediaEncoding>
+				<MediaEncoding>divx</MediaEncoding>
 				<MediaContainer>AVI</MediaContainer>
 				<HorzResolution>600</HorzResolution>
 				<VertResolution>480</VertResolution>
@@ -142,7 +142,7 @@
 		<IsAdult>false</IsAdult>
 		<ShowRental>
 			<ShowFormat>
-				<MediaEncoding>WMV9</MediaEncoding>
+				<MediaEncoding>WMV2</MediaEncoding>
 				<MediaContainer>ASF</MediaContainer>
 				<HorzResolution>600</HorzResolution>
 				<VertResolution>480</VertResolution>
@@ -170,7 +170,7 @@
 		</ShowRental>
 		<ShowRental>
 			<ShowFormat>
-				<MediaEncoding>DivX5</MediaEncoding>
+				<MediaEncoding>divx</MediaEncoding>
 				<MediaContainer>AVI</MediaContainer>
 				<HorzResolution>600</HorzResolution>
 				<VertResolution>480</VertResolution>
