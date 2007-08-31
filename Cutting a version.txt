@@ -12,30 +12,21 @@
 
 - Copy provider.war file to:
 
-	provider_excellentvideos.war
 	provider_internetvideos.war
-	provider_mlb.war
 	provider_moviesmovies.war
-	provider_vodflicks.war
 
 - Deploy to Server
 	- In Firefox, open: http://api.inetvod.com/manager/html
 
 	- In "Applications" section, Undeploy:
 
-		provider_excellentvideos
 		provider_internetvideos
-		provider_mlb
 		provider_moviesmovies
-		provider_vodflicks
 
 	- In "Deploy:WAR file to deploy", specify WAR file as:
 
-		- C:\projects\iNetVOD\webprovider\trunk\provider_excellentvideos.war
 		- C:\projects\iNetVOD\webprovider\trunk\provider_internetvideos.war
-		- C:\projects\iNetVOD\webprovider\trunk\provider_mlb.war
 		- C:\projects\iNetVOD\webprovider\trunk\provider_moviesmovies.war
-		- C:\projects\iNetVOD\webprovider\trunk\provider_vodflicks.war
 
 	- Test
 
