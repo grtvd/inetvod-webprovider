@@ -16,7 +16,15 @@
 	provider_moviesmovies.war
 
 - Deploy to Server
-	- In Firefox, open: http://api.inetvod.com/manager/html
+	- Copy war files to C:\projects\iNetVOD-prod\provider\Program Files\iNetVOD\webprovider
+
+	- Commit to SVN, use label "provider: Deployed version CCYY-MM-DD."
+
+	- On Server
+
+	- From C:\Program Files\iNetVOD\webprovider, update from SVN.
+
+	- In Firefox, open: http://localhost:8080/manager/html
 
 	- In "Applications" section, Undeploy:
 
@@ -25,8 +33,8 @@
 
 	- In "Deploy:WAR file to deploy", specify WAR file as:
 
-		- C:\projects\iNetVOD\webprovider\trunk\provider_internetvideos.war
-		- C:\projects\iNetVOD\webprovider\trunk\provider_moviesmovies.war
+		- C:\Program Files\iNetVOD\webprovider\provider_internetvideos.war
+		- C:\Program Files\iNetVOD\webprovider\provider_moviesmovies.war
 
 	- Test
 
