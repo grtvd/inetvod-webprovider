@@ -1,5 +1,5 @@
 /**
- * Copyright © 2005-2006 iNetVOD, Inc. All Rights Reserved.
+ * Copyright © 2005-2009 iNetVOD, Inc. All Rights Reserved.
  * Confidential and Proprietary
  */
 package com.inetvod.provider.request;
@@ -15,7 +15,6 @@ import com.inetvod.provider.rqdata.StatusCode;
 public abstract class AuthenRequestable implements ProviderRequestable
 {
 	protected String fVersion;
-	protected String fRequestID;
 	protected Authenticate fAuthenticate;
 
 	//protected Member fMember;
@@ -23,10 +22,9 @@ public abstract class AuthenRequestable implements ProviderRequestable
 	protected StatusCode fStatusCode = StatusCode.sc_GeneralError;
 	public StatusCode getStatusCode() { return fStatusCode; }
 
-	public void setRequest(String version, String requestID, Authenticate authenticate)
+	public void setRequest(String version, Authenticate authenticate)
 	{
 		fVersion = version;
-		fRequestID = requestID;
 		fAuthenticate = authenticate;
 
 		//fMember = Member.get(fSessionData.getMemberID());

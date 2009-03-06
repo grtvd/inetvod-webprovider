@@ -1,5 +1,5 @@
 /**
- * Copyright © 2004-2005 iNetVOD, Inc. All Rights Reserved.
+ * Copyright © 2004-2009 iNetVOD, Inc. All Rights Reserved.
  * Confidential and Proprietary
  */
 package com.inetvod.common.core;
@@ -49,15 +49,20 @@ public abstract class ServletFulfiller
 			logRequest(false, "Failed reading request", fHttpServletRequest.getInputStream(), startTime, e);
 			logged = true;
 
-			// if we have a valid response, don't propogate exception
+			// if we have a valid response, don't propagate exception
 			if(response == null)
 				throw e;
 		}
 
 		try
 		{
-			if((response == null) && (request != null))
-				response = request.fulfillRequest();
+			if(response == null)
+			{
+				if (request != null)
+					response = request.fulfillRequest();
+				else
+					throw new Exception("Request is null");
+			}
 		}
 		catch(Exception e)
 		{
@@ -66,7 +71,7 @@ public abstract class ServletFulfiller
 			logRequest(false, "Failed fulfilling request", null, request, response, startTime, e);
 			logged = true;
 
-			// if we have a valid response, don't propogate exception
+			// if we have a valid response, don't propagate exception
 			if(response == null)
 				throw e;
 		}
@@ -122,11 +127,9 @@ public abstract class ServletFulfiller
 		return requestable;
 	}
 
-	/// <summary>
-	/// Read a Requestable object from its name
-	/// </summary>
-	/// <param name="className"></param>
-	/// <returns></returns>
+	/**
+	 * Read a Requestable object from its name
+	 */
 	protected abstract Requestable readRequestableFromReader(DataReader dataReader) throws Exception;
 
 	protected void writeWriteable(Writeable writeable) throws Exception
@@ -212,7 +215,7 @@ public abstract class ServletFulfiller
 		catch(Exception e)
 		{
 			if(writer != null)
-				try { writer.close(); } catch(Exception e2) {}
+				try { writer.close(); } catch(Exception ignore) {}
 			Logger.logErr(this, "logRequest", "Failure during logging", e);
 		}
 	}
@@ -223,8 +226,8 @@ public abstract class ServletFulfiller
 		logRequest(success, msg, null, requestStream, null, ".raw", null, startTime, exception);
 	}
 
-	protected void logRequest(boolean success, String msg, Requestable request,
-		Date startTime, Exception exception) throws Exception
+	protected void logRequest(boolean success, Requestable request, Date startTime, Exception exception)
+		throws Exception
 	{
 		XmlDataWriter requestWriter = null;
 		try

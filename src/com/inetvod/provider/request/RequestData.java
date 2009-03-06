@@ -1,5 +1,5 @@
 /**
- * Copyright © 2005 iNetVOD, Inc. All Rights Reserved.
+ * Copyright © 2005-2009 iNetVOD, Inc. All Rights Reserved.
  * Confidential and Proprietary
  */
 package com.inetvod.provider.request;
@@ -33,10 +33,10 @@ public class RequestData implements Requestable
 		readFrom(reader);
 	}
 
-	public void setRequest(String version, String requestID, Authenticate authenticate) throws Exception
+	public void setRequest(String version, Authenticate authenticate) throws Exception
 	{
 		if(fRequest instanceof AuthenRequestable)
-			((AuthenRequestable)fRequest).setRequest(version, requestID, authenticate);
+			((AuthenRequestable)fRequest).setRequest(version, authenticate);
 	}
 
 	public Writeable fulfillRequest() throws Exception
@@ -65,7 +65,7 @@ public class RequestData implements Requestable
 		fRequestType = reader.readString("RequestType", RequestTypeMaxLength);
 
 		Class<ProviderRequestable> cl = (Class<ProviderRequestable>)Class.forName(getClass().getPackage().getName() + "." + fRequestType);
-		Constructor<ProviderRequestable> ctor = cl.getConstructor(new Class[] { DataReader.class });
+		Constructor<ProviderRequestable> ctor = cl.getConstructor(DataReader.class);
 		fRequest = reader.readObject(fRequestType, ctor);
 	}
 

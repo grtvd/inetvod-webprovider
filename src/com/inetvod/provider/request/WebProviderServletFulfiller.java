@@ -1,5 +1,5 @@
 /**
- * Copyright © 2005 iNetVOD, Inc. All Rights Reserved.
+ * Copyright © 2005-2009 iNetVOD, Inc. All Rights Reserved.
  * Confidential and Proprietary
  */
 package com.inetvod.provider.request;
@@ -21,42 +21,41 @@ public class WebProviderServletFulfiller extends ServletFulfiller
 		super(httpServletRequest, httpServletResponse);
 	}
 
+	@Override
 	public DataFormat getRequestDataFormat()
 	{
 		return DataFormat.XML;	//TODO: base format on URL
 	}
 
+	@Override
 	protected Writeable createResponseFromException(Requestable requestable, Exception e)
 	{
-		INetVODProviderResp response = new INetVODProviderResp();
-
-		if((requestable != null) && (requestable instanceof INetVODProviderRqst))
-			response.setRequestID(((INetVODProviderRqst)requestable).getRequestID());
+		ProviderResp response = new ProviderResp();
 
 		response.setStatusCode(StatusCode.sc_GeneralError);
 
 		return response;
 	}
 
-	/// <summary>
-	/// Read a Requestable object from its name
-	/// </summary>
-	/// <param name="className"></param>
-	/// <returns></returns>
+	/**
+	 * Read a Requestable object from its name
+	 */
+	@Override
 	protected Requestable readRequestableFromReader(DataReader dataReader) throws Exception
 	{
-		return dataReader.readObject("INetVODProviderRqst", INetVODProviderRqst.CtorDataReader);
+		return dataReader.readObject("ProviderRqst", ProviderRqst.CtorDataReader);
 	}
 
+	@Override
 	protected String getRequestType(Requestable requestable)
 	{
 		String requestType = null;
 
-		if(requestable instanceof INetVODProviderRqst)
+		if(requestable instanceof ProviderRqst)
 		{
-			INetVODProviderRqst iNetVODProviderRqst = (INetVODProviderRqst)requestable;
-			if(iNetVODProviderRqst.getRequestData() != null)
-				requestType = iNetVODProviderRqst.getRequestData().getRequestType();
+			ProviderRqst providerRqst = (ProviderRqst)requestable;
+			if(providerRqst.getRequestData() != null)
+				requestType = providerRqst.getRequestData().getRequestType();
 		}
 
 		return requestType;
